@@ -2,7 +2,7 @@ import { Collection } from 'discord.js';
 import type { GuildEmoji } from 'discord.js';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import type { CommandContext } from './context.js';
-import { showStats, timeAgo } from './stats.js';
+import { showServerEmoji, showStats, timeAgo } from './stats.js';
 import { BotDatabase } from '../storage/database.js';
 
 function live(id: string, name: string, animated = false): GuildEmoji {
@@ -285,6 +285,98 @@ describe('inline statistics', () => {
     expect(reply.mock.calls[0]?.[0]).toContain('!history stats <page>');
     await showStats(context, 'guild', emojis, undefined, 3, reply);
     expect(reply.mock.calls[1]?.[0]).toContain('Choose a page from 1 to 2');
+  });
+});
+
+describe('server emoji listing', () => {
+  let db: BotDatabase;
+  let context: CommandContext;
+  beforeEach(() => {
+    db = new BotDatabase(':memory:');
+    context = { db } as CommandContext;
+    vi.spyOn(Date, 'now').mockReturnValue(Date.parse('2026-10-23T12:00:00Z'));
+  });
+  afterEach(() => {
+    db.close();
+    vi.restoreAllMocks();
+  });
+
+  function record(
+    messageId: string,
+    emojiId: string,
+    textCount: number,
+    reactionCount: number,
+    createdAt: number,
+  ) {
+    db.recordMessage({
+      guildId: 'guild',
+      channelId: 'channel',
+      messageId,
+      createdAt,
+      textEmojis: textCount ? [{ emojiId, count: textCount }] : [],
+      reactions: reactionCount ? [{ emojiId, count: reactionCount }] : [],
+    });
+  }
+
+  it('lists every installed emoji most used first with last-used times', async () => {
+    const now = Date.parse('2026-10-23T12:00:00Z');
+    const emojis = Array.from({ length: 12 }, (_, index) =>
+      live(String(111111111111111111n + BigInt(index)), `e${index}`),
+    );
+    record('recent', emojis[1]!.id, 4, 1, now - 2 * 86400_000);
+    record('older', emojis[0]!.id, 2, 0, now - 3600_000);
+    const reply = vi.fn();
+    await showServerEmoji(context, 'guild', emojis, reply);
+    expect(reply).toHaveBeenCalledOnce();
+    const lines = (reply.mock.calls[0]?.[0] as string).split('\n');
+    expect(lines[0]).toBe('All server emoji · most used first:');
+    // Twelve installed emoji: deliberately more than the ten-row stats page.
+    expect(lines.slice(1)).toHaveLength(12);
+    expect(lines[1]).toBe(
+      `1. <:e1:${emojis[1]!.id}> e1 · 4 text, 1 reactions · installed · last used 2 days ago`,
+    );
+    expect(lines[2]).toBe(
+      `2. <:e0:${emojis[0]!.id}> e0 · 2 text, 0 reactions · installed · last used 1 hour ago`,
+    );
+    expect(lines[3]).toContain(
+      '0 text, 0 reactions · installed · never observed',
+    );
+  });
+
+  it('omits emoji that are not currently installed', async () => {
+    const installed = live('111111111111111111', 'kept');
+    record(
+      'm1',
+      '222222222222222222',
+      9,
+      0,
+      Date.parse('2026-10-23T11:00:00Z'),
+    );
+    const reply = vi.fn();
+    await showServerEmoji(context, 'guild', [installed], reply);
+    const text = reply.mock.calls[0]?.[0] as string;
+    expect(text).toContain('<:kept:111111111111111111>');
+    expect(text).not.toContain('222222222222222222');
+  });
+
+  it('splits long lists across replies instead of paging', async () => {
+    const emojis = Array.from({ length: 40 }, (_, index) =>
+      live(String(111111111111111111n + BigInt(index)), `long_name_${index}`),
+    );
+    const reply = vi.fn();
+    await showServerEmoji(context, 'guild', emojis, reply);
+    expect(reply.mock.calls.length).toBeGreaterThan(1);
+    const contents = reply.mock.calls.map((call) => call[0] as string);
+    expect(contents.every((content) => content.length <= 1900)).toBe(true);
+    expect(contents.join('\n')).toContain('40. ');
+  });
+
+  it('reports an empty server clearly', async () => {
+    const reply = vi.fn();
+    await showServerEmoji(context, 'guild', [], reply);
+    expect(reply).toHaveBeenCalledExactlyOnceWith(
+      'All server emoji · most used first:\nNo custom emoji installed.',
+    );
   });
 });
 

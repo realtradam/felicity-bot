@@ -190,3 +190,62 @@ export async function showStats(
     );
   }
 }
+
+/** Every emoji currently installed on the server, most used first; never paginated. */
+export async function showServerEmoji(
+  context: CommandContext,
+  guildId: string,
+  current: Iterable<GuildEmoji>,
+  reply: (content: string) => Promise<unknown>,
+) {
+  const rows = context.db.emojiStats(guildId);
+  const entries = [...current]
+    .map((emoji) => {
+      const assetId = context.db.getInstallation(guildId, emoji.id)?.assetId;
+      const row = rows.find((entry) =>
+        assetId ? entry.assetId === assetId : entry.emojiId === emoji.id,
+      );
+      return {
+        emoji,
+        textCount: row?.textCount ?? 0,
+        reactionCount: row?.reactionCount ?? 0,
+        lastUsedAt: row?.lastUsedAt ?? null,
+      };
+    })
+    .sort(
+      (a, b) =>
+        b.textCount + b.reactionCount - (a.textCount + a.reactionCount) ||
+        (b.lastUsedAt ?? 0) - (a.lastUsedAt ?? 0) ||
+        (a.emoji.name ?? a.emoji.id).localeCompare(b.emoji.name ?? b.emoji.id),
+    );
+  const heading = 'All server emoji · most used first:';
+  const lines = entries.map((entry, index) => {
+    const { emoji, textCount, reactionCount, lastUsedAt } = entry;
+    const mention = formatEmoji({
+      id: emoji.id,
+      name: emoji.name ?? 'emoji',
+      animated: Boolean(emoji.animated),
+    });
+    const lastUsed =
+      lastUsedAt !== null
+        ? `last used ${timeAgo(lastUsedAt)}`
+        : textCount || reactionCount
+          ? 'last used unknown'
+          : 'never observed';
+    return `${index + 1}. ${mention} ${emoji.name ?? emoji.id} · ${textCount} text, ${reactionCount} reactions · installed · ${lastUsed}`;
+  });
+  if (!lines.length) {
+    await reply(`${heading}\nNo custom emoji installed.`);
+    return;
+  }
+  // Discord caps one message at 2,000 characters, so split without paging.
+  let content = heading;
+  for (const line of lines) {
+    if (content.length + line.length + 1 > 1900 && content !== heading) {
+      await reply(content);
+      content = heading;
+    }
+    content += `\n${line}`;
+  }
+  await reply(content);
+}

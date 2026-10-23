@@ -8,7 +8,7 @@ import { EmojiService } from '../emoji/service.js';
 import { scanHistory } from '../history/scan.js';
 import type { CommandContext } from './context.js';
 import { showLibrary } from './library.js';
-import { showStats } from './stats.js';
+import { showServerEmoji, showStats } from './stats.js';
 import { UserError } from './user-error.js';
 
 export interface ParsedCommand {
@@ -50,6 +50,7 @@ const help = [
   '!history stats [page]',
   '!history stats_channel [page]',
   '!history stats_current [page]',
+  '!history server_emoji',
 ].join('\n');
 
 export async function sendReport(
@@ -119,6 +120,12 @@ export async function handleMessageCommand(
       throw new UserError('Usage: !emoji list [page]');
     const current = await refreshCurrent();
     await showLibrary(message, context, current.values(), Number(args[0] ?? 1));
+    return true;
+  }
+  if (group === 'history' && action === 'server_emoji') {
+    if (args.length) throw new UserError('Usage: !history server_emoji');
+    const current = await refreshCurrent();
+    await showServerEmoji(context, message.guildId, current.values(), reply);
     return true;
   }
   if (

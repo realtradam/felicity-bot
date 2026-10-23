@@ -78,6 +78,11 @@ describe('message command parser', () => {
       action: 'stats_channel',
       args: [],
     });
+    expect(parseMessageCommand('!history server_emoji')).toEqual({
+      group: 'history',
+      action: 'server_emoji',
+      args: [],
+    });
     expect(parseMessageCommand('  !EMOJI LIST  ')?.action).toBe('list');
     expect(parseMessageCommand('ordinary message !emoji list')).toBeUndefined();
     expect(parseMessageCommand('!emojilist')).toBeUndefined();
@@ -395,6 +400,18 @@ describe('message command dispatch', () => {
     await handleMessageCommand(f.message, f.context);
     expect(f.reply.mock.calls[1]?.[0].content).toContain('0 text');
     expect(f.reply.mock.calls[1]?.[0].content).toContain('swapped');
+  });
+  it('lists every installed server emoji without paging arguments', async () => {
+    const f = fixture(db);
+    f.message.content = '!history server_emoji';
+    await handleMessageCommand(f.message, f.context);
+    expect(f.reply.mock.calls[0]?.[0].content).toContain(
+      'All server emoji · most used first',
+    );
+    f.message.content = '!history server_emoji 2';
+    await expect(handleMessageCommand(f.message, f.context)).rejects.toThrow(
+      'Usage: !history server_emoji',
+    );
   });
   it('accepts stats pages and rejects malformed arguments', async () => {
     const f = fixture(db);
