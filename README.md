@@ -51,6 +51,8 @@ If no `.env` exists, the previous gopass flow remains available via `./bin/dev_s
 
 ### 3. Install dependencies and start
 
+**Always check production before starting dev.** Felicity is deployed on [Dokploy](http://xenifse1.chimera-dinosaur.ts.net:3000), project `felicity` → service `felicity-bot`. The existing local `.env` uses the same bot token as production. Stop production and confirm its bot container has stopped before running `./bin/up`; if you cannot verify production status, do not start dev with that token. Alternatively, use a separate Discord application/token for development. Two instances can both answer commands and perform conflicting emoji mutations. Stop dev with `./bin/down` before resuming production. See [agent/operational safety](AGENTS.md).
+
 ```bash
 ./bin/setup
 ./bin/up
