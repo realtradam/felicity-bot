@@ -121,7 +121,7 @@ Run it inside **each channel/thread you want included**; there is no automatic d
 
 Stats include installed, archived-zero-use, and swapped-out emoji. Deleted/uninstalled IDs remain in the database, with outgoing identities labeled **swapped**. An emoji swapped back in returns to **installed**, with old/new counts combined. Unmapped external/deleted emoji IDs are reported as external/untracked because the bot cannot infer missing identities from names alone. Run `!emoji backup` before your first swaps to establish all current identities.
 
-Stats render installed custom emoji inline and use the bot's cached application-emoji previews for archived/removed ones (text fallback if unavailable). Standard Unicode emoji are included whenever observed in text or reactions, including flags, skin tones, keycaps and joined sequences. Presentation-selector variants share totals; different skin tones remain separate. Unicode entries do not get installation-state labels. Reports use ten entries per page: `!history stats 2` or `!history stats_channel 2`.
+Stats render installed custom emoji inline and use the bot's cached application-emoji previews for archived/removed ones (text fallback if unavailable). Untracked custom emoji — usually ones from a server the bot is not in — are previewed by downloading their public Discord CDN image into the same bot-owned cache; nothing is added to the archive database. Standard Unicode emoji are included whenever observed in text or reactions, including flags, skin tones, keycaps and joined sequences. Presentation-selector variants share totals; different skin tones remain separate. Unicode entries do not get installation-state labels. Reports use ten entries per page: `!history stats 2` or `!history stats_channel 2`.
 
 **Backfill after upgrading:** previous snapshots did not record Unicode emoji and message bodies are not stored. Run `!history scan restart` in each channel/thread to include older Unicode usage. New live messages/reactions are tracked automatically. A normal incremental scan deliberately skips already-covered messages.
 
@@ -194,6 +194,8 @@ Before destructive production use, test backup → upload → swap/remove with d
 ## Inline previews: no image host
 
 `!emoji list [page]` is a compact text list with real inline emoji—no cards, IDs, files or public image links. Usable server emoji are preferred. Otherwise the bot reads the archived PNG/GIF **directly from SQLite** and uploads it to its application-owned emoji slots. These previews are bot-only: they never occupy server slots or change server installations, archived identities, or usage counts.
+
+Untracked emoji seen in statistics (for example one used in a message but never installed in this server) have no archived bytes. For those the bot downloads the emoji's public `cdn.discordapp.com/emojis/<id>` image and caches it the same way, under an `x_<emoji id>` preview name. Only previews are created; external emoji are not added to the archive or to any server.
 
 The cache defaults to **100 previews**, configurable with `PREVIEW_CACHE_SIZE` (10–2,000). It reuses existing previews and evicts the least-recently-used Felicity-managed preview when full. Unrelated application emoji are never deleted. Current-page images are protected from eviction while its reply is being built/sent, and concurrent preview operations are serialized. Usage order is in memory, reseeded from Discord on restart; original image bytes are permanent in SQLite.
 

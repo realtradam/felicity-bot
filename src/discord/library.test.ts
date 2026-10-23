@@ -130,7 +130,7 @@ it('pins archived images for the whole page through the actual Discord reply', a
     withPage: async (ids, render) => {
       expect(ids).toEqual(['asset0', 'asset1']);
       events.push('pinned');
-      const result = await render(mention);
+      const result = await render(mention, () => Promise.resolve(undefined));
       events.push('released');
       return result;
     },

@@ -6,11 +6,15 @@ import { ApplicationEmojiPreview } from './inline-preview.js';
 
 const assetId = 'a'.repeat(64);
 const name = `f_${assetId.slice(0, 30)}`;
-function setup() {
+function setup(download?: typeof fetch) {
   const fetch = vi.fn().mockResolvedValue(new Collection());
   const create = vi
     .fn()
-    .mockResolvedValue({ id: '123456789012345678', name, animated: false });
+    .mockImplementation(async ({ name }: { name: string }) => ({
+      id: '123456789012345678',
+      name,
+      animated: false,
+    }));
   const readAsset = vi
     .fn()
     .mockResolvedValue({ image: Buffer.from('archived image') });
@@ -25,6 +29,8 @@ function setup() {
     () => manager,
     { readAsset } as unknown as EmojiArchive,
     error,
+    100,
+    download,
   );
   return { fetch, create, remove, manager, readAsset, error, preview };
 }
@@ -97,6 +103,64 @@ describe('application emoji previews', () => {
       {} as EmojiArchive,
     );
     expect(await missing.mention(assetId)).toBeUndefined();
+  });
+  it('downloads untracked emoji from the CDN and caches them as owned previews', async () => {
+    const image = Buffer.concat([
+      Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]),
+      Buffer.from('pixels'),
+    ]);
+    const download = vi
+      .fn()
+      .mockResolvedValueOnce(new Response(null, { status: 415 }))
+      .mockResolvedValueOnce(new Response(image, { status: 200 }));
+    const f = setup(download);
+    const emojiId = '860063973701320716';
+    expect(await f.preview.external(emojiId)).toBe(
+      `<:x_${emojiId}:123456789012345678>`,
+    );
+    expect(f.create).toHaveBeenCalledExactlyOnceWith({
+      name: `x_${emojiId}`,
+      attachment: image,
+    });
+    expect(download).toHaveBeenNthCalledWith(
+      1,
+      `https://cdn.discordapp.com/emojis/${emojiId}.gif`,
+      expect.anything(),
+    );
+    expect(download).toHaveBeenNthCalledWith(
+      2,
+      `https://cdn.discordapp.com/emojis/${emojiId}.png`,
+      expect.anything(),
+    );
+    // The deterministic name lets a later reply (or restart) reuse the preview.
+    expect(await f.preview.external(emojiId)).toBe(
+      `<:x_${emojiId}:123456789012345678>`,
+    );
+    expect(download).toHaveBeenCalledTimes(2);
+    expect(f.readAsset).not.toHaveBeenCalled();
+  });
+  it('falls back to plain text when an external emoji cannot be downloaded', async () => {
+    const download = vi
+      .fn()
+      .mockResolvedValue(new Response(null, { status: 404 }));
+    const f = setup(download);
+    expect(await f.preview.external('860063973701320716')).toBeUndefined();
+    expect(f.create).not.toHaveBeenCalled();
+    expect(f.error).toHaveBeenCalledOnce();
+  });
+  it('rejects downloaded content that is not a PNG or GIF image', async () => {
+    const download = vi
+      .fn()
+      .mockResolvedValue(new Response(Buffer.from('<html>'), { status: 200 }));
+    const f = setup(download);
+    expect(await f.preview.external('860063973701320716')).toBeUndefined();
+    expect(f.create).not.toHaveBeenCalled();
+  });
+  it('ignores malformed external IDs without a network request', async () => {
+    const download = vi.fn();
+    const f = setup(download);
+    expect(await f.preview.external('not-an-id')).toBeUndefined();
+    expect(download).not.toHaveBeenCalled();
   });
 });
 

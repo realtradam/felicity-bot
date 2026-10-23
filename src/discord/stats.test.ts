@@ -82,6 +82,26 @@ describe('inline statistics', () => {
     expect(mention).not.toHaveBeenCalled();
   });
 
+  it('previews untracked emoji from the CDN-backed cache instead of showing raw text', async () => {
+    const external = vi.fn().mockResolvedValue('<:x_860063973701320716:123>');
+    context.inlinePreview = { mention: vi.fn(), external };
+    db.recordMessage({
+      guildId: 'guild',
+      channelId: 'channel',
+      messageId: 'external-message',
+      createdAt: Date.parse('2026-10-23T04:00:00Z'),
+      textEmojis: [{ emojiId: '860063973701320716', count: 3 }],
+      reactions: [],
+    });
+    const reply = vi.fn();
+    await showStats(context, 'guild', [], undefined, 1, reply);
+    expect(external).toHaveBeenCalledWith('860063973701320716');
+    const text = reply.mock.calls[0]?.[0] as string;
+    expect(text).toContain(
+      '<:x_860063973701320716:123> 860063973701320716 · 3 text, 0 reactions · external / untracked',
+    );
+  });
+
   it('protects removed-emoji previews through sending server and channel reports', async () => {
     archive(false);
     let protectedPage = false;
@@ -92,7 +112,7 @@ describe('inline statistics', () => {
         expect(ids).toEqual(['asset']);
         protectedPage = true;
         try {
-          return await render(mention);
+          return await render(mention, () => Promise.resolve(undefined));
         } finally {
           protectedPage = false;
         }

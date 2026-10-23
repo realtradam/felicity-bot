@@ -102,8 +102,15 @@ export async function showStats(
               : emoji.id === row.emojiId),
       ),
     }));
+  // External emoji are not installed or archived; preview them from the CDN cache.
+  const externalIds = entries.flatMap(({ row, live }) =>
+    !live && !row.assetId && /^\d{17,20}$/.test(row.emojiId)
+      ? [row.emojiId]
+      : [],
+  );
   const render = async (
     preview: (id: string) => Promise<string | undefined>,
+    externalPreview: (id: string) => Promise<string | undefined>,
   ) => {
     const lines: string[] = [];
     for (const [index, { row, live }] of entries.entries()) {
@@ -119,7 +126,8 @@ export async function showStats(
           : row.assetId
             ? await preview(row.assetId)
             : /^\d{17,20}$/.test(row.emojiId)
-              ? formatEmoji({ id: row.emojiId, name: row.name ?? 'emoji' })
+              ? ((await externalPreview(row.emojiId)) ??
+                formatEmoji({ id: row.emojiId, name: row.name ?? 'emoji' }))
               : undefined);
       const label = unicode
         ? unicode
@@ -172,10 +180,13 @@ export async function showStats(
         !live && row.assetId ? [row.assetId] : [],
       ),
       render,
+      externalIds,
     );
   } else {
     await render(
       (id) => context.inlinePreview?.mention(id) ?? Promise.resolve(undefined),
+      (id) =>
+        context.inlinePreview?.external?.(id) ?? Promise.resolve(undefined),
     );
   }
 }
