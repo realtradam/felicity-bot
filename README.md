@@ -74,11 +74,14 @@ Replies are ordinary, public messages in the invoking channel—not ephemeral. *
 | `!emoji swap :old: backed-up-name` | Back up the outgoing emoji and install the archived incoming emoji. All IDs for the same archived emoji retain a shared usage identity. |
 | `!emoji remove :emoji:`            | Back up first, then remove. No extra confirmation argument; the command itself requests deletion.                                       |
 | `!emoji add <link> [name]`         | Import a 7TV emote or direct HTTPS image, optionally choose its name, back up automatically, and upload it.                             |
+| `!emoji steal`                     | Reply to a message: add every custom emoji in it that this server does not already have, renaming on name conflicts.                    |
 | `!history scan`                    | Catch up from newest messages to the previous scan, then continue any unfinished older history.                                         |
 | `!history stats [page]`            | Server-wide observed text/reaction totals, combining old and new emoji IDs; show swapped-out/removed emoji.                             |
 | `!history stats_current [page]`    | Current-server custom emoji only, including zero-use slots, least used first; useful for choosing swap candidates.                      |
 | `!history stats_channel [page]`    | Same report, with usage restricted to the current channel/thread.                                                                       |
 | `!history server_emoji`            | Every emoji currently installed on the server, most used first, with text/reaction totals and when each was last used; not paged.       |
+
+`!emoji steal` must be sent as a reply. It reads custom emoji mentions from the replied-to message, skips emoji that are already installed on the server, and imports the rest through the normal archive/upload path, so stolen emoji are backed up like any other import. A name already used on the server gets a numeric suffix (`name_2`); names that are too short or contain invalid characters are replaced with a valid fallback. Unicode emoji, reactions and stickers are not stolen.
 
 `!help` lists all message commands, grouped under small `###` prefix headers. Bare `!emoji` shows `!emoji list`; bare `!history` shows `!history stats`. Explicit `!emoji help` and `!history help` still show the full menu. Emoji selectors accept an actual Discord mention (`<:name:ID>`), `:name:`, bare name or numeric ID. Incoming swap targets accept backed-up names (case-insensitive) or a full asset ID (reported when a name is ambiguous). Duplicate/ambiguous names are rejected rather than guessing. Renamed emoji keep aliases. There is no `remote` command.
 

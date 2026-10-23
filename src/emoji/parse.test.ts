@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import {
   countCustomEmoji,
   countEmoji,
+  parseCustomEmojiRefs,
   unicodeEmojiId,
   unicodeEmojiValue,
 } from './parse.js';
@@ -21,6 +22,16 @@ describe('custom emoji parser', () => {
     expect(
       countCustomEmoji('😀 :hello: <:bad:123> <@:thing:123456789012345678>'),
     ).toEqual([]);
+  });
+  it('extracts unique references with animation flags for stealing', () => {
+    expect(
+      parseCustomEmojiRefs(
+        '<:one:111111111111111111> <a:two:222222222222222222> <:renamed:111111111111111111> :text:',
+      ),
+    ).toEqual([
+      { emojiId: '111111111111111111', name: 'one', animated: false },
+      { emojiId: '222222222222222222', name: 'two', animated: true },
+    ]);
   });
 });
 

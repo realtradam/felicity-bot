@@ -5,6 +5,7 @@ import {
 } from 'discord.js';
 import type { Message } from 'discord.js';
 import { EmojiService } from '../emoji/service.js';
+import type { StealResult } from '../emoji/service.js';
 import { scanHistory } from '../history/scan.js';
 import type { CommandContext } from './context.js';
 import { showLibrary } from './library.js';
@@ -44,6 +45,7 @@ const help = [
   '!emoji swap :old: backed-up-name',
   '!emoji remove :emoji:',
   '!emoji add <7TV-or-image-link> [name]',
+  '!emoji steal (reply to a message)',
   '',
   '### !history',
   '!history scan [all|1–5000] [restart]',
@@ -78,6 +80,27 @@ export async function sendReport(
   }
 }
 
+function stealSummary(result: StealResult) {
+  if (!result.added.length && !result.skipped && !result.failed.length)
+    return 'No custom emoji found in the replied-to message.';
+  const parts: string[] = [];
+  if (result.added.length) {
+    const mentions = result.added.map((emoji) => formatEmoji(emoji)).join(' ');
+    parts.push(
+      mentions.length > 1500
+        ? `Added ${result.added.length} emoji.`
+        : `Added ${result.added.length} emoji: ${mentions}`,
+    );
+  }
+  if (result.skipped)
+    parts.push(`Skipped ${result.skipped} already on this server.`);
+  if (result.failed.length)
+    parts.push(
+      `Could not add ${result.failed.map((name) => `:${name}:`).join(', ')}. Check emoji slots and Manage Expressions.`,
+    );
+  return parts.join('\n');
+}
+
 /** Errors are handled by the lifecycle wrapper: only UserError messages may reach users. */
 export async function handleMessageCommand(
   message: Message,
@@ -99,7 +122,8 @@ export async function handleMessageCommand(
     return true;
   }
   const mutation =
-    group === 'emoji' && ['backup', 'swap', 'remove', 'add'].includes(action);
+    group === 'emoji' &&
+    ['backup', 'swap', 'remove', 'add', 'steal'].includes(action);
   const scan = group === 'history' && action === 'scan';
   const service = new EmojiService(context.db, context.archive);
   const refreshCurrent = async () => {
@@ -211,7 +235,8 @@ export async function handleMessageCommand(
     return true;
   }
   if (mutation) {
-    const expected = action === 'swap' ? 2 : action === 'backup' ? 0 : 1;
+    const expected =
+      action === 'swap' ? 2 : action === 'backup' || action === 'steal' ? 0 : 1;
     if (
       action === 'add'
         ? args.length < 1 || args.length > 2
@@ -253,6 +278,20 @@ export async function handleMessageCommand(
           animated: result.animated,
         });
         await reply(`Swapped out :${result.removed}: for ${emoji}`);
+      } else if (action === 'steal') {
+        if (!message.reference?.messageId)
+          throw new UserError(
+            'Reply to a message containing emoji, then run !emoji steal.',
+          );
+        const target = await message.fetchReference().catch(() => {
+          throw new UserError('Could not read the replied-to message.');
+        });
+        const result = await service.steal(
+          message.guild,
+          target.content ?? '',
+          signal,
+        );
+        await reply(stealSummary(result));
       } else if (action === 'add') {
         await reply(
           'Importing the image, backing it up, and adding it to the server…',

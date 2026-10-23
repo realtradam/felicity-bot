@@ -8,6 +8,26 @@ export interface EmojiCount {
   count: number;
 }
 
+export interface CustomEmojiRef {
+  emojiId: string;
+  name: string;
+  animated: boolean;
+}
+
+/**
+ * Custom emoji mentions in message content, de-duplicated by ID.
+ * The first spelling wins; Discord names are not unique across servers.
+ */
+export function parseCustomEmojiRefs(content: string): CustomEmojiRef[] {
+  const found = new Map<string, CustomEmojiRef>();
+  for (const match of content.matchAll(/<(a?):([A-Za-z0-9_]+):(\d{17,20})>/g)) {
+    const [, animated, name, emojiId] = match;
+    if (!emojiId || !name || found.has(emojiId)) continue;
+    found.set(emojiId, { emojiId, name, animated: animated === 'a' });
+  }
+  return [...found.values()];
+}
+
 /** Custom Discord mentions, grouped by installation ID. */
 export function countCustomEmoji(content: string): EmojiCount[] {
   const counts = new Map<string, number>();

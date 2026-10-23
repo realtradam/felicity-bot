@@ -413,6 +413,35 @@ describe('message command dispatch', () => {
       'Usage: !history server_emoji',
     );
   });
+  it('steals missing emoji from the replied-to message', async () => {
+    const f = fixture(db);
+    f.message.content = '!emoji steal';
+    await expect(handleMessageCommand(f.message, f.context)).rejects.toThrow(
+      'Reply to a message containing emoji',
+    );
+    f.message.reference = {
+      messageId: '123456789012345678',
+    } as Message['reference'];
+    (
+      f.message as unknown as { fetchReference: () => Promise<unknown> }
+    ).fetchReference = vi
+      .fn()
+      .mockResolvedValue({ content: '<a:Party:222222222222222222>' });
+    const steal = vi.spyOn(EmojiService.prototype, 'steal').mockResolvedValue({
+      added: [{ name: 'Party', id: '999999999999999999', animated: true }],
+      skipped: 1,
+      failed: [],
+    });
+    await handleMessageCommand(f.message, f.context);
+    expect(steal).toHaveBeenCalledWith(
+      f.message.guild,
+      '<a:Party:222222222222222222>',
+      expect.anything(),
+    );
+    expect(f.reply.mock.calls[0]?.[0].content).toBe(
+      'Added 1 emoji: <a:Party:999999999999999999>\nSkipped 1 already on this server.',
+    );
+  });
   it('accepts stats pages and rejects malformed arguments', async () => {
     const f = fixture(db);
     f.message.content = '!history stats 2';

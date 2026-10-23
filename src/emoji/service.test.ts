@@ -425,4 +425,78 @@ describe('emoji operations', () => {
       db.getSourceAsset('guild', '7tv', '01F010F9GR0007E4VV006YKSKN')?.id,
     ).toBe(newAsset.id);
   });
+  it('steals only emoji the server is missing and renames taken names', async () => {
+    const f = fixture(db);
+    const add = vi
+      .spyOn(f.service, 'add')
+      .mockImplementation(async (_guild, link, _signal, name) => ({
+        name: name!,
+        id: `added-${name}`,
+        animated: link.endsWith('.gif'),
+        alreadyInstalled: false,
+      }));
+    const result = await f.service.steal(
+      f.guild,
+      [
+        '<:old:123456789012345678>',
+        '<a:Party:222222222222222222>',
+        '<:old:333333333333333333>',
+        '<:renamed:222222222222222222>',
+      ].join(' '),
+      signal(),
+    );
+    expect(add).toHaveBeenCalledTimes(2);
+    expect(add.mock.calls[0]?.[1]).toBe(
+      'https://cdn.discordapp.com/emojis/222222222222222222.gif',
+    );
+    expect(add.mock.calls[0]?.[3]).toBe('Party');
+    expect(add.mock.calls[1]?.[1]).toBe(
+      'https://cdn.discordapp.com/emojis/333333333333333333.png',
+    );
+    expect(add.mock.calls[1]?.[3]).toBe('old_2');
+    expect(result).toEqual({
+      added: [
+        { name: 'Party', id: 'added-Party', animated: true },
+        { name: 'old_2', id: 'added-old_2', animated: false },
+      ],
+      skipped: 1,
+      failed: [],
+    });
+  });
+  it('counts already-installed assets as skipped and reports failures', async () => {
+    const f = fixture(db);
+    vi.spyOn(f.service, 'add')
+      .mockResolvedValueOnce({
+        name: 'dup',
+        id: '999999999999999999',
+        animated: false,
+        alreadyInstalled: true,
+      })
+      .mockRejectedValueOnce(new Error('full'));
+    const result = await f.service.steal(
+      f.guild,
+      '<:dup:222222222222222222> <:broken:333333333333333333>',
+      signal(),
+    );
+    expect(result.added).toEqual([]);
+    expect(result.skipped).toBe(1);
+    expect(result.failed).toEqual(['broken']);
+  });
+  it('derives a valid name for short names and skips work without mentions', async () => {
+    const f = fixture(db);
+    const add = vi.spyOn(f.service, 'add').mockResolvedValue({
+      name: 'e_2222',
+      id: '999999999999999999',
+      animated: false,
+      alreadyInstalled: false,
+    });
+    expect(await f.service.steal(f.guild, 'text only', signal())).toEqual({
+      added: [],
+      skipped: 0,
+      failed: [],
+    });
+    expect(add).not.toHaveBeenCalled();
+    await f.service.steal(f.guild, '<:a:222222222222222222>', signal());
+    expect(add.mock.calls[0]?.[3]).toBe('e_2222');
+  });
 });

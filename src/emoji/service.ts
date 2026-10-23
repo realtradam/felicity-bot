@@ -11,6 +11,32 @@ import {
 } from './image-url.js';
 import type { ImageDownloader } from './image-url.js';
 import { fetchSevenTvEmote, parseSevenTvUrl } from './seventv.js';
+import { parseCustomEmojiRefs } from './parse.js';
+
+export interface StealResult {
+  added: Array<{ name: string; id: string; animated: boolean }>;
+  skipped: number;
+  failed: string[];
+}
+
+const emojiNamePattern = /^[A-Za-z0-9_]{2,32}$/;
+
+/** Discord names are unique per server; derive a free, valid name without guessing content identity. */
+function availableEmojiName(
+  raw: string,
+  emojiId: string,
+  taken: Set<string>,
+): string {
+  let base = raw.replace(/[^A-Za-z0-9_]/g, '_').slice(0, 32);
+  if (base.length < 2) base = `e_${emojiId.slice(-4)}`;
+  let name = base;
+  for (let suffix = 2; taken.has(name.toLowerCase()); suffix++) {
+    const tail = `_${suffix}`;
+    name = `${base.slice(0, 32 - tail.length)}${tail}`;
+  }
+  taken.add(name.toLowerCase());
+  return name;
+}
 
 export function resolveCurrentEmoji(
   emojis: Iterable<GuildEmoji>,
@@ -120,7 +146,7 @@ export class EmojiService {
     name: string,
     roles: string[] = [],
   ) {
-    if (!/^[A-Za-z0-9_]{2,32}$/.test(name))
+    if (!emojiNamePattern.test(name))
       throw new UserError(
         'Emoji names must be 2–32 letters, numbers, or underscores.',
       );
@@ -148,10 +174,7 @@ export class EmojiService {
     signal: AbortSignal,
     requestedName?: string,
   ) {
-    if (
-      requestedName !== undefined &&
-      !/^[A-Za-z0-9_]{2,32}$/.test(requestedName)
-    ) {
+    if (requestedName !== undefined && !emojiNamePattern.test(requestedName)) {
       throw new UserError(
         'Emoji names must be 2–32 letters, numbers, or underscores.',
       );
@@ -235,6 +258,56 @@ export class EmojiService {
     }
   }
 
+  /**
+   * Add every custom emoji mentioned in `content` that this server does not
+   * currently have, reusing the normal import/archive/upload path.
+   */
+  async steal(
+    guild: Guild,
+    content: string,
+    signal: AbortSignal,
+  ): Promise<StealResult> {
+    const refs = parseCustomEmojiRefs(content);
+    const result: StealResult = { added: [], skipped: 0, failed: [] };
+    if (!refs.length) return result;
+    const current = await this.current(guild);
+    const installed = new Set(current.keys());
+    const taken = new Set(
+      [...current.values()].flatMap((emoji) =>
+        emoji.name ? [emoji.name.toLowerCase()] : [],
+      ),
+    );
+    for (const ref of refs) {
+      signal.throwIfAborted();
+      if (installed.has(ref.emojiId)) {
+        result.skipped++;
+        continue;
+      }
+      const name = availableEmojiName(ref.name, ref.emojiId, taken);
+      const extension = ref.animated ? 'gif' : 'png';
+      try {
+        const added = await this.add(
+          guild,
+          `https://cdn.discordapp.com/emojis/${ref.emojiId}.${extension}`,
+          signal,
+          name,
+        );
+        installed.add(added.id);
+        if (added.alreadyInstalled) result.skipped++;
+        else
+          result.added.push({
+            name: added.name ?? name,
+            id: added.id,
+            animated: added.animated,
+          });
+      } catch {
+        signal.throwIfAborted();
+        result.failed.push(ref.name);
+      }
+    }
+    return result;
+  }
+
   async swap(
     guild: Guild,
     selector: string,
@@ -246,7 +319,7 @@ export class EmojiService {
     if (outgoing.managed)
       throw new UserError('Integration-managed emoji cannot be swapped.');
     const target = this.resolveAsset(guild.id, incoming);
-    if (!/^[A-Za-z0-9_]{2,32}$/.test(target.name))
+    if (!emojiNamePattern.test(target.name))
       throw new UserError(
         'The incoming backup has an invalid Discord emoji name. Nothing was removed.',
       );
