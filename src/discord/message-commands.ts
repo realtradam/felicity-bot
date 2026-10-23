@@ -6,7 +6,7 @@ import {
 import type { Message } from 'discord.js';
 import { EmojiService } from '../emoji/service.js';
 import { scanHistory } from '../history/scan.js';
-import type { CommandContext } from './commands.js';
+import type { CommandContext } from './context.js';
 import { showLibrary } from './library.js';
 import { showStats } from './stats.js';
 import { UserError } from './user-error.js';

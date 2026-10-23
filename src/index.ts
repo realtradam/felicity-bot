@@ -4,13 +4,11 @@ import {
   Client,
   Events,
   GatewayIntentBits,
-  MessageFlags,
   Options,
   Partials,
 } from 'discord.js';
 import type { Logger } from 'pino';
 import { loadConfig } from './config.js';
-import { handleCommand } from './discord/commands.js';
 import { handleMessageCommand } from './discord/message-commands.js';
 import { UserError } from './discord/user-error.js';
 import { EmojiService } from './emoji/service.js';
@@ -89,25 +87,6 @@ async function main() {
       'Discord client warning; check intents, connectivity, and rate limits',
     ),
   );
-  client.on(Events.InteractionCreate, (interaction) => {
-    if (!interaction.isChatInputCommand()) return;
-    run(async () => {
-      try {
-        await handleCommand(interaction, context);
-      } catch (error) {
-        logger.error(
-          { ...errorDetails(error), command: interaction.commandName },
-          'Command failed',
-        );
-        const content =
-          'Operation failed. Check bot permissions, server capacity, and connectivity. Partial backups/scan progress were retained. No automatic retry of uploads or deletion was attempted.';
-        if (interaction.deferred || interaction.replied)
-          await interaction.editReply({ content });
-        else
-          await interaction.reply({ content, flags: MessageFlags.Ephemeral });
-      }
-    });
-  });
   client.on(Events.MessageCreate, (message) => {
     if (!stopping && message.guildId === config.guildId) {
       try {

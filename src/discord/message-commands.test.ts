@@ -5,7 +5,7 @@ import {
   handleMessageCommand,
   parseMessageCommand,
 } from './message-commands.js';
-import type { CommandContext } from './commands.js';
+import type { CommandContext } from './context.js';
 import type { Config } from '../config.js';
 import type { EmojiArchive } from '../emoji/archive.js';
 import { EmojiService } from '../emoji/service.js';

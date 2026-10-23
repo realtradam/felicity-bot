@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-set -euo pipefail
-source "$(dirname "$0")/_common"
-load_secrets
-compose run --rm --no-deps bot npm run commands:deploy -- "$@"

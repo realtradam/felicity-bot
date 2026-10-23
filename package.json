@@ -16,8 +16,7 @@
     "test:watch": "vitest",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "format:check": "prettier --check .",
-    "commands:deploy": "tsx src/deploy-commands.ts"
+    "format:check": "prettier --check ."
   },
   "dependencies": {
     "better-sqlite3": "^13.0.3",

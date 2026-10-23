@@ -3,7 +3,7 @@ import type { GuildEmoji, Message } from 'discord.js';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { BotDatabase } from '../storage/database.js';
 import type { EmojiArchive } from '../emoji/archive.js';
-import type { CommandContext } from './commands.js';
+import type { CommandContext } from './context.js';
 import { showLibrary } from './library.js';
 import type { Config } from '../config.js';
 

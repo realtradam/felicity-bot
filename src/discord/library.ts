@@ -1,6 +1,6 @@
 import { formatEmoji, MessageFlags } from 'discord.js';
 import type { GuildEmoji, Message } from 'discord.js';
-import type { CommandContext } from './commands.js';
+import type { CommandContext } from './context.js';
 
 export const LIBRARY_PAGE_SIZE = 10;
 

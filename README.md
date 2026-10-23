@@ -16,7 +16,7 @@ Development runs in Docker. The host only needs Docker with Compose and Bash. Lo
 
 - Application ID: `690681378718613615`
 - Development server: **Notifs** — guild ID `1499281440880201818`.
-- Guild installation with the `bot` and `applications.commands` scopes.
+- The saved invite includes `bot` and `applications.commands`; only the `bot` scope is needed for message commands.
 - Saved permission bitfield: `8934609227072` (includes Connect and Speak for possible future voice functionality; playback is not implemented).
 - This is an invite URL, not a bot token. For a private application, open it while signed into the application owner's account. Keep Installation → Install Link set to **None**.
 
@@ -26,7 +26,7 @@ In the [Discord Developer Portal](https://discord.com/developers/applications):
 
 1. Create an application and bot; copy the **application ID** and **bot token**. Use a dedicated development application, not your personal user token.
 2. Enable **Message Content Intent** under Bot → Privileged Gateway Intents. No presence or member intent is needed.
-3. In OAuth2 → URL Generator, select `bot` and `applications.commands`.
+3. In OAuth2 → URL Generator, select `bot`.
 4. Grant the bot **View Channels**, **Read Message History**, **Send Messages**, **Attach Files**, **Create Expressions**, and **Manage Expressions**. Also grant **Send Messages in Threads** to reply to prefix commands inside threads. Voice-channel chat additionally requires **Connect**; normal text channels do not. Do not grant Administrator.
 5. Invite it to your test server. Enable Discord Developer Mode, then copy the server ID.
 
@@ -61,7 +61,7 @@ If no `.env` exists, the previous gopass flow remains available via `./bin/dev_s
 
 No shell exports or gopass unlock are needed when `.env` is present. Tests and builds do not require live Discord access.
 
-Regular message commands work immediately after startup; **slash-command registration is not required**. The bot only processes commands/data from `DISCORD_GUILD_ID`.
+Message commands work immediately after startup; no command registration is needed. The bot only processes commands/data from `DISCORD_GUILD_ID`.
 
 ## Message commands
 
@@ -131,10 +131,6 @@ Every usage report includes an English relative time such as `last used 5 minute
 
 Management command arguments are excluded from text-popularity counts, so `!emoji remove :old:` does not count as organic usage. Repeated history scans replace per-message snapshots rather than duplicating counts. Text and reactions are shown separately; ordering uses their combined total. Counts reflect currently existing observed data, not a complete historical event ledger.
 
-### Optional existing slash commands
-
-The older `/ping`, `/emoji backup`, `/emoji library`, `/emoji stats`, `/emoji upload`, `/emoji remove`, and `/history scan` remain available if registered with `./bin/commands-deploy`. The slash removal command still requires its confirmation ID. Slash scans retain their 1,000-message default, 5,000 cap and ten-minute deadline. Prefix commands are the primary interface for swaps, image/7TV imports and channel statistics. Slash responses are ephemeral. Slash definitions also have no default member-permission restrictions; re-run `./bin/commands-deploy` if commands were previously registered with restricted defaults.
-
 ## Data and behavior
 
 Persistent files inside the container:
@@ -181,8 +177,7 @@ The source is bind-mounted; `tsx watch` reloads on changes. npm dependencies/cac
 src/
   config.ts            # Value-free environment validation errors
   index.ts             # Client lifecycle, events, shutdown
-  deploy-commands.ts   # Explicit guild command registration
-  discord/             # Command definitions/handlers and ingestion
+  discord/             # Message command handlers, shared context and ingestion
   emoji/               # Archive, swaps, public image/7TV imports, conversion, parsing
   history/             # Resumable, cancellable history backfill
   storage/             # SQLite schema and queries

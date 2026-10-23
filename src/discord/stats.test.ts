@@ -1,7 +1,7 @@
 import { Collection } from 'discord.js';
 import type { GuildEmoji } from 'discord.js';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import type { CommandContext } from './commands.js';
+import type { CommandContext } from './context.js';
 import { showStats, timeAgo } from './stats.js';
 import { BotDatabase } from '../storage/database.js';
 

@@ -1,7 +1,7 @@
 import { formatEmoji } from 'discord.js';
 import type { GuildEmoji } from 'discord.js';
 import { unicodeEmojiValue } from '../emoji/parse.js';
-import type { CommandContext } from './commands.js';
+import type { CommandContext } from './context.js';
 import type { RankedEmoji } from '../storage/database.js';
 
 export const STATS_PAGE_SIZE = 10;

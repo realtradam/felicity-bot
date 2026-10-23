@@ -10,7 +10,6 @@ Use the executable scripts in `bin/`; do not invoke Compose directly. They selec
 | `bin/up`               | Load local `.env` (or gopass fallback); start with live reload              |
 | `bin/down`             | Stop services; retain volumes                                               |
 | `bin/logs`             | Follow logs                                                                 |
-| `bin/commands-deploy`  | Register this application's commands in the configured guild                |
 | `bin/check`            | Typecheck, lint, verify formatting                                          |
 | `bin/test`             | Vitest; passes additional arguments to the test runner                      |
 | `bin/build`            | Compile JS to bind-mounted `dist/`                                          |
@@ -68,20 +67,18 @@ The archive includes the entire data directory, including any SQLite WAL sidecar
 
 Configure your container deployment platform with this production Compose file or the production Dockerfile, plus the three required variables. The platform must persist `/app/data` and allow outgoing HTTPS/WebSocket connections. Supply production secrets through the platform's environment settings; `bin/prod_secrets` prints `DISCORD_TOKEN=…` for this purpose **to stdout**, so do not run it in a logged CI job or redirect it into the repository. Set the non-secret application and server IDs separately.
 
-Prefix commands need no registration. Optional slash-command registration must target the production application/server explicitly. `bin/commands-deploy` uses the development `.env` when present (with exported variables taking precedence); without that file, it uses an exported `DISCORD_TOKEN` or the **development** gopass token. For production, inject the production token securely via the deployment platform's one-off job and run `node dist/deploy-commands.js` (included in the production build). Do not let the dev fallback silently select the wrong bot.
-
 Health checks read a timestamp written every 30 seconds only while the Discord client is ready. A stale/missing heartbeat makes the container unhealthy; Docker's restart policy alone does not restart a merely unhealthy process. Configure monitoring/redeployment in the platform. A fatal error or failed login exits nonzero. SIGTERM/SIGINT cancel scans, disconnect the client, wait for active tasks, and close SQLite; Docker gives a 30-second grace period with a 25-second process deadline.
 
 Run one instance against each SQLite volume. Do not horizontally scale this scaffold over a shared SQLite file. Production data volume names depend on the deployment platform's Compose project name; back up the actual mounted volume, not the development one.
 
 ## Safety boundaries and follow-up work
 
-- Prefix commands and optional slash registration are guild-scoped. The configured guild is also enforced in runtime events and command execution.
+- Message commands are guild-scoped. The configured guild is also enforced in runtime events and command execution.
 - No user token/self-bot support; no automatic server-wide history collection.
-- There are no application-level caller-permission or role checks: any member in the configured server can invoke all commands, including emoji mutations. The bot still requires its own Discord permissions. Successful backup before deletion, operation locks, and the older slash removal confirmation remain in place.
+- There are no application-level caller-permission or role checks: any member in the configured server can invoke all commands, including emoji mutations. The bot still requires its own Discord permissions. Successful backup before deletion and operation locks remain in place.
 - New uploads have no role restrictions. Backups preserve original restrictions, and swap rollback restores them.
 - An API mutation and its local DB write cannot be one atomic transaction. A timeout or disk failure may leave Discord and local installation metadata out of sync. Inspect Discord and back up the current guild to reconcile before retrying.
-- Live refreshes and history scans are idempotent, but overlapping snapshots/deletions may race. Missed events, inaccessible messages, and offline edits require reconciliation scans (`!history scan restart`, or slash `resume:false`). No exact-once claim is made.
+- Live refreshes and history scans are idempotent, but overlapping snapshots/deletions may race. Missed events, inaccessible messages, and offline edits require reconciliation scans (`!history scan restart`). No exact-once claim is made.
 - Scanned coverage ranges, unfinished gaps and archives persist (SQLite schema 5), but jobs themselves are not durable/automatically resumed. Regular/all scans always check newest messages first, skip covered ranges, and continue any unfinished older history. `restart` ignores prior coverage and replaces it after the first successfully stored page; counts remain idempotent. Legacy cursors migrate as a single known boundary, conservatively rechecking newer messages once. Run the command again after a process restart.
 - Rate limits may outlast interaction deadlines. Existing backup files and completed scan pages are retained; partial success must be reviewed.
 - Failures are logged without raw request bodies, headers, tokens or message content. Error types are logged rather than raw Discord error objects; investigate permissions/configuration/network first.
@@ -90,7 +87,7 @@ Run one instance against each SQLite volume. Do not horizontally scale this scaf
 
 Bare `!emoji` opens the archive list and bare `!history` opens server-wide stats; `!help` is the grouped command menu. `stats_current` lists current server emoji slots only, least used first. All reports include the relative last-used time (such as 5 minutes ago) from the newest message containing the emoji in text or reactions; reaction dates deliberately use the message sent date, not the real reaction time. Zero-use rows say never observed.
 
-The primary interface is `!emoji backup/list/swap/remove/add` and `!history scan/stats/stats_channel/stats_current`; see the README for syntax. No slash registration is required for these commands. Replies are public; the bot needs Send Messages in Threads for prefix replies inside threads. Command execution does not check caller permissions or roles. Discord channel access determines who can send messages there; there is no bot-specific management-channel restriction. Previously registered slash defaults must be refreshed with `bin/commands-deploy` to clear old member-permission defaults.
+The interface is `!emoji backup/list/swap/remove/add` and `!history scan/stats/stats_channel/stats_current`; see the README for syntax. Message commands need no registration. Replies are public; the bot needs Send Messages in Threads for replies inside threads. Command execution does not check caller permissions or roles. Discord channel access determines who can send messages there; there is no bot-specific management-channel restriction.
 
 SQLite version 2 adds image BLOBs, per-guild name aliases, source-provider mappings and an operation journal. SQLite images are authoritative; local image files remain a cache/export and a fallback for version-1 backups. Legacy file-only images are imported into SQLite when read/backed up. Keep pre-migration snapshots if you need to run older code: version-1 code cannot open version-2 databases.
 

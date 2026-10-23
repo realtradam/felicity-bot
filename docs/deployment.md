@@ -31,10 +31,10 @@ Do not set the retired `IMAGE_STORE_URL`, `IMAGE_STORE_TOKEN`, or `IMAGE_PUBLIC_
 
 - Ensure the `bot_data` volume persists across redeployments. Back up the SQLite database plus legacy exports/metadata together while stopped.
 - Original images are SQLite BLOBs. The 100-entry application-emoji cache is only for previews; its objects can be evicted/recreated without losing archived images.
-- Schema 4 upgrades existing v1/v2/v3 databases and drops only obsolete hosting metadata. Keep a snapshot before upgrading if rollback to older code is needed.
+- Schema 5 upgrades existing v1/v2/v3/v4 databases, preserves data and adds incremental scan coverage. Keep a snapshot before upgrading if rollback to older code is needed.
 - Start the deployment and look for `Felicity is ready` in logs.
 - Test `!help`, `!emoji list`, then non-destructive backups/scans before testing swaps/removals.
-- Prefix commands need no registration. If using optional slash commands, run `node dist/deploy-commands.js` once with the deployment environment and again after changing definitions.
+- Message commands need no registration. Slash commands are not supported.
 - Use one bot instance per SQLite data volume. Do not run a second copy of the same bot concurrently for normal operation.
 
 Dokploy's health status reads the bot's readiness heartbeat. Restart policies restart exited processes but do not automatically restart merely unhealthy ones; configure platform monitoring accordingly. Outgoing HTTPS/WebSocket access is required for Discord and imported image sources.
