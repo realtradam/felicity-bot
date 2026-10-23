@@ -7,7 +7,7 @@ Before running `./bin/up`, `npm run dev`, or any other command that logs the bot
 - Dokploy: `http://xenifse1.chimera-dinosaur.ts.net:3000`
 - Project: `felicity`; Compose service: `felicity-bot`; app name: `felicity-bot-ojxcoc`.
 - Production source: `main`, `./docker-compose.prod.yml` at this repository's root.
-- The existing local `.env` and production use the same bot application/token, targeting Notifs (`1499281440880201818`). Never print the token or commit credentials.
+- The existing local `.env` and production use the same bot application/token, serving every server the bot has been added to (currently including Notifs). Never print the token or commit credentials.
 
 If production is running with the same token, stop it in Dokploy and confirm the bot container is stopped **before** starting development. If production status cannot be checked, do not start dev with that token. A genuinely separate Discord application/token may be used for development instead.
 

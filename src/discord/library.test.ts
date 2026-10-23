@@ -5,7 +5,6 @@ import { BotDatabase } from '../storage/database.js';
 import type { EmojiArchive } from '../emoji/archive.js';
 import type { CommandContext } from './context.js';
 import { showLibrary } from './library.js';
-import type { Config } from '../config.js';
 
 let db: BotDatabase;
 beforeEach(() => {
@@ -32,7 +31,6 @@ function setup(count = 1) {
     db,
     archive: {} as EmojiArchive,
     inlinePreview: { mention },
-    config: {} as Config,
     running: new Set(),
     signal: new AbortController().signal,
   };

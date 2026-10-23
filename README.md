@@ -15,10 +15,10 @@ Development runs in Docker. The host only needs Docker with Compose and Bash. Lo
 [Invite Felicity to a server](https://discord.com/oauth2/authorize?client_id=690681378718613615&permissions=8934609227072&integration_type=0&scope=bot+applications.commands)
 
 - Application ID: `690681378718613615`
-- Development server: **Notifs** — guild ID `1499281440880201818`.
+- Felicity serves **every server it has been added to**; no server ID is configured. Development currently uses **Notifs**.
 - The saved invite includes `bot` and `applications.commands`; only the `bot` scope is needed for message commands.
 - Saved permission bitfield: `8934609227072` (includes Connect and Speak for possible future voice functionality; playback is not implemented).
-- This is an invite URL, not a bot token. For a private application, open it while signed into the application owner's account. Keep Installation → Install Link set to **None**.
+- This is an invite URL, not a bot token. To let anyone outside the application team invite Felicity, enable **Public Bot** under Bot → Authorization Flow. Otherwise, open the link while signed into the application owner's account. Keep Installation → Install Link set to **None**.
 
 #### Developer Portal setup
 
@@ -34,7 +34,7 @@ The app requests guild, expression, message, message-content and reaction intent
 
 ### 2. Configure local credentials
 
-This checkout is configured using a local **`.env`** file containing the bot token, application ID and Notifs server ID. The file is excluded from Git and Docker build contexts, with owner-only permissions (`600`). Never commit or share it.
+This checkout is configured using a local **`.env`** file containing the bot token and application ID. The file is excluded from Git and Docker build contexts, with owner-only permissions (`600`). Never commit or share it.
 
 For a fresh checkout, copy `.env.example` to `.env`, restrict its permissions, and fill in `DISCORD_TOKEN` locally:
 
@@ -47,7 +47,7 @@ The non-secret IDs are already provided in the example. Edit the token with your
 
 Scripts pass `.env` to Docker Compose's dotenv parser rather than executing it as shell code. Exported environment variables override `.env` values. Existing containers must be recreated with `./bin/up` after changing the file.
 
-If no `.env` exists, the previous gopass flow remains available via `./bin/dev_secrets`, with `DISCORD_CLIENT_ID` and `DISCORD_GUILD_ID` exported in your shell. The development gopass path is `projects/discordbot-felicity/dev/discord_token`.
+If no `.env` exists, the previous gopass flow remains available via `./bin/dev_secrets`, with `DISCORD_CLIENT_ID` exported in your shell. The development gopass path is `projects/discordbot-felicity/dev/discord_token`.
 
 ### 3. Install dependencies and start
 
@@ -61,11 +61,11 @@ If no `.env` exists, the previous gopass flow remains available via `./bin/dev_s
 
 No shell exports or gopass unlock are needed when `.env` is present. Tests and builds do not require live Discord access.
 
-Message commands work immediately after startup; no command registration is needed. The bot only processes commands/data from `DISCORD_GUILD_ID`.
+Message commands work immediately after startup; no command registration is needed. The bot serves **every server it has been added to**; no server ID is configured, and each server's emoji library, usage data, and scan history stay separated in the database.
 
 ## Message commands
 
-Replies are ordinary, public messages in the invoking channel—not ephemeral. **All commands are available to any member in the configured server**, including emoji removal/swaps and history scans. There are no application-level role or caller-permission checks. Discord still enforces the bot’s own permissions. Bot/webhook messages are ignored and cannot trigger commands.
+Replies are ordinary, public messages in the invoking channel—not ephemeral. **All commands are available to any member in any server the bot has joined**, including emoji removal/swaps and history scans. There are no application-level role or caller-permission checks. Discord still enforces the bot’s own permissions. Bot/webhook messages are ignored and cannot trigger commands.
 
 | Command                            | Behavior                                                                                                                                |
 | ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |

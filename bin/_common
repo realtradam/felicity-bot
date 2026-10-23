@@ -19,5 +19,4 @@ load_secrets() {
     export DISCORD_TOKEN
   fi
   : "${DISCORD_CLIENT_ID:?Export DISCORD_CLIENT_ID (Discord application ID)}"
-  : "${DISCORD_GUILD_ID:?Export DISCORD_GUILD_ID (authorized development server ID)}"
 }

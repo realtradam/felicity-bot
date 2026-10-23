@@ -26,10 +26,11 @@ Set these in Dokploy's Environment settings:
 ```dotenv
 DISCORD_TOKEN=<production bot token>
 DISCORD_CLIENT_ID=<Discord application ID>
-DISCORD_GUILD_ID=<server ID>
 PREVIEW_CACHE_SIZE=100
 LOG_LEVEL=info
 ```
+
+The bot serves every server it has been added to, so there is no server ID to configure; add it to each server through Discord's OAuth2 invite flow.
 
 Use a separate Discord application/token for production when practical. Configure the bot's own Discord permissions and Message Content Intent as described in the README. Application preview emojis need no new server permission and do not use server slots. No application-level caller role/permission checks exist.
 

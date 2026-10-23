@@ -82,12 +82,7 @@ export async function handleMessageCommand(
   message: Message,
   context: CommandContext,
 ): Promise<boolean> {
-  if (
-    message.author.bot ||
-    message.webhookId ||
-    !message.inGuild() ||
-    message.guildId !== context.config.guildId
-  )
+  if (message.author.bot || message.webhookId || !message.inGuild())
     return false;
   const command = parseMessageCommand(message.content);
   if (!command) return false;

@@ -8,7 +8,6 @@ services:
     environment:
       DISCORD_TOKEN: ${DISCORD_TOKEN:-}
       DISCORD_CLIENT_ID: ${DISCORD_CLIENT_ID:-}
-      DISCORD_GUILD_ID: ${DISCORD_GUILD_ID:-}
       DATA_DIR: /app/data
       PREVIEW_CACHE_SIZE: ${PREVIEW_CACHE_SIZE:-100}
       LOG_LEVEL: ${LOG_LEVEL:-info}

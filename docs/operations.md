@@ -32,7 +32,6 @@ The first `bin/setup` may download Node and native build tools into the Docker i
 | -------------------- | -------------- | ------------------------------------------------------------ |
 | `DISCORD_TOKEN`      | Runtime/deploy | Bot token from local `.env`, environment, or gopass fallback |
 | `DISCORD_CLIENT_ID`  | Runtime/deploy | Discord application ID                                       |
-| `DISCORD_GUILD_ID`   | Runtime/deploy | Single authorized server ID                                  |
 | `DATA_DIR`           | No             | Defaults to `./data`; Compose uses `/app/data`               |
 | `PREVIEW_CACHE_SIZE` | No             | App-preview LRU limit, default 100, allowed 10–2,000         |
 | `LOG_LEVEL`          | No             | `info` by default; Pino levels including `silent` supported  |
@@ -73,9 +72,9 @@ Run one instance against each SQLite volume. Do not horizontally scale this scaf
 
 ## Safety boundaries and follow-up work
 
-- Message commands are guild-scoped. The configured guild is also enforced in runtime events and command execution.
+- Message commands and data are guild-scoped: the bot answers in every server it has joined, and each server's emoji library, usage totals and scan ranges are stored under its own guild ID.
 - No user token/self-bot support; no automatic server-wide history collection.
-- There are no application-level caller-permission or role checks: any member in the configured server can invoke all commands, including emoji mutations. The bot still requires its own Discord permissions. Successful backup before deletion and operation locks remain in place.
+- There are no application-level caller-permission or role checks: any member in any server the bot has joined can invoke all commands, including emoji mutations. The bot still requires its own Discord permissions. Successful backup before deletion and operation locks remain in place.
 - New uploads have no role restrictions. Backups preserve original restrictions, and swap rollback restores them.
 - An API mutation and its local DB write cannot be one atomic transaction. A timeout or disk failure may leave Discord and local installation metadata out of sync. Inspect Discord and back up the current guild to reconcile before retrying.
 - Live refreshes and history scans are idempotent, but overlapping snapshots/deletions may race. Missed events, inaccessible messages, and offline edits require reconciliation scans (`!history scan restart`). No exact-once claim is made.

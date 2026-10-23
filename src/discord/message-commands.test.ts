@@ -6,7 +6,6 @@ import {
   parseMessageCommand,
 } from './message-commands.js';
 import type { CommandContext } from './context.js';
-import type { Config } from '../config.js';
 import type { EmojiArchive } from '../emoji/archive.js';
 import { EmojiService } from '../emoji/service.js';
 import { BotDatabase } from '../storage/database.js';
@@ -34,7 +33,6 @@ function fixture(db: BotDatabase) {
     reply,
   } as unknown as Message;
   const context: CommandContext = {
-    config: { guildId: 'guild' } as Config,
     db,
     archive: {} as EmojiArchive,
     signal: new AbortController().signal,
@@ -168,14 +166,18 @@ describe('message command dispatch', () => {
       '!history stats_current <page>',
     );
   });
-  it('ignores bot, webhook and unauthorized server messages', async () => {
+  it('ignores bot and DM messages but answers every server it is in', async () => {
     const f = fixture(db);
     f.message.author.bot = true;
     expect(await handleMessageCommand(f.message, f.context)).toBe(false);
     f.message.author.bot = false;
-    f.context.config.guildId = 'other';
+    const inGuild = vi.spyOn(f.message, 'inGuild').mockReturnValue(false);
     expect(await handleMessageCommand(f.message, f.context)).toBe(false);
-    expect(f.reply).not.toHaveBeenCalled();
+    inGuild.mockRestore();
+    f.message.content = '!help';
+    f.message.guildId = 'another-guild';
+    expect(await handleMessageCommand(f.message, f.context)).toBe(true);
+    expect(f.reply).toHaveBeenCalledOnce();
   });
   it('allows every emoji mutation without caller permissions or a member lookup', async () => {
     const f = fixture(db);

@@ -4,11 +4,10 @@ import { loadConfig } from './config.js';
 const valid = {
   DISCORD_TOKEN: 'a-secret-for-tests-only',
   DISCORD_CLIENT_ID: '123456789012345678',
-  DISCORD_GUILD_ID: '234567890123456789',
 };
 
 describe('configuration', () => {
-  it('requires credentials and a development guild', () => {
+  it('requires credentials', () => {
     expect(() => loadConfig({})).toThrow('DISCORD_TOKEN');
   });
   it('provides defaults', () => {

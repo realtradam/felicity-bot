@@ -51,8 +51,8 @@ async function main() {
       ),
     config.previewCacheSize,
   );
+  const emojiService = new EmojiService(db, archive);
   const context = {
-    config,
     db,
     archive,
     inlinePreview,
@@ -70,12 +70,13 @@ async function main() {
     tasks.add(task);
   };
   client.once(Events.ClientReady, (readyClient) => {
-    run(async () => {
-      const guild = await readyClient.guilds.fetch(config.guildId);
-      await new EmojiService(db, archive).current(guild);
-    });
+    for (const guild of readyClient.guilds.cache.values()) {
+      run(async () => {
+        await emojiService.current(guild);
+      });
+    }
     logger.info(
-      { botId: readyClient.user.id, guildId: config.guildId },
+      { botId: readyClient.user.id, guildCount: readyClient.guilds.cache.size },
       'Felicity is ready',
     );
   });
@@ -88,37 +89,36 @@ async function main() {
     ),
   );
   client.on(Events.MessageCreate, (message) => {
-    if (!stopping && message.guildId === config.guildId) {
-      try {
-        ingestMessage(db, message);
-      } catch (error) {
-        logger.error(errorDetails(error), 'Message ingestion failed');
-      }
-      run(async () => {
-        try {
-          await handleMessageCommand(message, context);
-        } catch (error) {
-          logger.error(errorDetails(error), 'Message command failed');
-          if (!controller.signal.aborted)
-            await message.reply({
-              content:
-                error instanceof UserError
-                  ? error.message
-                  : 'Operation failed. Check bot permissions, connectivity, and capacity. Backups and scan progress are retained; inspect Discord before retrying a mutation.',
-              allowedMentions: { parse: [], repliedUser: false },
-            });
-        }
-      });
+    if (stopping) return;
+    try {
+      ingestMessage(db, message);
+    } catch (error) {
+      logger.error(errorDetails(error), 'Message ingestion failed');
     }
+    run(async () => {
+      try {
+        await handleMessageCommand(message, context);
+      } catch (error) {
+        logger.error(errorDetails(error), 'Message command failed');
+        if (!controller.signal.aborted)
+          await message.reply({
+            content:
+              error instanceof UserError
+                ? error.message
+                : 'Operation failed. Check bot permissions, connectivity, and capacity. Backups and scan progress are retained; inspect Discord before retrying a mutation.',
+            allowedMentions: { parse: [], repliedUser: false },
+          });
+      }
+    });
+  });
+  client.on(Events.GuildCreate, (guild) => {
+    run(async () => {
+      await emojiService.current(guild);
+    });
   });
   // Serial REST refreshes avoid relying on cached counts for old/partial messages.
   const refreshes = new Map<string, Promise<void>>();
-  const refresh = (
-    guildId: string | null,
-    channelId: string,
-    messageId: string,
-  ) => {
-    if (guildId !== config.guildId) return;
+  const refresh = (channelId: string, messageId: string) => {
     run(async () => {
       const previous = refreshes.get(messageId) ?? Promise.resolve();
       const next = previous
@@ -143,43 +143,28 @@ async function main() {
     });
   };
   client.on(Events.MessageUpdate, (_old, message) =>
-    refresh(message.guildId, message.channelId, message.id),
+    refresh(message.channelId, message.id),
   );
   client.on(Events.MessageReactionAdd, (reaction) =>
-    refresh(
-      reaction.message.guildId,
-      reaction.message.channelId,
-      reaction.message.id,
-    ),
+    refresh(reaction.message.channelId, reaction.message.id),
   );
   client.on(Events.MessageReactionRemove, (reaction) =>
-    refresh(
-      reaction.message.guildId,
-      reaction.message.channelId,
-      reaction.message.id,
-    ),
+    refresh(reaction.message.channelId, reaction.message.id),
   );
   client.on(Events.MessageReactionRemoveAll, (message) =>
-    refresh(message.guildId, message.channelId, message.id),
+    refresh(message.channelId, message.id),
   );
   client.on(Events.MessageReactionRemoveEmoji, (reaction) =>
-    refresh(
-      reaction.message.guildId,
-      reaction.message.channelId,
-      reaction.message.id,
-    ),
+    refresh(reaction.message.channelId, reaction.message.id),
   );
   client.on(Events.MessageDelete, (message) => {
-    if (!stopping && message.guildId === config.guildId)
-      db.deleteMessage(message.id);
+    if (!stopping && message.guildId) db.deleteMessage(message.id);
   });
-  client.on(Events.MessageBulkDelete, (messages, channel) => {
-    if (!stopping && channel.guild.id === config.guildId)
-      for (const id of messages.keys()) db.deleteMessage(id);
+  client.on(Events.MessageBulkDelete, (messages) => {
+    if (!stopping) for (const id of messages.keys()) db.deleteMessage(id);
   });
   client.on(Events.GuildEmojiDelete, (emoji) => {
-    if (!stopping && emoji.guild.id === config.guildId)
-      db.deactivateInstallation(emoji.guild.id, emoji.id);
+    if (!stopping) db.deactivateInstallation(emoji.guild.id, emoji.id);
   });
   const heartbeat = setInterval(() => {
     if (client.isReady() && !stopping) {
@@ -234,7 +219,7 @@ function fatal(
 main().catch(() => {
   // Configuration validation failures are intentionally value-free.
   console.error(
-    'Felicity could not start. Check DISCORD_TOKEN, DISCORD_CLIENT_ID, DISCORD_GUILD_ID, LOG_LEVEL, and DATA_DIR.',
+    'Felicity could not start. Check DISCORD_TOKEN, DISCORD_CLIENT_ID, LOG_LEVEL, and DATA_DIR.',
   );
   process.exitCode = 1;
 });
