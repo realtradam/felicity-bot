@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+set -euo pipefail
+source "$(dirname "$0")/_common"
+# Exercise the pruned production artifact and native SQLite binding without Discord/network.
+docker run --rm --network none --entrypoint node felicity-bot:local --input-type=module -e '
+import { BotDatabase } from "./dist/storage/database.js";
+import { commandDefinitions } from "./dist/discord/definitions.js";
+import sharp from "sharp";
+import { parseMessageCommand } from "./dist/discord/message-commands.js";
+import { loadConfig } from "./dist/config.js";
+if (process.getuid() === 0) throw new Error("Production image must not run as root");
+const db = new BotDatabase("/app/data/smoke.sqlite");
+if (db.listAssets().length !== 0) throw new Error("Unexpected initial data");
+db.close();
+if (parseMessageCommand("!emoji remove :test:")?.action !== "remove") throw new Error("Prefix parser unavailable");
+const png = await sharp({ create: { width: 16, height: 16, channels: 4, background: "red" } }).png().toBuffer();
+if (!png.length) throw new Error("Image conversion unavailable");
+for (const command of commandDefinitions) command.toJSON();
+let rejected = false;
+try { loadConfig({}); } catch { rejected = true; }
+if (!rejected) throw new Error("Missing credentials must fail validation");
+console.log("Production smoke test passed: non-root, writable data directory, SQLite, sharp image conversion, message commands, command serialization, config validation.");
+'

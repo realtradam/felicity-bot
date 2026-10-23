@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -euo pipefail
+source "$(dirname "$0")/_common"
+: "${1:?Usage: bin/data-backup /path/to/new-backup.tar.gz (stop the bot first)}"
+if [[ -n "$(compose ps --status running -q bot)" ]]; then
+  printf 'Stop the bot with bin/down before taking a consistent database + image backup.\n' >&2
+  exit 1
+fi
+if [[ -e "$1" ]]; then printf 'Refusing to overwrite existing file: %s\n' "$1" >&2; exit 1; fi
+# Disable the dev entrypoint to keep dependency-install output out of the archive.
+# -T disables a pseudo-terminal; stdout is the binary archive only.
+umask 077
+compose run -T --rm --no-deps --entrypoint tar bot -C /app/data -czf - . > "$1"
+printf 'Saved %s. This archive contains server metadata and usage records; protect it.\n' "$1" >&2

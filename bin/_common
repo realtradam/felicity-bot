@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+set -euo pipefail
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$ROOT"
+# Let Compose parse dotenv syntax; never execute .env as a shell script.
+# Exported shell variables override .env values, per Compose's normal precedence.
+compose() {
+  local env_file=/dev/null
+  if [[ -f "$ROOT/.env" ]]; then env_file="$ROOT/.env"; fi
+  docker compose --env-file "$env_file" -p felicity-dev -f "$ROOT/docker-compose.yml" "$@"
+}
+load_secrets() {
+  # With a local .env, the application's schema validates the supplied values.
+  # Do not silently mix an incomplete .env with a different gopass credential.
+  if [[ -f "$ROOT/.env" ]]; then return; fi
+  if [[ -z "${DISCORD_TOKEN:-}" ]]; then
+    if [[ -t 0 ]]; then export GPG_TTY="$(tty)"; fi
+    DISCORD_TOKEN="$(gopass show -o projects/discordbot-felicity/dev/discord_token)"
+    export DISCORD_TOKEN
+  fi
+  : "${DISCORD_CLIENT_ID:?Export DISCORD_CLIENT_ID (Discord application ID)}"
+  : "${DISCORD_GUILD_ID:?Export DISCORD_GUILD_ID (authorized development server ID)}"
+}

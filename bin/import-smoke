@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+set -euo pipefail
+source "$(dirname "$0")/_common"
+# Read-only 7TV network check. No Discord uploads, removals, or persistent bot-data changes.
+compose run -T --rm --no-deps bot node --input-type=module - "${1:-https://7tv.app/emotes/01F010F9GR0007E4VV006YKSKN}" <<'JS'
+import { fetchSevenTvEmote } from './dist/emoji/seventv.js';
+import { fetchImageEmote } from './dist/emoji/image-url.js';
+import { EmojiArchive } from './dist/emoji/archive.js';
+import { BotDatabase } from './dist/storage/database.js';
+import { mkdtemp, rm } from 'node:fs/promises';
+import { join } from 'node:path';
+import { tmpdir } from 'node:os';
+const directory = await mkdtemp(join(tmpdir(), 'felicity-import-check-'));
+const db = new BotDatabase(':memory:');
+try {
+  const link = process.argv[2];
+  const is7tv = ['7tv.app', 'www.7tv.app'].includes(new URL(link).hostname);
+  const emote = is7tv ? await fetchSevenTvEmote(link) : await fetchImageEmote(link, new AbortController().signal);
+  const archive = new EmojiArchive(directory, db);
+  const asset = await archive.storeImage({ ...emote, guildId: 'smoke-test', sourceId: 'import-smoke' });
+  if (!(await archive.readAsset(asset.id)).image.equals(emote.image)) throw new Error('Archive roundtrip failed');
+  console.log(`${is7tv ? '7TV' : 'Direct image'} import/archive check passed: ${emote.name}, ${emote.animated ? 'animated GIF' : 'PNG'}, ${emote.image.length} bytes. No Discord mutations.`);
+} finally { db.close(); await rm(directory, { recursive: true, force: true }); }
+JS

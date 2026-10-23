@@ -1,0 +1,7 @@
+title = "Felicity secret scanning"
+
+[extend]
+useDefault = true
+# Discord application/client IDs are public identifiers, not authentication secrets.
+# Keep Discord client-secret/token and every other default detector enabled.
+disabledRules = ["discord-client-id"]

@@ -1,0 +1,9 @@
+FROM node:24-bookworm-slim
+RUN apt-get update && apt-get install -y --no-install-recommends python3 make g++ \
+    && rm -rf /var/lib/apt/lists/*
+WORKDIR /app
+RUN mkdir -p /app/node_modules /app/data /home/node/.npm \
+    && chown -R node:node /app /home/node/.npm
+USER node
+ENTRYPOINT ["bash", "/app/bin/container-entrypoint"]
+CMD ["npm", "run", "dev"]

@@ -1,0 +1,43 @@
+{
+  "name": "discordbot-felicity",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Discord emoji archive, management, and usage analytics bot",
+  "type": "module",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "node --input-type=module -e \"import { rmSync } from 'node:fs'; rmSync('dist', { recursive: true, force: true });\" && tsc -p tsconfig.build.json",
+    "start": "node dist/index.js",
+    "check": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "commands:deploy": "tsx src/deploy-commands.ts"
+  },
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "discord.js": "^14.27.0",
+    "emoji-regex": "^11.0.0",
+    "ipaddr.js": "^2.5.0",
+    "pino": "^10.4.0",
+    "sharp": "^0.35.5",
+    "undici": "^6.29.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.0",
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/node": "^24.19.2",
+    "eslint": "^10.13.0",
+    "prettier": "^3.9.10",
+    "tsx": "^4.23.15",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.72.0",
+    "vitest": "^5.0.5"
+  }
+}

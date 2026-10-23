@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -euo pipefail
+cd /app
+# Only refresh dependencies when the manifests change, not every watch restart.
+manifests=(package.json)
+if [[ -f package-lock.json ]]; then manifests+=(package-lock.json); fi
+manifest_hash="$(sha256sum "${manifests[@]}" | sha256sum | cut -d ' ' -f 1)"
+if [[ ! -f node_modules/.felicity-manifest ]] || [[ "$(cat node_modules/.felicity-manifest)" != "$manifest_hash" ]]; then
+  if [[ -f package-lock.json ]]; then npm ci; else npm install; fi
+  sha256sum package.json package-lock.json | sha256sum | cut -d ' ' -f 1 > node_modules/.felicity-manifest
+fi
+exec "$@"

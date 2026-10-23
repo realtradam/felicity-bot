@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -euo pipefail
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+"$ROOT/bin/secret-check"
+"$ROOT/bin/setup"
+"$ROOT/bin/check"
+"$ROOT/bin/test"
+"$ROOT/bin/build"
+"$ROOT/bin/image-build"
+"$ROOT/bin/validate-compose"
+"$ROOT/bin/smoke"
