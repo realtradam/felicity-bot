@@ -11,6 +11,14 @@ Deploy the **bot repository** (`git@github.com:realtradam/felicity-bot.git`) as 
 
 The production Dockerfile builds TypeScript and native dependencies, prunes dev packages, and runs as a non-root user. The production Compose file uses init, health checks, a restart policy, a 30-second shutdown grace period, and a persistent `bot_data` volume mounted at `/app/data`. Source code is not bind-mounted.
 
+## Automatic deployment
+
+Dokploy auto-deploy is enabled for pushes to `main`. GitHub must have an active, push-only repository webhook pointing to `https://webhook.catgirls.rodeo/compose/<Dokploy deploy token>`, with content type `application/json`. The existing webhook forwarder relays it to the private Dokploy API; do not point GitHub directly at the LAN/Tailscale panel. Copy the actual deploy token from Dokploy; do not commit or log the token-bearing webhook URL. Without that repository webhook, enabling auto-deploy alone cannot deliver push events.
+
+There is no GitHub Actions CI workflow. Checks/tests/builds remain available locally via `bin/`; run `./bin/secret-check` before committing or pushing. The webhook tells Dokploy to pull and rebuild the repository directly, without a GitHub Actions build job.
+
+Stop the local `felicity-dev` bot before pushing to `main` or manually deploying production when they use the same token. Never start dev until production is confirmed stopped; see [operational safety](../AGENTS.md).
+
 ## Environment
 
 Set these in Dokploy's Environment settings:

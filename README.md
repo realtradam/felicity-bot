@@ -205,6 +205,6 @@ The former `!emoji publish`, publishing scripts, image-host environment variable
 
 ## Before committing or pushing
 
-Run `./bin/secret-check`. It scans all Git-eligible working files and all reachable local Git history with a digest-pinned Gitleaks container, with findings redacted. CI runs the same check. `.env`, runtime data, local caches/backups and private-key files are ignored/excluded from builds. `.env.example` contains placeholders/non-secret settings only. Discord application IDs are public, so only the scanner's `discord-client-id` rule is disabled; token/key/client-secret detectors remain enabled.
+Run `./bin/secret-check`. It scans all Git-eligible working files and all reachable local Git history with a digest-pinned Gitleaks container, with findings redacted. Run this check locally before committing or pushing; this repository has no GitHub Actions CI workflow. `.env`, runtime data, local caches/backups and private-key files are ignored/excluded from builds. `.env.example` contains placeholders/non-secret settings only. Discord application IDs are public, so only the scanner's `discord-client-id` rule is disabled; token/key/client-secret detectors remain enabled.
 
 Never force-add ignored credentials. Review `git diff --cached` before committing. Secret scanners reduce risk but cannot guarantee detection of every credential format.
