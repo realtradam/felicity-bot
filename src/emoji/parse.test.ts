@@ -44,8 +44,15 @@ describe('Unicode emoji parser', () => {
       { emojiId: 'unicode:👍', count: 1 },
       { emojiId: 'unicode:👍🏽', count: 1 },
     ]);
-    expect(unicodeEmojiValue(unicodeEmojiId('❤️'))).toBe('❤');
+    expect(unicodeEmojiValue(unicodeEmojiId('❤️'))).toBe('❤️');
     expect(unicodeEmojiValue('123456789012345678')).toBeUndefined();
+  });
+  it('restores emoji presentation for text-default symbols', () => {
+    for (const emoji of ['❤', '☹', '©', '™', '✔', '☺'])
+      expect(unicodeEmojiValue(unicodeEmojiId(emoji))).toBe(`${emoji}\uFE0F`);
+    // Already emoji-presentation, keycaps, flags and ZWJ sequences keep their form.
+    for (const emoji of ['😀', '👍🏽', '🇨🇦', '1️⃣', '🏳️‍🌈'])
+      expect(unicodeEmojiValue(unicodeEmojiId(emoji))).toBe(emoji);
   });
   it('ignores ordinary text, digits, punctuation, and custom names', () => {
     expect(countEmoji('Hello 123 # * :smile: <@123456789012345678>')).toEqual(

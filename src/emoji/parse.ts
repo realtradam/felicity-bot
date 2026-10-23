@@ -1,5 +1,8 @@
 import emojiRegex from 'emoji-regex';
 
+const emojiPresentation = /^\p{Emoji_Presentation}/u;
+const emojiCapable = /^\p{Emoji}/u;
+
 export interface EmojiCount {
   emojiId: string;
   count: number;
@@ -21,7 +24,19 @@ export function unicodeEmojiId(emoji: string): string {
 }
 
 export function unicodeEmojiValue(id: string): string | undefined {
-  return id.startsWith('unicode:') ? id.slice('unicode:'.length) : undefined;
+  if (!id.startsWith('unicode:')) return undefined;
+  const emoji = id.slice('unicode:'.length);
+  // Storage strips VS16 so presentation variants share totals. Restore it for
+  // display when the base character defaults to text (❤ → ❤️, ☹ → ☹️, 1⃣ → 1️⃣),
+  // otherwise Discord renders the monochrome text glyph.
+  const first = String.fromCodePoint(emoji.codePointAt(0) ?? 0);
+  if (
+    emojiPresentation.test(emoji) ||
+    !emojiCapable.test(emoji) ||
+    emoji.slice(first.length).startsWith('\uFE0F')
+  )
+    return emoji;
+  return `${first}\uFE0F${emoji.slice(first.length)}`;
 }
 
 /** Count complete Unicode sequences (flags, modifiers, keycaps and ZWJ families). */
