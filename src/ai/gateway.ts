@@ -4,6 +4,7 @@ import { downloadPublicImage } from '../emoji/image-url.js';
 import type { ImageDownloader } from '../emoji/image-url.js';
 import { AIError } from './types.js';
 import { SEARCH_TOOL } from './search.js';
+import { prepareDiscordImage } from './vision.js';
 import type { ChatMessage, Completion, Model, ToolCall } from './types.js';
 
 const BASE = 'https://logfare.ai/v1';
@@ -16,6 +17,14 @@ const modelSchema = z.object({
   context_length: z.number().positive().optional(),
   requires_training_optin: z.boolean().optional(),
   premium_unlocked: z.boolean().optional(),
+  chat_vision: z.boolean().optional(),
+  metadata_stale: z.boolean().optional(),
+  chat_capabilities: z
+    .object({ input_modalities: z.array(z.string()).optional() })
+    .optional(),
+  architecture: z
+    .object({ input_modalities: z.array(z.string()).optional() })
+    .optional(),
 });
 const chunkSchema = z.object({
   model: z.string().optional(),
@@ -198,6 +207,15 @@ export class LogfareGateway {
               .slice(0, 100),
             kind,
             contextLength: m.context_length ?? 128_000,
+            vision:
+              kind === 'chat' &&
+              m.metadata_stale !== true &&
+              (m.chat_vision ??
+                (
+                  m.chat_capabilities?.input_modalities ??
+                  m.architecture?.input_modalities ??
+                  []
+                ).includes('image')),
             locked:
               m.requires_training_optin === true &&
               m.premium_unlocked === false,
@@ -218,7 +236,20 @@ export class LogfareGateway {
     return this.safe(signal, async (deadline) => {
       const response = await this.request('chat/completions', deadline, {
         model,
-        messages,
+        messages: messages.map(({ images, ...message }) =>
+          images?.length
+            ? {
+                ...message,
+                content: [
+                  { type: 'text', text: message.content },
+                  ...images.map((url) => ({
+                    type: 'image_url',
+                    image_url: { url, detail: 'auto' },
+                  })),
+                ],
+              }
+            : message,
+        ),
         stream: true,
         stream_options: { include_usage: true },
         max_tokens: maxTokens,
@@ -385,6 +416,10 @@ export class LogfareGateway {
         reader.releaseLock();
       }
     });
+  }
+
+  async prepareImage(url: string, signal: AbortSignal): Promise<string> {
+    return prepareDiscordImage(url, signal);
   }
 
   async image(

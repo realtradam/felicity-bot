@@ -8,8 +8,8 @@ import type { ChatMessage, Model } from './types.js';
 
 const signal = new AbortController().signal;
 const model: Model = {
-  id: 'glm-5.3',
-  name: 'GLM 5.3',
+  id: 'glm-5.3-flash',
+  name: 'GLM 5.3 Flash',
   kind: 'chat',
   contextLength: 262144,
   locked: false,
@@ -43,9 +43,9 @@ describe('channel AI service', () => {
       { role: 'user', content: input },
     ]);
     expect(systemPrompt(model).content).toMatch(
-      /Felicity.*Discord bot.*GLM 5.3/,
+      /Felicity.*Discord bot.*GLM 5.3 Flash/,
     );
-    expect(deliver).toHaveBeenCalledWith('Hello!', 'GLM 5.3');
+    expect(deliver).toHaveBeenCalledWith('Hello!', 'GLM 5.3 Flash');
     expect(store.load('one').messages).toEqual([
       { role: 'user', content: input },
       { role: 'assistant', content: 'Hello!' },
@@ -72,7 +72,7 @@ describe('channel AI service', () => {
     store.save('one', 'guild', { ...store.load('one'), model: 'logfare/auto' });
     const deliver = vi.fn().mockResolvedValue(undefined);
     await service.chat('one', 'guild', 'hi', signal, vi.fn(), deliver);
-    expect(deliver).toHaveBeenCalledWith('Hello!', 'GLM 5.3');
+    expect(deliver).toHaveBeenCalledWith('Hello!', 'GLM 5.3 Flash');
   });
 
   it('serializes channel mutations while allowing independent channels, and releases errors', async () => {
@@ -253,13 +253,13 @@ describe('channel AI service', () => {
     await expect(service.model('not-found', 'chat', signal)).rejects.toThrow(
       'unavailable',
     );
-    await expect(service.model('glm-5.3', 'image', signal)).rejects.toThrow(
-      'unavailable',
-    );
+    await expect(
+      service.model('glm-5.3-flash', 'image', signal),
+    ).rejects.toThrow('unavailable');
     models.mockResolvedValue([{ ...model, locked: true }]);
-    await expect(service.model('glm-5.3', 'chat', signal)).rejects.toThrow(
-      'opt-in',
-    );
+    await expect(
+      service.model('glm-5.3-flash', 'chat', signal),
+    ).rejects.toThrow('opt-in');
     expect(complete).not.toHaveBeenCalled();
   });
 });
@@ -319,7 +319,7 @@ describe('Exa-only chat tool loop', () => {
     expect(f.first).toHaveBeenCalledTimes(1);
     expect(f.deliver).toHaveBeenCalledExactlyOnceWith(
       'Here is the answer.\nSource: https://example.org/',
-      'GLM 5.3',
+      'GLM 5.3 Flash',
     );
     const second = f.complete.mock.calls[1]!;
     expect(second[1].slice(-2)).toEqual([
@@ -401,7 +401,7 @@ describe('Exa-only chat tool loop', () => {
     await f.chat();
     expect(f.runSearch).toHaveBeenCalledTimes(3);
     expect(f.complete.mock.calls[3]![5]).toBe(false);
-    expect(f.deliver).toHaveBeenCalledExactlyOnceWith('final', 'GLM 5.3');
+    expect(f.deliver).toHaveBeenCalledExactlyOnceWith('final', 'GLM 5.3 Flash');
   });
 
   it('rejects repeated call IDs across rounds rather than searching twice', async () => {
@@ -445,5 +445,148 @@ describe('Exa-only chat tool loop', () => {
     expect(f.complete.mock.calls[0]![5]).toBeUndefined();
     expect(f.runSearch).not.toHaveBeenCalled();
     expect(systemPrompt(model).content).toContain('You have no tools.');
+  });
+});
+
+describe('automatic Discord visual input', () => {
+  const url = 'https://cdn.discordapp.com/attachments/123/456/a.png';
+  const data = 'data:image/jpeg;base64,aW1hZ2U=';
+
+  it('attaches images on the first model request and search replay, but never persists bytes or replays them next turn', async () => {
+    const f = fixture();
+    f.models.mockResolvedValue([{ ...model, vision: true }]);
+    const prepare = vi.spyOn(f.gateway, 'prepareImage').mockResolvedValue(data);
+    const search = new ExaSearch('test');
+    const runSearch = vi.spyOn(search, 'search').mockResolvedValue('results');
+    const service = new ChatService(f.store, f.gateway, search);
+    f.complete.mockResolvedValueOnce({
+      text: '',
+      model: model.id,
+      inputTokens: 50,
+      toolCalls: [
+        {
+          id: 'search',
+          type: 'function',
+          function: { name: 'web_search', arguments: '{"query":"fact check"}' },
+        },
+      ],
+    });
+    await service.chat(
+      'one',
+      'guild',
+      `fact check ${url}`,
+      signal,
+      vi.fn(),
+      vi.fn(),
+      [url, url],
+    );
+    expect(prepare).toHaveBeenCalledTimes(1);
+    expect(runSearch).toHaveBeenCalledOnce();
+    expect(f.complete.mock.calls[0]![1].find((m) => m.role === 'user')).toEqual(
+      {
+        role: 'user',
+        content: `fact check ${url}`,
+        images: [data],
+      },
+    );
+    expect(
+      f.complete.mock.calls[1]![1].some((m) => m.images?.[0] === data),
+    ).toBe(true);
+    const state = f.store.load('one');
+    expect(state.messages[0]).toEqual({
+      role: 'user',
+      content: `fact check ${url}`,
+    });
+    expect(JSON.stringify(state)).not.toContain('base64');
+    expect(JSON.stringify(state)).not.toContain('"images"');
+    await service.chat('one', 'guild', 'follow up', signal, vi.fn(), vi.fn());
+    expect(f.complete.mock.calls[2]![1].every((m) => !m.images)).toBe(true);
+    expect(prepare).toHaveBeenCalledTimes(1);
+    expect(systemPrompt({ ...model, vision: true }).content).not.toContain(
+      'read_image',
+    );
+  });
+
+  it.each([false, undefined])(
+    'never downloads images when model vision support is %s',
+    async (vision) => {
+      const f = fixture();
+      f.models.mockResolvedValue([
+        { ...model, ...(vision === undefined ? {} : { vision }) },
+      ]);
+      const prepare = vi.spyOn(f.gateway, 'prepareImage');
+      await f.service.chat(
+        'one',
+        'guild',
+        `what is in ${url}`,
+        signal,
+        vi.fn(),
+        vi.fn(),
+        [url],
+      );
+      expect(prepare).not.toHaveBeenCalled();
+      expect(f.complete.mock.calls[0]![1].at(-1)).toEqual({
+        role: 'user',
+        content: `what is in ${url}`,
+      });
+      expect(f.complete.mock.calls[0]![1][0]!.content).toContain(
+        'cannot read images',
+      );
+    },
+  );
+
+  it('fails on missing images rather than pretending to have read them', async () => {
+    const f = fixture();
+    f.models.mockResolvedValue([{ ...model, vision: true }]);
+    vi.spyOn(f.gateway, 'prepareImage').mockRejectedValue(
+      new AIError('Could not read that Discord attachment'),
+    );
+    await expect(
+      f.service.chat('one', 'guild', 'inspect', signal, vi.fn(), vi.fn(), [
+        url,
+      ]),
+    ).rejects.toThrow('Could not read');
+    expect(f.complete).not.toHaveBeenCalled();
+    expect(f.store.load('one').messages).toEqual([]);
+  });
+
+  it('bounds image count before any download', async () => {
+    const f = fixture();
+    f.models.mockResolvedValue([{ ...model, vision: true }]);
+    const prepare = vi.spyOn(f.gateway, 'prepareImage');
+    await expect(
+      f.service.chat(
+        'one',
+        'guild',
+        'inspect',
+        signal,
+        vi.fn(),
+        vi.fn(),
+        [1, 2, 3, 4].map((i) => url + i),
+      ),
+    ).rejects.toThrow('At most three');
+    expect(prepare).not.toHaveBeenCalled();
+    expect(f.complete).not.toHaveBeenCalled();
+  });
+
+  it('rejects read_image even if a model tries calling the removed tool', async () => {
+    const f = fixture();
+    f.models.mockResolvedValue([{ ...model, vision: true }]);
+    const service = new ChatService(f.store, f.gateway, new ExaSearch('test'));
+    f.complete.mockResolvedValueOnce({
+      text: '',
+      model: model.id,
+      inputTokens: 1,
+      toolCalls: [
+        {
+          id: 'call',
+          type: 'function',
+          function: { name: 'read_image', arguments: JSON.stringify({ url }) },
+        },
+      ],
+    });
+    await expect(
+      service.chat('one', 'guild', 'inspect', signal, vi.fn(), vi.fn()),
+    ).rejects.toThrow('disallowed tool');
   });
 });

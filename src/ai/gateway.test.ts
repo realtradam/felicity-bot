@@ -435,3 +435,83 @@ describe('Logfare search tool streaming', () => {
     },
   );
 });
+
+describe('vision metadata and automatic multimodal serialization', () => {
+  it('uses explicit current vision metadata, not model names, with unknown/stale capability disabled', async () => {
+    const items = [
+      { id: 'flash', chat_vision: true },
+      { id: 'glm-5.3-flash' },
+      {
+        id: 'text',
+        chat_vision: false,
+        architecture: { input_modalities: ['text', 'image'] },
+      },
+      { id: 'stale', chat_vision: true, metadata_stale: true },
+      {
+        id: 'modalities',
+        chat_capabilities: { input_modalities: ['text', 'image'] },
+      },
+      {
+        id: 'architecture',
+        architecture: { input_modalities: ['text', 'image'] },
+      },
+    ].map((m) => ({ ...m, endpoints: ['chat/completions'] }));
+    const fetcher = vi
+      .fn<typeof fetch>()
+      .mockResolvedValue(Response.json({ data: items }));
+    const models = await new LogfareGateway('test', fetcher).models(signal);
+    expect(Object.fromEntries(models.map((m) => [m.id, m.vision]))).toEqual({
+      flash: true,
+      'glm-5.3-flash': false,
+      text: false,
+      stale: false,
+      modalities: true,
+      architecture: true,
+    });
+  });
+
+  it('sends image data as OpenAI image_url parts without an image tool or an extra inference call', async () => {
+    const fetcher = vi
+      .fn<typeof fetch>()
+      .mockImplementation(async () =>
+        sse([delta('description'), stop, '[DONE]']),
+      );
+    const gateway = new LogfareGateway('test', fetcher);
+    await gateway.complete(
+      'flash',
+      [
+        {
+          role: 'user',
+          content: 'what is this?',
+          images: ['data:image/jpeg;base64,aW1hZ2U='],
+        },
+      ],
+      signal,
+    );
+    const body = JSON.parse(fetcher.mock.calls[0]![1]!.body as string);
+    expect(body.messages).toEqual([
+      {
+        role: 'user',
+        content: [
+          { type: 'text', text: 'what is this?' },
+          {
+            type: 'image_url',
+            image_url: {
+              url: 'data:image/jpeg;base64,aW1hZ2U=',
+              detail: 'auto',
+            },
+          },
+        ],
+      },
+    ]);
+    expect(body.tools).toBeUndefined();
+    await gateway.complete('flash', [], signal, undefined, 8192, true);
+    const searchBody = JSON.parse(fetcher.mock.calls[1]![1]!.body as string);
+    expect(
+      searchBody.tools.map(
+        (t: { function: { name: string } }) => t.function.name,
+      ),
+    ).toEqual(['web_search']);
+    expect(fetcher).toHaveBeenCalledTimes(2);
+  });
+});

@@ -81,17 +81,38 @@ export type ImageDownloader = (
   signal: AbortSignal,
 ) => Promise<Buffer>;
 
-export const downloadPublicImage: ImageDownloader = async (input, signal) => {
+/** Exact attachment CDN hosts/paths only: never arbitrary embeds, proxies or lookalikes. */
+export function parseDiscordAttachmentUrl(input: string): URL {
+  const url = parseImageUrl(input);
+  if (
+    !['cdn.discordapp.com', 'media.discordapp.net'].includes(url.hostname) ||
+    !/^\/attachments\/\d+\/\d+\/[^/]+$/.test(url.pathname)
+  )
+    throw new UserError('Image reading only supports Discord attachment URLs.');
+  return url;
+}
+
+export const downloadPublicImage: ImageDownloader = (input, signal) =>
+  downloadImage(input, signal, parseImageUrl);
+
+export const downloadDiscordAttachment: ImageDownloader = (input, signal) =>
+  downloadImage(input, signal, parseDiscordAttachmentUrl);
+
+async function downloadImage(
+  input: string,
+  signal: AbortSignal,
+  validate: (input: string) => URL,
+): Promise<Buffer> {
+  let url = validate(input);
   const dispatcher = new Agent({
     connect: { lookup: publicLookup, timeout: 10_000 },
   });
   const deadline = AbortSignal.any([signal, AbortSignal.timeout(30_000)]);
-  let url = parseImageUrl(input);
   try {
     for (let redirects = 0; redirects <= 3; redirects++) {
       deadline.throwIfAborted();
       // Validate every redirect as well as the original URL; no automatic redirects/proxying.
-      url = parseImageUrl(url.href);
+      url = validate(url.href);
       const response = await request(url, {
         dispatcher,
         signal: deadline,
@@ -110,7 +131,7 @@ export const downloadPublicImage: ImageDownloader = async (input, signal) => {
           throw new UserError(
             'The image link has too many or invalid redirects.',
           );
-        url = parseImageUrl(new URL(location, url).href);
+        url = validate(new URL(location, url).href);
         continue;
       }
       if (response.statusCode !== 200) {
@@ -143,7 +164,7 @@ export const downloadPublicImage: ImageDownloader = async (input, signal) => {
   } finally {
     await dispatcher.destroy();
   }
-};
+}
 
 export function imageNameFromUrl(url: URL): string {
   let filename: string;

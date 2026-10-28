@@ -5,6 +5,8 @@ export interface ChatMessage {
   tool_call_id?: string;
   /** Ephemeral provider replay only; never written to channel history. */
   reasoning_content?: string;
+  /** Ephemeral visual input only; never persisted in channel history. */
+  images?: string[];
 }
 
 export interface ToolCall {
@@ -19,6 +21,8 @@ export interface Model {
   kind: 'chat' | 'image';
   contextLength: number;
   locked: boolean;
+  /** True only when the current provider catalog explicitly confirms vision. */
+  vision?: boolean;
 }
 
 export interface Completion {

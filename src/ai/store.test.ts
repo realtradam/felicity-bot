@@ -5,6 +5,26 @@ import { describe, expect, it } from 'vitest';
 import { ChatStore } from './store.js';
 
 describe('AI persistence', () => {
+  it('defaults new channels to GLM 5.3 Flash without replacing saved selections', () => {
+    const store = new ChatStore(':memory:');
+    try {
+      expect(store.load('new')).toMatchObject({
+        model: 'glm-5.3-flash',
+        imageModel: 'flux-1-schnell',
+        summary: '',
+        messages: [],
+      });
+      const existing = { ...store.load('existing'), model: 'glm-5.3' };
+      store.save('existing', 'guild', existing);
+      expect(store.load('existing').model).toBe('glm-5.3');
+      store.clear('existing');
+      expect(store.load('existing').model).toBe('glm-5.3');
+      expect(store.load('another-new').model).toBe('glm-5.3-flash');
+    } finally {
+      store.close();
+    }
+  });
+
   it('isolates channels and persists history/models/reply provenance through restart', () => {
     const dir = mkdtempSync(join(tmpdir(), 'felicity-ai-'));
     let store = new ChatStore(join(dir, 'ai.sqlite'));

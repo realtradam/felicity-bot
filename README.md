@@ -87,11 +87,11 @@ Replies are ordinary, public messages in the invoking channel—not ephemeral. *
 
 ### AI chat and image generation
 
-Start a message with **@Felicity**, or reply directly to one of her AI text responses. History and model choices are shared **only within that channel/thread** and persist across restarts. Ordinary channel chatter and replies to other bot outputs are not included.
+Start a message with **@Felicity**, or reply directly to one of her AI text responses. History and model choices are shared **only within that channel/thread** and persist across restarts. To ask about another message, reply to it and start with **@Felicity** (for example, `@Felicity can you fact check this`): its text and sender details are included as quoted context alongside your request. Only the immediate same-channel reply is read, not a reply chain. Discord-hosted image attachments and eligible embed images from both messages are automatically included for vision-capable models; external images are never downloaded. Ordinary channel chatter and unmentioned replies to other bot outputs are not included.
 
 ```text
 !ai models [page]
-!ai model glm-5.3
+!ai model glm-5.3-flash
 !ai status
 !ai compact
 !ai clear
@@ -100,13 +100,13 @@ Start a message with **@Felicity**, or reply directly to one of her AI text resp
 !image a cat watching the stars
 ```
 
-`!ai help` / `!image help` explain all commands. Default chat model: **GLM 5.3**; default image model: **FLUX.1 Schnell**. Chat model lists show Logfare’s observed 24h TTFT/TPS; image lists show generation latency. Missing metrics say unavailable. History auto-compacts above approximately **100,000 tokens**, earlier for smaller model windows; manual compaction/clear affect only the current channel.
+`!ai help` / `!image help` explain all commands. Default chat model: **GLM 5.3 Flash**; default image model: **FLUX.1 Schnell**. Existing channel model choices are retained; use `!ai model glm-5.3-flash` to switch them. Vision-capable models automatically receive up to three Discord attachment images, with metadata stripped; no image tool is exposed. Chat model lists show Logfare’s observed 24h TTFT/TPS; image lists show generation latency. Missing metrics say unavailable. History auto-compacts above approximately **100,000 tokens**, earlier for smaller model windows; manual compaction/clear affect only the current channel.
 
-Typing begins at the first streamed text/reasoning token. Responses are AI text verbatim, split if necessary, with only a final `-# GLM 5.3`-style bare-model subtext. Usage limits get “I’m tired and went to bed. I can’t reply right now.” with `-# Usage limits reached`; other errors use the relevant sanitized reason. Reasoning is never displayed.
+Typing begins at the first streamed text/reasoning token. Responses are AI text verbatim, split if necessary, with only a final `-# GLM 5.3 Flash`-style bare-model subtext. Usage limits get “I’m tired and went to bed. I can’t reply right now.” with `-# Usage limits reached`; other errors use the relevant sanitized reason. Reasoning is never displayed.
 
 The AI’s **only tool** is optional `web_search` through **Exa via Umans**, matching Dispatch; supply `UMANS_API_KEY` to enable it. No Firecrawl, shell, file, Discord-action, scrape/crawl or AI-callable image tools. Only the final assistant text is posted, not intermediate search prose or tool results.
 
-Set `LOGFARE_API_KEY` in the ignored environment; `AI_CHAT_ENABLED=false` disables the feature. **Logfare logs prompts and responses** and applies fair-use limits. Directed chat bodies, sender IDs/names and timestamps are now persisted in a separate `ai.sqlite`; analytics still do not store channel transcripts. `!ai clear` erases local context, not public Discord messages or provider logs. See [AI chat operations/privacy](docs/ai-chat.md) for exact triggers, compaction, configuration and tests. Production needs its own environment configuration; this change does not deploy or start the bot.
+Set `LOGFARE_API_KEY` in the ignored environment; `AI_CHAT_ENABLED=false` disables the feature. **Logfare logs prompts and responses** and applies fair-use limits. Directed chat bodies (including quoted reply text, its sender details and Discord image attachment URLs), sender IDs/names and timestamps are now persisted in a separate `ai.sqlite`; analytics still do not store channel transcripts. `!ai clear` erases local context, not public Discord messages or provider logs. See [AI chat operations/privacy](docs/ai-chat.md) for exact triggers, compaction, configuration and tests. Production needs its own environment configuration; this change does not deploy or start the bot.
 
 ### OpenAI reset and feature notifications
 

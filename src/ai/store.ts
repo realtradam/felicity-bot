@@ -49,7 +49,7 @@ export class ChatStore {
     return row
       ? (JSON.parse(row.state) as ChannelState)
       : {
-          model: 'glm-5.3',
+          model: 'glm-5.3-flash',
           imageModel: 'flux-1-schnell',
           summary: '',
           messages: [],

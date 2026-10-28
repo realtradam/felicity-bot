@@ -10,12 +10,12 @@ const gateway = new LogfareGateway(process.env.LOGFARE_API_KEY);
 const controller = new AbortController();
 try {
   const models = await gateway.models(controller.signal);
-  const chat = models.find(m => m.id === "glm-5.3" && m.kind === "chat" && !m.locked);
+  const chat = models.find(m => m.id === "glm-5.3-flash" && m.kind === "chat" && !m.locked);
   const image = models.find(m => m.id === "flux-1-schnell" && m.kind === "image" && !m.locked);
   if (!chat || !image) throw new Error("Smoke models unavailable or locked");
   const metrics = await gateway.metrics(controller.signal);
   let firstToken = false;
-  const result = await gateway.complete(chat.id, [{ role: "system", content: "Your name is Felicity. You are a Discord bot. Your model is GLM 5.3." }, { role: "user", content: `[${new Date().toISOString()}] Reply with a short hello, nothing else.` }], controller.signal, () => { firstToken = true; }, 1024);
+  const result = await gateway.complete(chat.id, [{ role: "system", content: "Your name is Felicity. You are a Discord bot. Your model is GLM 5.3 Flash." }, { role: "user", content: `[${new Date().toISOString()}] Reply with a short hello, nothing else.` }], controller.signal, () => { firstToken = true; }, 1024);
   if (!firstToken || !result.text.trim()) throw new Error("Streaming chat failed");
   console.log("Chat stream OK:", JSON.stringify({ model: result.model, characters: result.text.length, firstToken, inputTokens: result.inputTokens, metricsAvailable: metrics.has(chat.id) }));
   const generated = await gateway.image(image.id, "A simple blue circle on a white background.", controller.signal);
