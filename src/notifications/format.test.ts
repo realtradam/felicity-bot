@@ -3,6 +3,7 @@ import { describe, expect, it } from 'vitest';
 import { CATEGORY_QUESTION } from './prompt.js';
 import { formatNotification, sampleNotification } from './format.js';
 import type { Tweet } from './types.js';
+import { PREVIEW_DECISION, PREVIEW_TWEET } from './preview.js';
 
 const post: Tweet = {
   id: '2115273253711409208',
@@ -12,13 +13,21 @@ const post: Tweet = {
 };
 
 describe('notification output', () => {
+  it('uses party popper for resets and wilted rose for updates', () => {
+    expect(
+      formatNotification(post, { category: 'reset', confidence: 0.9 }),
+    ).toMatch(/^🎉 OpenAI usage reset\n/);
+    expect(
+      formatNotification(post, { category: 'feature', confidence: 0.9 }),
+    ).toMatch(/^🥀 OpenAI challenge update\n/);
+  });
   it('shows the actual chosen category probability, never a hardcoded confidence', () => {
     expect(
       formatNotification(post, { category: 'reset', confidence: 0.632 }),
     ).toContain('AI confidence: **63.2%** (model estimate)');
     expect(
       formatNotification(post, { category: 'feature', confidence: 0.819 }),
-    ).toContain('OpenAI feature update');
+    ).toContain('OpenAI challenge update');
     expect(
       formatNotification(post, { category: 'feature', confidence: 0.819 }),
     ).toContain('**81.9%**');
@@ -68,19 +77,28 @@ describe('notification output', () => {
       formatNotification(post, { category: 'neither', confidence: 0.9 }),
     ).toThrow('Unrelated');
   });
-  it('labels synthetic content/confidence clearly and contains no invented source tweet URL', () => {
+  it('replays stored real history through identical live formatting without test labels', () => {
     const output = sampleNotification();
-    expect(output).toContain('SAMPLE');
-    expect(output).toContain('97.4%');
-    expect(output).toContain('example value; no AI call');
-    expect(output).toContain('not a real announcement');
-    expect(output).not.toContain('/status/');
+    expect(output).toBe(formatNotification(PREVIEW_TWEET, PREVIEW_DECISION));
+    expect(output).toContain('88.5%');
+    expect(output).toContain(`/status/${PREVIEW_TWEET.id}`);
+    expect(output).not.toMatch(
+      /SAMPLE|Preview only|example value|not a real announcement/,
+    );
   });
-  it('keeps the runtime prompt identical to the frozen, evaluated research prompt', () => {
+  it('does not turn a challenge update into a guarantee of no reset later that day', () => {
+    const output = formatNotification(post, {
+      category: 'feature',
+      confidence: 0.9,
+    });
+    expect(output).toContain('No reset announced in this post.');
+    expect(output).not.toContain('no reset today');
+  });
+  it('keeps the runtime prompt identical to the explicit challenge-policy prompt, not the old generic prompt', () => {
     const frozen = JSON.parse(
       readFileSync(
         new URL(
-          '../../research/tweet-classifier/prompt-final.json',
+          '../../research/tweet-classifier/prompt-v4-challenge.json',
           import.meta.url,
         ),
         'utf8',

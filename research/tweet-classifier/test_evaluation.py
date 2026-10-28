@@ -12,7 +12,7 @@ spec.loader.exec_module(evaluation)
 
 class EvaluationTests(unittest.TestCase):
     def test_fixture_labels_and_state_are_separate(self):
-        for name in ['historical.json', 'challenges.json', 'validation.json']:
+        for name in ['historical.json', 'challenges.json', 'validation.json', 'challenge-scope-cases.json']:
             records = json.loads((ROOT / name).read_text())
             self.assertEqual(len({r['id'] for r in records}), len(records))
             for record in records:
@@ -37,11 +37,24 @@ class EvaluationTests(unittest.TestCase):
 
     def test_freeze_hashes(self):
         import hashlib
-        for name in ['frozen.json', 'frozen-phase2.json']:
+        for name in ['frozen.json', 'frozen-phase2.json', 'frozen-challenge-scope.json']:
             frozen = json.loads((ROOT / name).read_text())
             self.assertEqual(frozen['prompt_sha256'], hashlib.sha256((ROOT / frozen['prompt']).read_bytes()).hexdigest())
             for dataset, expected_hash in frozen['dataset_sha256'].items():
                 self.assertEqual(expected_hash, hashlib.sha256((ROOT / dataset).read_bytes()).hexdigest())
+
+    def test_clarified_scope_fixtures_are_separate_from_old_ground_truth(self):
+        cases = json.loads((ROOT / 'challenge-scope-cases.json').read_text())
+        by_id = {case['id']: case for case in cases}
+        old = {case['id']: case for case in json.loads((ROOT / 'historical.json').read_text())}
+        generic = '2111249810502353152'
+        self.assertEqual(old[generic]['expected'], 'feature')
+        self.assertEqual(by_id[generic]['expected'], 'neither')
+        self.assertEqual(by_id['2113770862860222611']['expected'], 'feature')
+        self.assertEqual(by_id['2105843926221660585']['expected'], 'reset')
+        self.assertEqual(by_id['2113492187770175603']['expected'], 'reset')
+        self.assertEqual(by_id['synthetic-rules-only']['expected'], 'neither')
+        self.assertEqual(len(cases), 32)
 
     def test_perfect_metrics(self):
         rows = [{'expected': label, 'predicted': label} for label in evaluation.LABELS]

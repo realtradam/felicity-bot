@@ -19,7 +19,7 @@ notifications.register("guild", "channel", 0);
 if (notifications.subscriptions().length !== 1) throw new Error("Notification storage unavailable");
 notifications.close();
 if (parseMessageCommand("!test openai-reset")?.group !== "test") throw new Error("Notification prefix unavailable");
-if (!sampleNotification().includes("example value; no AI call")) throw new Error("Offline sample unavailable");
+if (!sampleNotification().startsWith("🎉 OpenAI usage reset")) throw new Error("Offline sample unavailable");
 const png = await sharp({ create: { width: 16, height: 16, channels: 4, background: "red" } }).png().toBuffer();
 if (!png.length) throw new Error("Image conversion unavailable");
 let rejected = false;

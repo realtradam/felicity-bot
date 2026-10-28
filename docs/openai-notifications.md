@@ -11,17 +11,17 @@ Implementation status: implemented and offline-tested; **not deployed or live-sm
 !test openai-reset
 ```
 
-- Register subscribes the **current channel** to both usage-reset and feature announcements from **@thsottiaux**. Despite its name, the `openai-reset` topic includes both. `neither` produces no message.
+- Register subscribes the **current channel** to any OpenAI usage-reset announcement and updates from the daily ship-an-improvement-or-reset challenge by **@thsottiaux**. Despite its name, the `openai-reset` topic includes both. `neither` produces no message.
 - The bot accepts server text/announcement channels and active, unlocked threads where it has View Channel and Send Messages (Send Messages in Threads for threads). It does not change channel permissions or reopen archived threads.
 - Repeating register is idempotent. Subscriptions persist across restarts, are isolated by server/channel, and are removed on channel/server deletion. Unregister removes only the current channel, including unsent queued deliveries. Bare `!unregister` is an alias for this one topic.
 - New subscribers receive posts published from registration time onward, not a historical dump. Re-registering starts a new subscription. Registration timestamps use the source's one-second precision.
-- **`!test openai-reset` only replies with a built-in synthetic sample**, including an explicitly labeled example confidence of 97.4%. It makes **zero Twitter/FxTwitter or AI/Gateway calls**, spends no credits, does not register the channel, and works with monitoring disabled or no Gateway key. Discord still has to send the reply.
+- **`!test openai-reset` replays a stored real historical reset using exactly the live notification format**, including its recorded historical model confidence (88.5%) and real source link. It has no SAMPLE or test-disclaimer text. It is a historical replay, not a fresh reset or new inference. It makes **zero Twitter/FxTwitter or AI/Gateway calls**, spends no credits, does not register the channel, and works with monitoring disabled or no Gateway key. Discord still has to send the reply.
 - Unknown topics or extra arguments return usage guidance. `!help` lists these commands. Commands have no caller-role/permission gates, consistent with the rest of this bot; Discord still enforces the bot's own permissions. Bot/webhook/DM messages are ignored by the dispatcher.
 
 Example real-notification shape (text here is illustrative):
 
 ```text
-OpenAI usage reset
+🎉 OpenAI usage reset
 AI confidence: 96.7% (model estimate)
 
 > The source post’s announcement text
@@ -29,7 +29,7 @@ AI confidence: 96.7% (model estimate)
 @thsottiaux · https://x.com/thsottiaux/status/<post-id>
 ```
 
-Feature announcements use “OpenAI feature update”. Confidence is the **chosen category's probability returned by the Decision API**, not a fixed value or an invented explanation. It is not a measured accuracy or a guarantee. The actual notification includes the canonical source link and, when available, a short earlier-context excerpt. Long text is bounded to Discord's message limit, markdown is escaped, and mentions are disabled.
+Challenge-update announcements use “🥀 OpenAI challenge update” and “No reset announced in this post.”; resets use “🎉 OpenAI usage reset”. An update does not rule out a later reset the same day. Confidence is the **chosen category's probability returned by the Decision API**, not a fixed value or an invented explanation. It is not a measured accuracy or a guarantee. The actual notification includes the canonical source link and, when available, a short earlier-context excerpt. Long text is bounded to Discord's message limit, markdown is escaped, and mentions are disabled.
 
 ## Source, classification and timing
 
@@ -38,10 +38,10 @@ Feature announcements use “OpenAI feature update”. Confidence is the **chose
 - Candidate authorship must match the monitored numeric account ID **and** handle. Other authors, pure reposts and nested quoted posts are not treated as independent announcements. Replies by the monitored author can qualify.
 - Context consists only of explicitly linked earlier parents/quotes, at most three hops and six text entries; no future thread replies, OCR, media understanding, arbitrary URL fetching or article crawling. Missing required linked context causes a retry, not a confident guess without it.
 - Timeline catch-up is bounded to five pages per poll; context lookups to six per fetch, cached in memory across retries (1,000 statuses). A page/lookup-budget failure retains the checkpoint and retries; context progress can accumulate. Fully contextualized posts from a partially resolved batch can proceed while the unresolved gap remains, so one deleted parent does not suppress every other notification. A very long downtime exceeding five accessible pages needs operator investigation rather than silently skipping an unproven gap. A five-minute overlap absorbs modest source caching/out-of-order arrivals, but cannot guarantee discovery of posts exposed later than that window or posts the source never returns.
-- Classification uses only **`perplexity/pplx-decider-v1.2`**, the previously tested non-Flash Decision model, and the unchanged frozen **v3** prompt. No keyword fallback, alternate model, historical answer lookup or threshold tuned to hide errors. Runtime prompt parity is covered by an offline test.
-- Reset wins over a simultaneous feature announcement. Otherwise a specific feature/release/improvement is `feature`; unrelated/unsupported content is `neither`. Every valid reset/feature decision is delivered regardless of confidence; the displayed confidence helps the reader interpret it without silently filtering possible resets.
+- Classification uses only **`perplexity/pplx-decider-v1.2`**, the previously tested non-Flash Decision model, and the **challenge-scoped v4 policy prompt**. This user-requested policy change has not had a new model accuracy evaluation; the old v3 scores do not validate it. No keyword fallback, alternate model, historical answer lookup or threshold tuned to hide errors. Runtime prompt parity is covered by an offline test.
+- This follows the “update or else reset” challenge: the update category requires evidence of a daily-challenge connection in the post or its linked earlier context, and means no usage reset is announced in that post. Any actual OpenAI usage reset qualifies independently of the challenge, and wins over a simultaneous update. Generic product releases without a challenge connection are `neither`; unrelated/unsupported content is `neither`. Every valid reset/feature decision is delivered regardless of confidence; the displayed confidence helps the reader interpret it without silently filtering possible resets.
 - One serial worker classifies each newly observed post **once for all channels**, then fans out the result. Starts are paced at least 13 seconds apart, approximately five per minute, with persistent rate-limit deadlines and Retry-After/backoff. This is a conservative rate inferred from testing, not a contractual account quota.
-- The research's fresh retrospective validation had **10/10 resets correct**, **44/52 overall (84.6%)**. Feature precision was **58.8%** and recall **90.9%**; neither recall **77.4%**. These are small, assistant-labeled samples, not a promise of 100% future reset detection. Earlier development misses are retained in the [full report](../research/tweet-classifier/REPORT.md).
+- The **old broader v3 policy** research's fresh retrospective validation had **10/10 resets correct**, **44/52 overall (84.6%)**. Feature precision was **58.8%** and recall **90.9%**; neither recall **77.4%**. These are small, assistant-labeled samples, not a promise of 100% future reset detection. No accuracy has been measured for the new scope; [policy evidence and regression cases](../research/tweet-classifier/challenge-scope-policy.md) are separate from the old frozen datasets. Earlier development misses are retained in the [full report](../research/tweet-classifier/REPORT.md).
 
 ## Existing credits only; fail closed
 

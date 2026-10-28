@@ -130,7 +130,7 @@ describe('DiscordNotifications', () => {
     expect(fetchChannel).not.toHaveBeenCalled();
     expect(message.reply).toHaveBeenLastCalledWith({
       content: expect.stringMatching(
-        /Registered.*reset and feature.*neither.*silent/i,
+        /Registered.*reset.*challenge update.*neither.*silent/i,
       ),
       allowedMentions: mentions,
     });
@@ -204,7 +204,7 @@ describe('DiscordNotifications', () => {
     expect(channel.permissionsFor).not.toHaveBeenCalled();
   });
 
-  it('sends a labeled sample without enabled configuration, store mutation or any fetch', async () => {
+  it('replays real notification formatting without enabled configuration, store mutation or any fetch', async () => {
     notifications = new DiscordNotifications({} as Client, store, false);
     store.register('other-guild', 'other-channel', 50);
     const subscriptions = store.subscriptions();
@@ -221,10 +221,10 @@ describe('DiscordNotifications', () => {
       allowedMentions: mentions,
     });
     const payload = message.reply.mock.calls[0]![0] as { content: string };
-    expect(payload.content).toContain('SAMPLE');
-    expect(payload.content).toContain('97.4%');
-    expect(payload.content).toContain('example value; no AI call');
-    expect(payload.content).toContain('not a real announcement');
+    expect(payload.content).toContain('🎉 OpenAI usage reset');
+    expect(payload.content).toContain('88.5%');
+    expect(payload.content).toContain('/status/2114588174249071102');
+    expect(payload.content).not.toMatch(/SAMPLE|example value|Preview only/);
     expect(register).not.toHaveBeenCalled();
     expect(unregister).not.toHaveBeenCalled();
     expect(list).not.toHaveBeenCalled();

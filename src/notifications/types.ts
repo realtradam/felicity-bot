@@ -3,6 +3,7 @@ export const MONITORED_AUTHOR_ID = '1953337039510003712';
 export const DECISION_MODEL = 'perplexity/pplx-decider-v1.2';
 export const TOPIC = 'openai-reset';
 
+/** feature = daily-challenge update only; reset has no challenge restriction. */
 export type Category = 'reset' | 'feature' | 'neither';
 
 export interface LinkedContext {

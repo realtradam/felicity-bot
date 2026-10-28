@@ -100,7 +100,7 @@ describe('notification prefix command integration (offline)', () => {
       await expect(handleMessageCommand(message, context)).resolves.toBe(true);
       expect(reply).toHaveBeenCalledWith({
         content: expect.stringContaining(
-          'AI confidence: **97.4%** (example value; no AI call)',
+          'AI confidence: **88.5%** (model estimate)',
         ),
         allowedMentions: { parse: [], repliedUser: false },
       });

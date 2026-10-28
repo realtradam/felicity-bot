@@ -1,6 +1,7 @@
 import { escapeMarkdown } from 'discord.js';
 import type { Decision, Tweet } from './types.js';
 import { MONITORED_HANDLE } from './types.js';
+import { PREVIEW_DECISION, PREVIEW_TWEET } from './preview.js';
 
 /** Mentions are additionally disabled at the Discord transport boundary. */
 function quote(text: string, limit = 1100): string {
@@ -19,11 +20,7 @@ function quote(text: string, limit = 1100): string {
     .join('\n');
 }
 
-export function formatNotification(
-  tweet: Tweet,
-  decision: Decision,
-  sample = false,
-): string {
+export function formatNotification(tweet: Tweet, decision: Decision): string {
   if (decision.category === 'neither')
     throw new Error('Unrelated posts cannot produce notifications');
   if (
@@ -34,43 +31,28 @@ export function formatNotification(
     throw new Error('Invalid notification confidence');
   const title =
     decision.category === 'reset'
-      ? 'OpenAI usage reset'
-      : 'OpenAI feature update';
+      ? '🎉 OpenAI usage reset'
+      : '🥀 OpenAI challenge update';
   const parts = [
-    `${sample ? '🧪 SAMPLE — ' : ''}${title}`,
-    `AI confidence: **${(decision.confidence * 100).toFixed(1)}%**${sample ? ' (example value; no AI call)' : ' (model estimate)'}`,
+    title,
+    `AI confidence: **${(decision.confidence * 100).toFixed(1)}%** (model estimate)`,
     '',
     quote(tweet.text),
   ];
+  if (decision.category === 'feature')
+    parts.splice(1, 0, 'No reset announced in this post.');
   const linked = tweet.context[0];
   if (linked)
     parts.push('', 'Linked earlier context:', quote(linked.text, 350));
-  if (!sample) {
-    if (!/^\d{17,20}$/.test(tweet.id))
-      throw new Error('Invalid source post ID');
-    parts.push(
-      '',
-      `@${MONITORED_HANDLE} · <https://x.com/${MONITORED_HANDLE}/status/${tweet.id}>`,
-    );
-  } else {
-    parts.push(
-      '',
-      'Preview only — not a real announcement. No Twitter or AI requests were made.',
-    );
-  }
+  if (!/^\d{17,20}$/.test(tweet.id)) throw new Error('Invalid source post ID');
+  parts.push(
+    '',
+    `@${MONITORED_HANDLE} · <https://x.com/${MONITORED_HANDLE}/status/${tweet.id}>`,
+  );
   return parts.join('\n');
 }
 
-/** Synthetic fixture shared by the command and offline tests, never sent to an API. */
+/** Identical live formatting, replaying stored historical data with no API calls. */
 export function sampleNotification(): string {
-  return formatNotification(
-    {
-      id: '0000000000000000000',
-      text: 'Example: we’re resetting Codex usage limits today. Your allowance will be refreshed shortly.',
-      createdAt: 0,
-      context: [],
-    },
-    { category: 'reset', confidence: 0.974 },
-    true,
-  );
+  return formatNotification(PREVIEW_TWEET, PREVIEW_DECISION);
 }

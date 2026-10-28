@@ -1,0 +1,610 @@
+[
+  {
+    "id": "2111244596131111253",
+    "source_url": "https://x.com/thsottiaux/status/2111244596131111253",
+    "origin": "historical, already viewed; policy regression not unseen validation",
+    "state": {
+      "post": {
+        "text": "Day 12/\n\nWe’ve made improvements to Codex & Work that increase the effective usage you get. We achieved this by reusing context across subagents, keeping context cached longer, and improved request routing that allows us to increase cache hits.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "feature",
+    "rationale": "Daily challenge entry announces an efficiency improvement.",
+    "previous_expected": "feature"
+  },
+  {
+    "id": "2111244957851984181",
+    "source_url": "https://x.com/thsottiaux/status/2111244957851984181",
+    "origin": "historical, already viewed; policy regression not unseen validation",
+    "state": {
+      "post": {
+        "text": "We also significantly improved GPT-6 Pro for all pro users\n\nhttps://x.com/OpenAI/status/2111192259073094035",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "Day 12/\n\nWe’ve made improvements to Codex & Work that increase the effective usage you get. We achieved this by reusing context across subagents, keeping context cached longer, and improved request routing that allows us to increase cache hits.",
+          "is_monitored_author": true
+        },
+        {
+          "relation": "quote",
+          "depth": 1,
+          "text": "GPT-6 Astra Pro in ChatGPT got an upgrade with faster responses and improved use of plugins and tools.\n\nAnd now, multiple agents can tackle different parts of a task in parallel. You can follow each agent’s progress and open completed tasks to review their work.\n\nNow available to Pro users in the Chat tab.",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "feature",
+    "rationale": "Direct announcing continuation of the linked daily challenge entry.",
+    "previous_expected": "feature"
+  },
+  {
+    "id": "2111245052513259606",
+    "source_url": "https://x.com/thsottiaux/status/2111245052513259606",
+    "origin": "historical, already viewed; policy regression not unseen validation",
+    "state": {
+      "post": {
+        "text": "And update your app to enjoy this gem\n\nhttps://x.com/Gavmn/status/2111136119945396436",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "Day 12/\n\nWe’ve made improvements to Codex & Work that increase the effective usage you get. We achieved this by reusing context across subagents, keeping context cached longer, and improved request routing that allows us to increase cache hits.",
+          "is_monitored_author": true
+        },
+        {
+          "relation": "quote",
+          "depth": 1,
+          "text": "Dots, now on your Home Screen",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "feature",
+    "rationale": "Concrete endorsed capability in a direct continuation of the daily entry.",
+    "previous_expected": "feature"
+  },
+  {
+    "id": "2113770862860222611",
+    "source_url": "https://x.com/thsottiaux/status/2113770862860222611",
+    "origin": "historical, already viewed; policy regression not unseen validation",
+    "state": {
+      "post": {
+        "text": "On codex cli updates. We've added reusable prompt presets, inline model and permission settings, and enterprise MCP sign-in. We've also fixed failures when resuming long sessions and added Windows corporate-proxy authentication.\n\nSurprisingly the CLI has grown 2X in usage since devday.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "Day 19/ Small updates. Calls connect much faster for dots, changing reasoning in codex & work mid conversation does not invalidate cache anymore and a we've also updated the codex cli.",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "feature",
+    "rationale": "Specific CLI improvements in a reply to the author's daily challenge entry.",
+    "previous_expected": "feature"
+  },
+  {
+    "id": "2107573405553938664",
+    "source_url": "https://x.com/thsottiaux/status/2107573405553938664",
+    "origin": "historical, already viewed; policy regression not unseen validation",
+    "state": {
+      "post": {
+        "text": "Day 2.3/\n\nNever worry about remembering what you were saying with that colleague. Just talk your heart out and build up the context to load up into codex to get it all done.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "quote",
+          "depth": 1,
+          "text": "Your next meeting comes with a note-taker who can help with the follow-up.\n\nThe Meetings plugin takes notes for you and saves a personalized summary and next steps in ChatGPT Space, based on what ChatGPT knows about you and the work you’ve done together.\n\nKeep notes private or share them with your team, then ask ChatGPT to update a project plan or draft a follow-up.\n\nAvailable in beta for Pro and Business users in the ChatGPT desktop app on macOS. Enterprise is coming soon.\n\nDownload the desktop app, then search for “Meetings” in the plugin directory.\nhttps://chatgpt.com/download/",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "feature",
+    "rationale": "Daily challenge entry endorses the linked specific meeting capability.",
+    "previous_expected": "feature"
+  },
+  {
+    "id": "2111249810502353152",
+    "source_url": "https://x.com/thsottiaux/status/2111249810502353152",
+    "origin": "historical, already viewed; policy regression not unseen validation",
+    "state": {
+      "post": {
+        "text": "Also we just added slides support yesterday, try it out. Currently available in Pro, Business and Enterprise while we learn from your feedback.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "What is ChatGPT Space, that is the question. Endearingly awkward at times because it's the actual team working on it. What would you like to see next?",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "Concrete slides release, but no daily-challenge connection in the supplied post or links.",
+    "previous_expected": "feature"
+  },
+  {
+    "id": "2104986448269279399",
+    "source_url": "https://x.com/thsottiaux/status/2104986448269279399",
+    "origin": "historical, already viewed; policy regression not unseen validation",
+    "state": {
+      "post": {
+        "text": "Decisions API, for lightning fast constrained decision making powered by Luna. Supports visual inputs, and tuned to be able to make decisions in less than a few hundreds of milliseconds end to end.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "neither",
+    "rationale": "Standalone Decisions API announcement, not a challenge entry in the supplied evidence.",
+    "previous_expected": "feature"
+  },
+  {
+    "id": "2104981170685616361",
+    "source_url": "https://x.com/thsottiaux/status/2104981170685616361",
+    "origin": "historical, already viewed; policy regression not unseen validation",
+    "state": {
+      "post": {
+        "text": "Announcing dots. Dots work 24/7 for you, learn from your feedback, have their own computer, browser and can be connected to over 4k apps in our ecosystem.\n\nThey’re powered by Astra our best model yet. Included in your Pro plan, without drawing down on any of your usage. You can even call a dot while it’s working.\n\nWe’re getting you started with your primary dot today and soon you’ll be able to create entire teams of them.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "neither",
+    "rationale": "Standalone dots launch, not an established challenge update.",
+    "previous_expected": "feature"
+  },
+  {
+    "id": "2096717905614524491",
+    "source_url": "https://x.com/thsottiaux/status/2096717905614524491",
+    "origin": "historical, already viewed; policy regression not unseen validation",
+    "state": {
+      "post": {
+        "text": "We've made some improvements that improve usage on the long tail for power users of Astra when logged in with your ChatGPT account.\n\nNo change in quality and a pure win that on the long tail can result in up to 3-4X less usage being drawn from the subscription.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "neither",
+    "rationale": "Generic efficiency announcement predating the challenge; state contains no challenge connection.",
+    "previous_expected": "feature"
+  },
+  {
+    "id": "2108777962053292398",
+    "source_url": "https://x.com/thsottiaux/status/2108777962053292398",
+    "origin": "historical, already viewed; policy regression not unseen validation",
+    "state": {
+      "post": {
+        "text": "Your ChatGPT subscription is now also a Devin subscription",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "quote",
+          "depth": 1,
+          "text": "You can use any personal ChatGPT plan with Devin\n\nJust connect your Go, Plus, or Pro plan to Devin and all GPT model usage will draw down from you plan's quota",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "Endorsed integration launch, without supplied evidence connecting it to the challenge.",
+    "previous_expected": "feature"
+  },
+  {
+    "id": "2113492187770175603",
+    "source_url": "https://x.com/thsottiaux/status/2113492187770175603",
+    "origin": "historical, already viewed; policy regression not unseen validation",
+    "state": {
+      "post": {
+        "text": "Day 18/ Decisions API is GA, OpenResponses joined the Linux Foundation, we shipped some performance improvements and Uber is going all-in on codex & work. But yes… that’s a reset!",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "reset",
+    "rationale": "Challenge entry includes many improvements AND an actual reset; reset wins.",
+    "previous_expected": "reset"
+  },
+  {
+    "id": "2115273064481218829",
+    "source_url": "https://x.com/thsottiaux/status/2115273064481218829",
+    "origin": "historical, already viewed; policy regression not unseen validation",
+    "state": {
+      "post": {
+        "text": "Day 23/ Much requested iCloud Main & Calendar plugins. Just kidding, today is a reset. Still much requested though!",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "quote",
+          "depth": 1,
+          "text": "Much requested, and now yours to connect: iCloud Mail and Calendar plugins are available in ChatGPT.\n\nAsk ChatGPT to find that email, catch up on your inbox, check what’s next, or update a calendar event. Phew.\n\nAvailable on all ChatGPT plans on web, desktop, and iOS.",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "reset",
+    "rationale": "Apparent feature is a joke; the actual challenge outcome is reset.",
+    "previous_expected": "reset"
+  },
+  {
+    "id": "2098612714704891959",
+    "source_url": "https://x.com/thsottiaux/status/2098612714704891959",
+    "origin": "historical, already viewed; policy regression not unseen validation",
+    "state": {
+      "post": {
+        "text": "Hi Astra users. A reset and a quick update on quality issues that have been posted around.\n\nWorking with some of you, we have found and fixed the following issues:\n- Some skills written for previous models were triggering too often or preventing the model from checking its work.\n- An opt-in context management experiment that could cause early stops or replies to older messages. We've disabled it. Our rough estimate is that 4-5k users were affected by this experiment.\n- We've also removed some badly configured engines that resulted in a measured quality degradation for a long tail of traffic flowing through them.\n\nWe’ve also made some more minor improvements and things should feel significantly better across the board. More consistent follow-through, better tracking of your latest message, and better checks on the work as it’s going through the motions.\n\nThe examples posted and all the users who worked directly with us were incredibly useful in helping fix things quickly. Always grateful for this incredible community.\n\nAnd of course, a reset is also landing by midnight today.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "reset",
+    "rationale": "Reset and fixes outside the challenge; any actual usage reset qualifies.",
+    "previous_expected": "reset"
+  },
+  {
+    "id": "2105843926221660585",
+    "source_url": "https://x.com/thsottiaux/status/2105843926221660585",
+    "origin": "historical, already viewed; policy regression not unseen validation",
+    "state": {
+      "post": {
+        "text": "Global reset landing tomorrow 10am PST for all paid ChatGPT accounts. Apologies for the slow start with GPT-6.1 Sol, it's now back to running at expected speeds after the massive load spike in the first two days.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "reset",
+    "rationale": "Standalone global usage reset qualifies without a daily challenge marker.",
+    "previous_expected": "reset"
+  },
+  {
+    "id": "2097174560412246215",
+    "source_url": "https://x.com/thsottiaux/status/2097174560412246215",
+    "origin": "historical, already viewed; policy regression not unseen validation",
+    "state": {
+      "post": {
+        "text": "All reset for everyone. Enjoy the week with Astra.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "quote",
+          "depth": 1,
+          "text": "Never gonna give you up\nNever gonna let you down\nNever gonna run around and desert you\nNever gonna make you cry\nNever gonna say goodbye\nNever gonna tell a lie and hurt you\n\nThanks for reading. We will do a global reset of the usage for all paid subscriptions so that you can keep enjoying Astra after burning through all of it doing fun 3D modeling in blender. The work week is about to start.\n\nLands around 6pm PST today.",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "reset",
+    "rationale": "Reset completion outside challenge qualifies.",
+    "previous_expected": "reset"
+  },
+  {
+    "id": "2106239435461579088",
+    "source_url": "https://x.com/thsottiaux/status/2106239435461579088",
+    "origin": "historical, already viewed; policy regression not unseen validation",
+    "state": {
+      "post": {
+        "text": "All fixed. Surprising number of Pro 500 users on here.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "quote",
+          "depth": 1,
+          "text": "Seeing some reports that the Pro 500 didn’t get the reset as expected earlier. Investigating and will make up for it",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "reset",
+    "rationale": "Completion of previously missing reset for a subset of users; linked context establishes it.",
+    "previous_expected": "reset"
+  },
+  {
+    "id": "2114237083652882932",
+    "source_url": "https://x.com/thsottiaux/status/2114237083652882932",
+    "origin": "historical, already viewed; policy regression not unseen validation",
+    "state": {
+      "post": {
+        "text": "It is all propagated. Enjoy some mad codexing tomorrow. Fun week ahead too.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "quote",
+          "depth": 1,
+          "text": "By midnight PST",
+          "is_monitored_author": true
+        },
+        {
+          "relation": "parent",
+          "depth": 2,
+          "text": "Day 20/ Rest and reset",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "reset",
+    "rationale": "Linked reset propagation completion qualifies.",
+    "previous_expected": "reset"
+  },
+  {
+    "id": "2115290318652444729",
+    "source_url": "https://x.com/thsottiaux/status/2115290318652444729",
+    "origin": "historical, already viewed; policy regression not unseen validation",
+    "state": {
+      "post": {
+        "text": "@AdamHoltererer Maybe it’s because I have bad long term memory.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "OpenAI has reset Codex limits 11 times this month",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "Reaction to historical reset count does not announce a new reset.",
+    "previous_expected": "neither"
+  },
+  {
+    "id": "2114599388454481930",
+    "source_url": "https://x.com/thsottiaux/status/2114599388454481930",
+    "origin": "historical, already viewed; policy regression not unseen validation",
+    "state": {
+      "post": {
+        "text": "@larsencc @bot Not enough resets",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "Sunday @bot feedback thread.\n\nWhats the most annoying thing about grok bot right now? Be honest and brutal.",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "Joking demand for someone else's bot to reset, not an announcement.",
+    "previous_expected": "neither"
+  },
+  {
+    "id": "2107370852564021582",
+    "source_url": "https://x.com/thsottiaux/status/2107370852564021582",
+    "origin": "historical, already viewed; policy regression not unseen validation",
+    "state": {
+      "post": {
+        "text": "Use auto-review instead of full-access. Not a trade-off anymore and you'll sleep more peacefully",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "Day 2.1/\n\nWe have made Auto-review free for all users signed in through a ChatGPT account. You can enable it in settings > permissions > auto-review. Auto-review improves upon the default sandbox setting that requires you to approve everything, which is prone to decision fatigue unless you spend a lot of time configuring specific rules.\n\nIt allows you to run long tasks while having a second agent review all actions taken by the primary agent. Its only goal is to prevent high-risk actions from being taken and to protect against unwanted actions that are not aligned with the original user intent. This  Auto-review feature is now free and does not draw usage from your plan.",
+          "is_monitored_author": true
+        },
+        {
+          "relation": "quote",
+          "depth": 2,
+          "text": "Day 1/\n\nWe have optimized the default speed to be ~50% faster across GPT-6 Astra and GPT-6.1 Sol through the subscription across all our products and partners using Sign in With ChatGPT (including OpenCode, Pi, Amp, Devin, ...).\n\nNo changes needed on your end and this should be felt within the next two hours.",
+          "is_monitored_author": true
+        },
+        {
+          "relation": "quote",
+          "depth": 3,
+          "text": "Over the next 28 days, each day we’ll either ship one thing that is a clear improvement and relevant for most codex/work users or ship a full reset. Let the improvements begin.",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "Advice about a linked existing challenge feature, not a new announcing continuation.",
+    "previous_expected": "neither"
+  },
+  {
+    "id": "2107576143285219799",
+    "source_url": "https://x.com/thsottiaux/status/2107576143285219799",
+    "origin": "historical, already viewed; policy regression not unseen validation",
+    "state": {
+      "post": {
+        "text": "Vote",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "Roundup of Day 2/\n\n2.1/ Approve for me (auto-review) is now included and does not use usage. Can be between 2-10% of plan when used. Also better for you.\n2.2/ Simplified API for builders.\n2.3/ Meeting notes integrated.\n2.4/ Decisions API live for builders. Will use in the app to improve the experience.",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "Vote prompt under a roundup, not itself an announcement.",
+    "previous_expected": "neither"
+  },
+  {
+    "id": "2114228445043691592",
+    "source_url": "https://x.com/thsottiaux/status/2114228445043691592",
+    "origin": "historical, already viewed; policy regression not unseen validation",
+    "state": {
+      "post": {
+        "text": "@_jayyy18_13k",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "tibo's 28 day challenge is starting to look like 28 days of finding excuses to reset codex 😭",
+          "is_monitored_author": false
+        },
+        {
+          "relation": "quote",
+          "depth": 2,
+          "text": "Day 20/ Rest and reset",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "Reaction to someone's challenge commentary, not an announcement.",
+    "previous_expected": "neither"
+  },
+  {
+    "id": "synthetic-unnumbered-daily-update",
+    "origin": "synthetic policy regression, not real tweets",
+    "state": {
+      "post": {
+        "text": "For today’s ship-or-reset challenge, we shipped bulk task editing in Codex. No reset today.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "feature",
+    "rationale": "Explicit challenge connection without a day number qualifies."
+  },
+  {
+    "id": "synthetic-generic-release",
+    "origin": "synthetic policy regression, not real tweets",
+    "state": {
+      "post": {
+        "text": "We just shipped bulk task editing in Codex.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "neither",
+    "rationale": "Identical product change without evidence of a challenge connection does not qualify."
+  },
+  {
+    "id": "synthetic-reset-no-challenge",
+    "origin": "synthetic policy regression, not real tweets",
+    "state": {
+      "post": {
+        "text": "An extra usage reset is landing for all paid accounts tonight.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "reset",
+    "rationale": "No daily challenge marker needed for usage reset."
+  },
+  {
+    "id": "synthetic-reset-subset",
+    "origin": "synthetic policy regression, not real tweets",
+    "state": {
+      "post": {
+        "text": "We have restored the usage allowance for the affected Business accounts.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "reset",
+    "rationale": "Actual quota restoration for a subset of users qualifies."
+  },
+  {
+    "id": "synthetic-both",
+    "origin": "synthetic policy regression, not real tweets",
+    "state": {
+      "post": {
+        "text": "Today’s challenge update is bulk editing. We are also resetting usage for everyone.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "reset",
+    "rationale": "Any actual reset takes priority even when an update shipped."
+  },
+  {
+    "id": "synthetic-rules-only",
+    "origin": "synthetic policy regression, not real tweets",
+    "state": {
+      "post": {
+        "text": "Every day during the challenge, we will ship an improvement or reset usage.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "neither",
+    "rationale": "Conditional challenge rules are not an actual reset commitment for a particular occurrence."
+  },
+  {
+    "id": "synthetic-day-number-joke",
+    "origin": "synthetic policy regression, not real tweets",
+    "state": {
+      "post": {
+        "text": "Day 41: my coffee is cold.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "neither",
+    "rationale": "Day numbering alone is not an update or reset."
+  },
+  {
+    "id": "synthetic-no-feature-no-reset",
+    "origin": "synthetic policy regression, not real tweets",
+    "state": {
+      "post": {
+        "text": "No update and no reset today.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "neither",
+    "rationale": "Negation is not an announcement of either desired category."
+  },
+  {
+    "id": "synthetic-complaint",
+    "origin": "synthetic policy regression, not real tweets",
+    "state": {
+      "post": {
+        "text": "Where is today’s challenge update? Reset our limits instead.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "neither",
+    "rationale": "Request is not an update or reset announcement."
+  },
+  {
+    "id": "synthetic-unrelated-followup",
+    "origin": "synthetic policy regression, not real tweets",
+    "state": {
+      "post": {
+        "text": "We also improved a third-party game I play.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "For today’s ship-or-reset challenge, we shipped bulk task editing in Codex.",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "Challenge linkage cannot make unrelated products count."
+  }
+]

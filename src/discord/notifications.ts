@@ -106,7 +106,7 @@ export class DiscordNotifications {
       ? 'Registered this channel for openai-reset notifications.'
       : 'This channel is already registered for openai-reset notifications.';
     content +=
-      ' You will receive OpenAI usage reset and feature notifications; unrelated posts (neither) stay silent.';
+      ' You will receive any OpenAI usage reset and daily challenge update notifications; unrelated posts (neither) stay silent.';
     if (!this.enabled)
       content +=
         ' Warning: your subscription is saved, but monitoring is disabled; check Gateway configuration and OPENAI_RESET_ENABLED.';

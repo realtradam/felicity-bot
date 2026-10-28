@@ -96,6 +96,29 @@ describe('OpenAIResetMonitor (offline)', () => {
     },
   );
 
+  it('does not let a challenge update suppress a later reset, or require a challenge marker for resets', async () => {
+    store.register('g', 'c', 1_000_000);
+    const update = {
+      ...tweet(),
+      text: 'For today’s ship-or-reset challenge, bulk task editing is live.',
+    };
+    const laterReset = {
+      ...tweet('2115273253711409209', 1_002_000),
+      text: 'An extra usage reset is landing for everyone tonight.',
+    };
+    fetchSince.mockResolvedValue([update, laterReset]);
+    classify
+      .mockResolvedValueOnce({ category: 'feature', confidence: 0.9 })
+      .mockResolvedValueOnce({ category: 'reset', confidence: 0.95 });
+    await monitor.tick(controller.signal);
+    now += 13_000;
+    await monitor.tick(controller.signal);
+    expect(
+      deliver.mock.calls.map(([delivery]) => delivery.decision.category),
+    ).toEqual(['feature', 'reset']);
+    expect(classify).toHaveBeenLastCalledWith(laterReset, controller.signal);
+  });
+
   it('never infers or notifies posts published before registration', async () => {
     store.register('g', 'c', now);
     await monitor.tick(controller.signal);

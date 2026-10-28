@@ -94,9 +94,9 @@ Replies are ordinary, public messages in the invoking channel—not ephemeral. *
 !test openai-reset
 ```
 
-Subscribe the **current channel** to new reset **and** feature posts from **@thsottiaux**; unrelated posts stay silent. Registrations persist across restarts. `!test openai-reset` sends a labeled synthetic preview with example confidence, **without any Twitter/AI API call, credit usage, or registration**. Real notifications show the model's chosen-category confidence and a source link.
+Subscribe the **current channel** to any usage-reset announcement **and daily challenge updates** from **@thsottiaux**; unrelated posts stay silent. Registrations persist across restarts. `!test openai-reset` replays a real historical reset in the exact live format with its recorded confidence, **without any Twitter/AI API call, credit usage, or registration**. Real notifications show the model's chosen-category confidence and a source link.
 
-The implementation uses free FxTwitter polling (about one minute, not a real-time stream) and the previously evaluated `perplexity/pplx-decider-v1.2` via the existing free-tier Gateway key. Set optional `AI_GATEWAY_API_KEY` (or existing `VERCEL_TOKEN`) securely; `OPENAI_RESET_ENABLED=false` disables monitoring. No key means subscriptions/samples still work but monitoring stays off. No paid X API, purchase/top-up or model fallback; persistent credit limits fail closed. Confidence is a model estimate, **not a guarantee of future accuracy**.
+The implementation uses free FxTwitter polling (about one minute, not a real-time stream) and `perplexity/pplx-decider-v1.2` with the challenge-scoped prompt (revised policy not yet model-evaluated) via the existing free-tier Gateway key. Set optional `AI_GATEWAY_API_KEY` (or existing `VERCEL_TOKEN`) securely; `OPENAI_RESET_ENABLED=false` disables monitoring. No key means subscriptions/samples still work but monitoring stays off. No paid X API, purchase/top-up or model fallback; persistent credit limits fail closed. Confidence is a model estimate, **not a guarantee of future accuracy**.
 
 See [notification behavior, cost safeguards and operational limits](docs/openai-notifications.md). This change is offline-tested only; production has not been deployed or logged into for testing.
 

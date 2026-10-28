@@ -124,7 +124,7 @@ def validate_answer(result):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--split', choices=['development', 'holdout', 'challenge', 'validation'], required=True)
+    parser.add_argument('--split', choices=['development', 'holdout', 'challenge', 'validation', 'scope'], required=True)
     parser.add_argument('--prompt', required=True)
     parser.add_argument('--phase2', action='store_true', help='Use explicit second-stage freeze; original holdout is now development.')
     parser.add_argument('--output', required=True)
@@ -137,8 +137,8 @@ def main():
     prompt = json.loads(prompt_path.read_text())
     if prompt.get('type') != 'choice' or set(prompt.get('criteria', {})) != set(LABELS):
         raise SystemExit('Prompt must define exactly the three choices.')
-    dataset = ROOT / ('challenges.json' if args.split == 'challenge' else 'validation.json' if args.split == 'validation' else 'historical.json')
-    fixtures = [r for r in json.loads(dataset.read_text()) if r['split'] == args.split]
+    dataset = ROOT / ('challenge-scope-cases.json' if args.split == 'scope' else 'challenges.json' if args.split == 'challenge' else 'validation.json' if args.split == 'validation' else 'historical.json')
+    fixtures = [r for r in json.loads(dataset.read_text()) if args.split == 'scope' or r['split'] == args.split]
     if args.limit:
         fixtures = fixtures[:args.limit]
     prompt_hash = hashlib.sha256(prompt_path.read_bytes()).hexdigest()
@@ -149,7 +149,7 @@ def main():
     if output.exists():
         raise SystemExit('Output exists; refusing overwrite or hidden rerun.')
     if args.split != 'development':
-        frozen = json.loads((ROOT / ('frozen-phase2.json' if args.phase2 else 'frozen.json')).read_text())
+        frozen = json.loads((ROOT / ('frozen-challenge-scope.json' if args.split == 'scope' else 'frozen-phase2.json' if args.phase2 else 'frozen.json')).read_text())
         if frozen['prompt_sha256'] != prompt_hash or frozen['dataset_sha256'][dataset.name] != hashlib.sha256(dataset.read_bytes()).hexdigest():
             raise SystemExit('Frozen prompt/dataset mismatch.')
     key = credential(); before = preflight(key); rows = []
