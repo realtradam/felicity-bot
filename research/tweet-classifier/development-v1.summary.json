@@ -1,0 +1,338 @@
+{
+  "n": 47,
+  "correct": 3,
+  "accuracy": 0.06382978723404255,
+  "accuracy_wilson95": [0.0219449870207728, 0.17162877934377904],
+  "macro_f1": 0.20673635307781654,
+  "always_neither_accuracy": 0.8297872340425532,
+  "per_class": {
+    "reset": {
+      "support": 3,
+      "precision": 0,
+      "recall": 0.0,
+      "f1": 0
+    },
+    "feature": {
+      "support": 5,
+      "precision": 1.0,
+      "recall": 0.4,
+      "f1": 0.5714285714285715
+    },
+    "neither": {
+      "support": 39,
+      "precision": 0.5,
+      "recall": 0.02564102564102564,
+      "f1": 0.048780487804878044
+    }
+  },
+  "confusion_matrix": {
+    "reset": {
+      "reset": 0,
+      "feature": 0,
+      "neither": 0,
+      "error": 3
+    },
+    "feature": {
+      "reset": 0,
+      "feature": 2,
+      "neither": 1,
+      "error": 2
+    },
+    "neither": {
+      "reset": 0,
+      "feature": 0,
+      "neither": 1,
+      "error": 38
+    }
+  },
+  "errors": [
+    {
+      "id": "2111245052513259606",
+      "expected": "feature",
+      "predicted": "neither",
+      "probabilities": {
+        "reset": 0.08863004782754391,
+        "feature": 0.4467354018541522,
+        "neither": 0.4646345503183038
+      },
+      "usage": {
+        "inputTokens": 399,
+        "outputTokens": 1
+      },
+      "cost": "0.00000798",
+      "model": "perplexity/pplx-decider-v1.2",
+      "latency_seconds": 0.521
+    },
+    {
+      "id": "2111245443917385980",
+      "expected": "neither",
+      "predicted": "error",
+      "error": "HTTP 429"
+    },
+    {
+      "id": "2111245772645896573",
+      "expected": "neither",
+      "predicted": "error",
+      "error": "not attempted"
+    },
+    {
+      "id": "2111246098207813946",
+      "expected": "neither",
+      "predicted": "error",
+      "error": "not attempted"
+    },
+    {
+      "id": "2111249534072529256",
+      "expected": "neither",
+      "predicted": "error",
+      "error": "not attempted"
+    },
+    {
+      "id": "2111249810502353152",
+      "expected": "feature",
+      "predicted": "error",
+      "error": "not attempted"
+    },
+    {
+      "id": "2111323620471632217",
+      "expected": "neither",
+      "predicted": "error",
+      "error": "not attempted"
+    },
+    {
+      "id": "2111336070248026489",
+      "expected": "neither",
+      "predicted": "error",
+      "error": "not attempted"
+    },
+    {
+      "id": "2111337472349343856",
+      "expected": "neither",
+      "predicted": "error",
+      "error": "not attempted"
+    },
+    {
+      "id": "2111338115667509490",
+      "expected": "neither",
+      "predicted": "error",
+      "error": "not attempted"
+    },
+    {
+      "id": "2111339932614861298",
+      "expected": "neither",
+      "predicted": "error",
+      "error": "not attempted"
+    },
+    {
+      "id": "2111341888322314672",
+      "expected": "neither",
+      "predicted": "error",
+      "error": "not attempted"
+    },
+    {
+      "id": "2111491105120547265",
+      "expected": "neither",
+      "predicted": "error",
+      "error": "not attempted"
+    },
+    {
+      "id": "2111492028177723532",
+      "expected": "neither",
+      "predicted": "error",
+      "error": "not attempted"
+    },
+    {
+      "id": "2111492673890824348",
+      "expected": "reset",
+      "predicted": "error",
+      "error": "not attempted"
+    },
+    {
+      "id": "2111492738025959922",
+      "expected": "reset",
+      "predicted": "error",
+      "error": "not attempted"
+    },
+    {
+      "id": "2111493076850229733",
+      "expected": "neither",
+      "predicted": "error",
+      "error": "not attempted"
+    },
+    {
+      "id": "2111495392559067199",
+      "expected": "neither",
+      "predicted": "error",
+      "error": "not attempted"
+    },
+    {
+      "id": "2111495569806065883",
+      "expected": "neither",
+      "predicted": "error",
+      "error": "not attempted"
+    },
+    {
+      "id": "2111519953564368960",
+      "expected": "neither",
+      "predicted": "error",
+      "error": "not attempted"
+    },
+    {
+      "id": "2111522308666077527",
+      "expected": "neither",
+      "predicted": "error",
+      "error": "not attempted"
+    },
+    {
+      "id": "2111523462372372942",
+      "expected": "neither",
+      "predicted": "error",
+      "error": "not attempted"
+    },
+    {
+      "id": "2111523665817047359",
+      "expected": "neither",
+      "predicted": "error",
+      "error": "not attempted"
+    },
+    {
+      "id": "2111566005684289735",
+      "expected": "neither",
+      "predicted": "error",
+      "error": "not attempted"
+    },
+    {
+      "id": "2111583927156760690",
+      "expected": "neither",
+      "predicted": "error",
+      "error": "not attempted"
+    },
+    {
+      "id": "2111687989328011357",
+      "expected": "neither",
+      "predicted": "error",
+      "error": "not attempted"
+    },
+    {
+      "id": "2111832959842161136",
+      "expected": "neither",
+      "predicted": "error",
+      "error": "not attempted"
+    },
+    {
+      "id": "2111849858374177222",
+      "expected": "neither",
+      "predicted": "error",
+      "error": "not attempted"
+    },
+    {
+      "id": "2111918635849801739",
+      "expected": "neither",
+      "predicted": "error",
+      "error": "not attempted"
+    },
+    {
+      "id": "2111918768733753664",
+      "expected": "neither",
+      "predicted": "error",
+      "error": "not attempted"
+    },
+    {
+      "id": "2111941223187710114",
+      "expected": "neither",
+      "predicted": "error",
+      "error": "not attempted"
+    },
+    {
+      "id": "2111945355596353823",
+      "expected": "neither",
+      "predicted": "error",
+      "error": "not attempted"
+    },
+    {
+      "id": "2111990254408434095",
+      "expected": "feature",
+      "predicted": "error",
+      "error": "not attempted"
+    },
+    {
+      "id": "2111994295364571327",
+      "expected": "neither",
+      "predicted": "error",
+      "error": "not attempted"
+    },
+    {
+      "id": "2112034063934742720",
+      "expected": "neither",
+      "predicted": "error",
+      "error": "not attempted"
+    },
+    {
+      "id": "2112034328549216593",
+      "expected": "neither",
+      "predicted": "error",
+      "error": "not attempted"
+    },
+    {
+      "id": "2112039275344941371",
+      "expected": "neither",
+      "predicted": "error",
+      "error": "not attempted"
+    },
+    {
+      "id": "2112039554538770846",
+      "expected": "neither",
+      "predicted": "error",
+      "error": "not attempted"
+    },
+    {
+      "id": "2112039750999986304",
+      "expected": "neither",
+      "predicted": "error",
+      "error": "not attempted"
+    },
+    {
+      "id": "2112049026636103954",
+      "expected": "neither",
+      "predicted": "error",
+      "error": "not attempted"
+    },
+    {
+      "id": "2112268918681485431",
+      "expected": "neither",
+      "predicted": "error",
+      "error": "not attempted"
+    },
+    {
+      "id": "2112426606870585551",
+      "expected": "neither",
+      "predicted": "error",
+      "error": "not attempted"
+    },
+    {
+      "id": "2112432076767289678",
+      "expected": "reset",
+      "predicted": "error",
+      "error": "not attempted"
+    },
+    {
+      "id": "2112592264686149749",
+      "expected": "neither",
+      "predicted": "error",
+      "error": "not attempted"
+    }
+  ],
+  "model": "perplexity/pplx-decider-v1.2",
+  "prompt_sha256": "be76b3d3b03f4cef19c182be6f2a12eea419fd4c7d90f4f71e60fabca0e79f11",
+  "dataset_sha256": "bded41817f927d00be04a29201f49b37ab52b863f8903a133ab0973eed1a6d53",
+  "split": "development",
+  "credits_before": {
+    "balance": "4.99999466",
+    "total_used": "0.00000534"
+  },
+  "credits_after": {
+    "balance": "4.999966",
+    "total_used": "0.000034"
+  },
+  "reported_cost": "0.00002866"
+}

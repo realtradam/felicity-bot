@@ -1,0 +1,11 @@
+{
+  "model": "perplexity/pplx-decider-v1.2",
+  "prompt": "prompt-v2.json",
+  "prompt_sha256": "a6798ca23b6ff15eaef3c022417f2a552488711c3bab55c83d2a721959edfbd3",
+  "dataset_sha256": {
+    "historical.json": "bded41817f927d00be04a29201f49b37ab52b863f8903a133ab0973eed1a6d53",
+    "challenges.json": "88ffc316872de17ccde77c4e4973420f58d82d68f3316c22638dc953579bbabd"
+  },
+  "frozen_at_utc": "2026-10-28T11:00:56.457188+00:00",
+  "selection": "v2 meets >=95% development accuracy and has macro-F1 0.9654; stop refinement after v2. No holdout or challenge predictions exist at freeze."
+}

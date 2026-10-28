@@ -36,6 +36,8 @@ The first `bin/setup` may download Node and native build tools into the Docker i
 | `PREVIEW_CACHE_SIZE` | No             | App-preview LRU limit, default 100, allowed 10–2,000         |
 | `LOG_LEVEL`          | No             | `info` by default; Pino levels including `silent` supported  |
 
+Optional notification configuration: `AI_GATEWAY_API_KEY` (or legacy `VERCEL_TOKEN`) supplies the existing free-tier AI Gateway key; `OPENAI_RESET_ENABLED=false` disables monitoring. Never print/commit keys or enable auto-recharge for this feature. See [OpenAI notifications](openai-notifications.md) for the $0.05 lifetime local credit cap, fixed model, source limits, subscription commands and confidence semantics.
+
 Dev secret: `projects/discordbot-felicity/dev/discord_token`.
 Production secret: `projects/discordbot-felicity/prod/discord_token`.
 Local development uses a git-ignored `.env` with owner-only permissions (`chmod 600 .env`). `.env.example` contains non-secret settings only. Exported environment variables override `.env`. If `.env` is missing, startup falls back to gopass; an incomplete `.env` does not silently mix in gopass credentials. Never commit `.env` or reuse production credentials in development.
@@ -47,6 +49,8 @@ Development Compose project: `felicity-dev`.
 - `felicity-dev_node_modules`: installed dependencies.
 - `felicity-dev_npm_cache`: npm download cache.
 - `felicity-dev_bot_data`: SQLite, emoji images, metadata and readiness heartbeat.
+
+Notifications use a separate `notifications.sqlite` schema-1 database in this same data directory, holding channel registrations, post/delivery journal and credit accounting. The stopped whole-directory backup below includes it and its WAL sidecars; do not reset it to bypass a budget. Existing emoji/history schema 5 is unchanged by notifications.
 
 Stopping does not remove these volumes. Never remove the data volume unless you deliberately intend to destroy the archive and statistics. A fresh database is automatically migrated on startup; no separate DB service or migration command is necessary for schema version 5 (version-1/2/3/4 databases migrate automatically, preserving assets, upload IDs, counts and scan progress).
 

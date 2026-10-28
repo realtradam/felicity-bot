@@ -1,0 +1,199 @@
+{
+  "n": 52,
+  "correct": 44,
+  "accuracy": 0.8461538461538461,
+  "accuracy_wilson95": [0.7247565640845235, 0.9199241040911734],
+  "macro_f1": 0.8571428571428571,
+  "always_neither_accuracy": 0.5961538461538461,
+  "per_class": {
+    "reset": {
+      "support": 10,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "feature": {
+      "support": 11,
+      "precision": 0.5882352941176471,
+      "recall": 0.9090909090909091,
+      "f1": 0.7142857142857143
+    },
+    "neither": {
+      "support": 31,
+      "precision": 0.96,
+      "recall": 0.7741935483870968,
+      "f1": 0.8571428571428571
+    }
+  },
+  "confusion_matrix": {
+    "reset": {
+      "reset": 10,
+      "feature": 0,
+      "neither": 0,
+      "error": 0
+    },
+    "feature": {
+      "reset": 0,
+      "feature": 10,
+      "neither": 1,
+      "error": 0
+    },
+    "neither": {
+      "reset": 0,
+      "feature": 7,
+      "neither": 24,
+      "error": 0
+    }
+  },
+  "errors": [
+    {
+      "id": "2100297380968997327",
+      "expected": "neither",
+      "predicted": "feature",
+      "probabilities": {
+        "reset": 0.010375514382015193,
+        "feature": 0.7249876736066755,
+        "neither": 0.2646368120113093
+      },
+      "usage": {
+        "inputTokens": 517,
+        "outputTokens": 1
+      },
+      "cost": "0.00001034",
+      "model": "perplexity/pplx-decider-v1.2",
+      "latency_seconds": 0.539
+    },
+    {
+      "id": "2104989161774322009",
+      "expected": "neither",
+      "predicted": "feature",
+      "probabilities": {
+        "reset": 0.01595726522826193,
+        "feature": 0.7293349712802657,
+        "neither": 0.25470776349147256
+      },
+      "usage": {
+        "inputTokens": 446,
+        "outputTokens": 1
+      },
+      "cost": "0.00000892",
+      "model": "perplexity/pplx-decider-v1.2",
+      "latency_seconds": 0.553
+    },
+    {
+      "id": "2104994835212226681",
+      "expected": "neither",
+      "predicted": "feature",
+      "probabilities": {
+        "reset": 0.018737107612989946,
+        "feature": 0.6314737608333095,
+        "neither": 0.34978913155370056
+      },
+      "usage": {
+        "inputTokens": 462,
+        "outputTokens": 1
+      },
+      "cost": "0.00000924",
+      "model": "perplexity/pplx-decider-v1.2",
+      "latency_seconds": 0.66
+    },
+    {
+      "id": "2105007775676072381",
+      "expected": "neither",
+      "predicted": "feature",
+      "probabilities": {
+        "reset": 0.010236988372069367,
+        "feature": 0.8702431957798141,
+        "neither": 0.11951981584811634
+      },
+      "usage": {
+        "inputTokens": 481,
+        "outputTokens": 1
+      },
+      "cost": "0.00000962",
+      "model": "perplexity/pplx-decider-v1.2",
+      "latency_seconds": 0.941
+    },
+    {
+      "id": "2105039500149948878",
+      "expected": "neither",
+      "predicted": "feature",
+      "probabilities": {
+        "reset": 0.011553370970005085,
+        "feature": 0.5905833533547086,
+        "neither": 0.3978632756752863
+      },
+      "usage": {
+        "inputTokens": 464,
+        "outputTokens": 1
+      },
+      "cost": "0.00000928",
+      "model": "perplexity/pplx-decider-v1.2",
+      "latency_seconds": 0.666
+    },
+    {
+      "id": "2105102312167575701",
+      "expected": "neither",
+      "predicted": "feature",
+      "probabilities": {
+        "reset": 0.011271395165189711,
+        "feature": 0.5552620081893297,
+        "neither": 0.4334665966454806
+      },
+      "usage": {
+        "inputTokens": 654,
+        "outputTokens": 1
+      },
+      "cost": "0.00001308",
+      "model": "perplexity/pplx-decider-v1.2",
+      "latency_seconds": 0.668
+    },
+    {
+      "id": "2107573405553938664",
+      "expected": "feature",
+      "predicted": "neither",
+      "probabilities": {
+        "reset": 0.03136073636673135,
+        "feature": 0.47675044450155624,
+        "neither": 0.4918888191317124
+      },
+      "usage": {
+        "inputTokens": 615,
+        "outputTokens": 1
+      },
+      "cost": "0.0000123",
+      "model": "perplexity/pplx-decider-v1.2",
+      "latency_seconds": 0.846
+    },
+    {
+      "id": "2110864861119045840",
+      "expected": "neither",
+      "predicted": "feature",
+      "probabilities": {
+        "reset": 0.012808365412646879,
+        "feature": 0.5712857426835342,
+        "neither": 0.41590589190381894
+      },
+      "usage": {
+        "inputTokens": 538,
+        "outputTokens": 1
+      },
+      "cost": "0.00001076",
+      "model": "perplexity/pplx-decider-v1.2",
+      "latency_seconds": 182.418
+    }
+  ],
+  "model": "perplexity/pplx-decider-v1.2",
+  "prompt_sha256": "d18bd926510a8f331aa5bfab5ec2a774dee3c438e6767f91c914ed5037bae873",
+  "dataset_sha256": "527182e167425756162a8838f45dee3431b0defedafe3a0a80e9aa1dc28cc44a",
+  "split": "validation",
+  "credits_before": {
+    "balance": "4.99714492",
+    "total_used": "0.00285508"
+  },
+  "credits_after": {
+    "balance": "4.99660836",
+    "total_used": "0.00339164"
+  },
+  "reported_cost": "0.00053656"
+}

@@ -1,0 +1,11 @@
+{
+  "model": "perplexity/pplx-decider-v1.2",
+  "prompt": "prompt-v3.json",
+  "prompt_sha256": "d18bd926510a8f331aa5bfab5ec2a774dee3c438e6767f91c914ed5037bae873",
+  "dataset_sha256": {
+    "historical.json": "bded41817f927d00be04a29201f49b37ab52b863f8903a133ab0973eed1a6d53",
+    "validation.json": "527182e167425756162a8838f45dee3431b0defedafe3a0a80e9aa1dc28cc44a"
+  },
+  "frozen_at_utc": "2026-10-28T11:21:32.892295+00:00",
+  "selection": "One final shorter candidate addressing consumed holdout reset failures. The historical holdout is now development, not unseen data. Fresh 52-case retrospective validation has no predictions yet. No v4."
+}

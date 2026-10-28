@@ -1,0 +1,1 @@
+{"id": "2110971985417441512", "expected": "neither", "predicted": "neither", "probabilities": {"reset": 0.010004583823354838, "feature": 0.01828309344077407, "neither": 0.9717123227358712}, "usage": {"inputTokens": 267, "outputTokens": 1}, "cost": "0.00000534", "model": "perplexity/pplx-decider-v1.2", "latency_seconds": 0.902}

@@ -1,0 +1,9 @@
+{
+  "snapshot_sha256": "0e643197778df8c4cd5ada8fecc57202f83e70af4ab6ecb4fefd97c9a9e2cb35",
+  "dataset_sha256": "bded41817f927d00be04a29201f49b37ab52b863f8903a133ab0973eed1a6d53",
+  "collected_at_utc": "2026-10-28T10:37:05.896200+00:00",
+  "source": "https://api.fxtwitter.com/2/profile/thsottiaux/statuses?count=100&with_replies=true",
+  "pages": 6,
+  "authored_posts": 102,
+  "ground_truth": "Assistant manual provisional labels, assigned before inference."
+}

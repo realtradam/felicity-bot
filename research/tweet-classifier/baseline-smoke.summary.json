@@ -1,0 +1,62 @@
+{
+  "n": 1,
+  "correct": 1,
+  "accuracy": 1.0,
+  "accuracy_wilson95": [0.20654329147389294, 1.0],
+  "macro_f1": 0.3333333333333333,
+  "always_neither_accuracy": 1.0,
+  "per_class": {
+    "reset": {
+      "support": 0,
+      "precision": 0,
+      "recall": 0,
+      "f1": 0
+    },
+    "feature": {
+      "support": 0,
+      "precision": 0,
+      "recall": 0,
+      "f1": 0
+    },
+    "neither": {
+      "support": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    }
+  },
+  "confusion_matrix": {
+    "reset": {
+      "reset": 0,
+      "feature": 0,
+      "neither": 0,
+      "error": 0
+    },
+    "feature": {
+      "reset": 0,
+      "feature": 0,
+      "neither": 0,
+      "error": 0
+    },
+    "neither": {
+      "reset": 0,
+      "feature": 0,
+      "neither": 1,
+      "error": 0
+    }
+  },
+  "errors": [],
+  "model": "perplexity/pplx-decider-v1.2",
+  "prompt_sha256": "be76b3d3b03f4cef19c182be6f2a12eea419fd4c7d90f4f71e60fabca0e79f11",
+  "dataset_sha256": "bded41817f927d00be04a29201f49b37ab52b863f8903a133ab0973eed1a6d53",
+  "split": "development",
+  "credits_before": {
+    "balance": "5",
+    "total_used": "0"
+  },
+  "credits_after": {
+    "balance": "4.99999466",
+    "total_used": "0.00000534"
+  },
+  "reported_cost": "0.00000534"
+}

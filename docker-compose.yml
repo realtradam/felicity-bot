@@ -9,6 +9,10 @@ services:
       DISCORD_TOKEN: ${DISCORD_TOKEN:-}
       DISCORD_CLIENT_ID: ${DISCORD_CLIENT_ID:-}
       DATA_DIR: /app/data
+      # Existing credits only. No top-ups, paid fallback or Twitter credentials.
+      OPENAI_RESET_ENABLED: ${OPENAI_RESET_ENABLED:-true}
+      AI_GATEWAY_API_KEY: ${AI_GATEWAY_API_KEY:-}
+      VERCEL_TOKEN: ${VERCEL_TOKEN:-}
       PREVIEW_CACHE_SIZE: ${PREVIEW_CACHE_SIZE:-100}
       LOG_LEVEL: ${LOG_LEVEL:-info}
     volumes:

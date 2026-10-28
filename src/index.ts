@@ -17,6 +17,11 @@ import { ApplicationEmojiPreview } from './emoji/inline-preview.js';
 import { EmojiArchive } from './emoji/archive.js';
 import { createLogger, errorDetails } from './logger.js';
 import { BotDatabase } from './storage/database.js';
+import { DiscordNotifications } from './discord/notifications.js';
+import { NotificationStore } from './notifications/store.js';
+import { GatewayClassifier } from './notifications/gateway.js';
+import { FxTwitterSource } from './notifications/source.js';
+import { OpenAIResetMonitor } from './notifications/monitor.js';
 
 async function main() {
   const config = loadConfig();
@@ -24,6 +29,10 @@ async function main() {
   await mkdir(config.dataDir, { recursive: true });
   const db = new BotDatabase(join(config.dataDir, 'felicity.sqlite'));
   const archive = new EmojiArchive(config.dataDir, db);
+  const notificationStore = new NotificationStore(
+    join(config.dataDir, 'notifications.sqlite'),
+  );
+  notificationStore.recover();
   const client = new Client({
     intents: [
       GatewayIntentBits.Guilds,
@@ -41,6 +50,25 @@ async function main() {
   });
   const controller = new AbortController();
   const tasks = new Set<Promise<void>>();
+  const notifications = new DiscordNotifications(
+    client,
+    notificationStore,
+    config.openaiReset.enabled,
+  );
+  const monitor =
+    config.openaiReset.enabled && config.openaiReset.apiKey
+      ? new OpenAIResetMonitor({
+          store: notificationStore,
+          source: new FxTwitterSource(),
+          classifier: new GatewayClassifier(
+            config.openaiReset.apiKey,
+            notificationStore,
+          ),
+          deliver: (delivery, signal) =>
+            notifications.deliver(delivery, signal),
+          warn: (details, message) => logger.warn(details, message),
+        })
+      : undefined;
   const running = new Set<string>();
   const inlinePreview = new ApplicationEmojiPreview(
     () => client.application?.emojis,
@@ -53,6 +81,7 @@ async function main() {
   );
   const emojiService = new EmojiService(db, archive);
   const context = {
+    notifications,
     db,
     archive,
     inlinePreview,
@@ -70,6 +99,11 @@ async function main() {
     tasks.add(task);
   };
   client.once(Events.ClientReady, (readyClient) => {
+    if (monitor) run(() => monitor.run(controller.signal));
+    else
+      logger.info(
+        'OpenAI reset monitoring disabled; subscriptions and offline samples remain available',
+      );
     for (const guild of readyClient.guilds.cache.values()) {
       run(async () => {
         await emojiService.current(guild);
@@ -148,6 +182,15 @@ async function main() {
   client.on(Events.MessageReactionAdd, (reaction) =>
     refresh(reaction.message.channelId, reaction.message.id),
   );
+  client.on(Events.GuildDelete, (guild) => {
+    if (!stopping) notificationStore.removeGuild(guild.id);
+  });
+  client.on(Events.ChannelDelete, (channel) => {
+    if (!stopping) notificationStore.removeChannel(channel.id);
+  });
+  client.on(Events.ThreadDelete, (thread) => {
+    if (!stopping) notificationStore.removeChannel(thread.id);
+  });
   client.on(Events.MessageReactionRemove, (reaction) =>
     refresh(reaction.message.channelId, reaction.message.id),
   );
@@ -187,6 +230,7 @@ async function main() {
     forceExit.unref();
     await client.destroy();
     await Promise.allSettled([...tasks]);
+    notificationStore.close();
     db.close();
     clearTimeout(forceExit);
     process.exitCode = exitCode;
@@ -219,7 +263,7 @@ function fatal(
 main().catch(() => {
   // Configuration validation failures are intentionally value-free.
   console.error(
-    'Felicity could not start. Check DISCORD_TOKEN, DISCORD_CLIENT_ID, LOG_LEVEL, and DATA_DIR.',
+    'Felicity could not start. Check DISCORD_TOKEN, DISCORD_CLIENT_ID, LOG_LEVEL, DATA_DIR, and optional notification configuration.',
   );
   process.exitCode = 1;
 });

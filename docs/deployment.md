@@ -36,6 +36,14 @@ Use a separate Discord application/token for production when practical. Configur
 
 Do not set the retired `IMAGE_STORE_URL`, `IMAGE_STORE_TOKEN`, or `IMAGE_PUBLIC_URL` variables. They are no longer read. No external Docker bridge network needs creating. Do not add a public domain or host ports for the bot.
 
+## Optional OpenAI notifications
+
+To enable the newly implemented reset/feature monitor after an authorized deployment, securely supply the **existing free-tier Gateway key** as `AI_GATEWAY_API_KEY` or `VERCEL_TOKEN` in Dokploy. The local `.env` is not automatically deployed. Both variables are optional; `OPENAI_RESET_ENABLED=false` explicitly disables monitoring. No key means no polling/inference, while saved registration and `!test openai-reset` remain available. The test command uses no Twitter/AI calls.
+
+No paid X subscription or new service is needed: FxTwitter is polled roughly every minute, with no real-time/SLA guarantee. Keep Gateway auto-recharge disabled; the app only consumes existing credits using a fixed model, preflight checks and durable $0.05 lifetime notification budget. Notifications show the actual chosen-class confidence, not guaranteed accuracy. `notifications.sqlite` shares the existing bot data volume but is separate from emoji/history schema 5. Preserve/back up both. See [complete notification operations and limits](openai-notifications.md).
+
+These changes do **not** add the key to production, start/stop a live bot, deploy, or perform a live notification test. Do not run a second instance with the production token to test them.
+
 ## Data and deployment
 
 - Ensure the `bot_data` volume persists across redeployments. Back up the SQLite database plus legacy exports/metadata together while stopped.

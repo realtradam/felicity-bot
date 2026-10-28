@@ -1,0 +1,2322 @@
+[
+  {
+    "id": "2110971985417441512",
+    "source_url": "https://x.com/thsottiaux/status/2110971985417441512",
+    "published_at": "Fri Oct 16 05:51:55 +0000 2026",
+    "split": "development",
+    "state": {
+      "post": {
+        "text": "Either we are out of ideas or we are cooking. Time will tell",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2111244596131111253",
+    "source_url": "https://x.com/thsottiaux/status/2111244596131111253",
+    "published_at": "Fri Oct 16 23:55:11 +0000 2026",
+    "split": "development",
+    "state": {
+      "post": {
+        "text": "Day 12/\n\nWe’ve made improvements to Codex & Work that increase the effective usage you get. We achieved this by reusing context across subagents, keeping context cached longer, and improved request routing that allows us to increase cache hits.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "feature",
+    "rationale": "Concrete new OpenAI capability or shipped improvement."
+  },
+  {
+    "id": "2111244957851984181",
+    "source_url": "https://x.com/thsottiaux/status/2111244957851984181",
+    "published_at": "Fri Oct 16 23:56:37 +0000 2026",
+    "split": "development",
+    "state": {
+      "post": {
+        "text": "We also significantly improved GPT-6 Pro for all pro users\n\nhttps://x.com/OpenAI/status/2111192259073094035",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "Day 12/\n\nWe’ve made improvements to Codex & Work that increase the effective usage you get. We achieved this by reusing context across subagents, keeping context cached longer, and improved request routing that allows us to increase cache hits.",
+          "is_monitored_author": true
+        },
+        {
+          "relation": "quote",
+          "depth": 1,
+          "text": "GPT-6 Astra Pro in ChatGPT got an upgrade with faster responses and improved use of plugins and tools.\n\nAnd now, multiple agents can tackle different parts of a task in parallel. You can follow each agent’s progress and open completed tasks to review their work.\n\nNow available to Pro users in the Chat tab.",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "feature",
+    "rationale": "Concrete new OpenAI capability or shipped improvement."
+  },
+  {
+    "id": "2111245052513259606",
+    "source_url": "https://x.com/thsottiaux/status/2111245052513259606",
+    "published_at": "Fri Oct 16 23:57:00 +0000 2026",
+    "split": "development",
+    "state": {
+      "post": {
+        "text": "And update your app to enjoy this gem\n\nhttps://x.com/Gavmn/status/2111136119945396436",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "Day 12/\n\nWe’ve made improvements to Codex & Work that increase the effective usage you get. We achieved this by reusing context across subagents, keeping context cached longer, and improved request routing that allows us to increase cache hits.",
+          "is_monitored_author": true
+        },
+        {
+          "relation": "quote",
+          "depth": 1,
+          "text": "Dots, now on your Home Screen",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "feature",
+    "rationale": "Endorses a concrete home-screen release in the quoted post."
+  },
+  {
+    "id": "2111245443917385980",
+    "source_url": "https://x.com/thsottiaux/status/2111245443917385980",
+    "published_at": "Fri Oct 16 23:58:33 +0000 2026",
+    "split": "development",
+    "state": {
+      "post": {
+        "text": "@koltregaskes Thanks Kol!",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "OpenAI, I think you need to explain this a lot better. The difference is you can use chat mode not just work mode.\n\nWhy are AI labs so bad at explaining their own tools and systems? 🤷‍♂️",
+          "is_monitored_author": false
+        },
+        {
+          "relation": "quote",
+          "depth": 2,
+          "text": "A few big upgrades for Chrome users today! We’re bringing the power of computer use to anyone who uses Chrome.\n\nFirst up: ChatGPT can now use your tabs in Chrome to make answers more useful and get things done for you. \n\nIf you’re in Chat, it can look across your open tabs and gather info. \n\nIf you’re in Work, ChatGPT can control your Chrome tabs to get things, like sending messages, filling out forms, or downloading files. It can even help you organize and group that pile of tabs you have open.",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2111245772645896573",
+    "source_url": "https://x.com/thsottiaux/status/2111245772645896573",
+    "published_at": "Fri Oct 16 23:59:51 +0000 2026",
+    "split": "development",
+    "state": {
+      "post": {
+        "text": "@theo How many packs do you smoke per day?",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "Most common format of DMs I get:\n\n“Hey Theo, I’ve been a fan for a long time\n\n[3-8 paragraph life story]\n\nSo, which $20 plan is better, Claude or Codex?”",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2111246098207813946",
+    "source_url": "https://x.com/thsottiaux/status/2111246098207813946",
+    "published_at": "Sat Oct 17 00:01:09 +0000 2026",
+    "split": "development",
+    "state": {
+      "post": {
+        "text": "@codex_resets Mehga ghud",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "Day 12: Dots on the Home Screen\n\nClear improvement, or meh? 👏 or 🤷 here:\nhttps://codex-resets.com/tibo-28\n\nhttps://x.com/thsottiaux/status/2111245052513259606",
+          "is_monitored_author": false
+        },
+        {
+          "relation": "quote",
+          "depth": 2,
+          "text": "And update your app to enjoy this gem\n\nhttps://x.com/Gavmn/status/2111136119945396436",
+          "is_monitored_author": true
+        },
+        {
+          "relation": "parent",
+          "depth": 3,
+          "text": "Day 12/\n\nWe’ve made improvements to Codex & Work that increase the effective usage you get. We achieved this by reusing context across subagents, keeping context cached longer, and improved request routing that allows us to increase cache hits.",
+          "is_monitored_author": true
+        },
+        {
+          "relation": "quote",
+          "depth": 3,
+          "text": "Dots, now on your Home Screen",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2111249534072529256",
+    "source_url": "https://x.com/thsottiaux/status/2111249534072529256",
+    "published_at": "Sat Oct 17 00:14:48 +0000 2026",
+    "split": "development",
+    "state": {
+      "post": {
+        "text": "What is ChatGPT Space, that is the question. Endearingly awkward at times because it's the actual team working on it. What would you like to see next?",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "neither",
+    "rationale": "Feedback request about an existing product; no concrete new change."
+  },
+  {
+    "id": "2111249810502353152",
+    "source_url": "https://x.com/thsottiaux/status/2111249810502353152",
+    "published_at": "Sat Oct 17 00:15:54 +0000 2026",
+    "split": "development",
+    "state": {
+      "post": {
+        "text": "Also we just added slides support yesterday, try it out. Currently available in Pro, Business and Enterprise while we learn from your feedback.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "What is ChatGPT Space, that is the question. Endearingly awkward at times because it's the actual team working on it. What would you like to see next?",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "feature",
+    "rationale": "Concrete new OpenAI capability or shipped improvement."
+  },
+  {
+    "id": "2111323620471632217",
+    "source_url": "https://x.com/thsottiaux/status/2111323620471632217",
+    "published_at": "Sat Oct 17 05:09:12 +0000 2026",
+    "split": "development",
+    "state": {
+      "post": {
+        "text": "@StefanoGPT @OpenAI",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "See, @OpenAI? It’s fine to build hype.\n\nBut then you gotta deliver.\n\nSpot the difference.",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2111336070248026489",
+    "source_url": "https://x.com/thsottiaux/status/2111336070248026489",
+    "published_at": "Sat Oct 17 05:58:40 +0000 2026",
+    "split": "development",
+    "state": {
+      "post": {
+        "text": "@_simonsmith Getting there",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "Dots are for doing.\n\nChat is for learning and discussing.\n\nWork is what you use if you have no Dot.",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2111337472349343856",
+    "source_url": "https://x.com/thsottiaux/status/2111337472349343856",
+    "published_at": "Sat Oct 17 06:04:14 +0000 2026",
+    "split": "development",
+    "state": {
+      "post": {
+        "text": "@poteto @bot Small @poteto speaks big facts",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "how do you trust your agents' work more? copy this post/link and give it to your @bot or agent!\n\n1. codebase improvements: this is just good software engineering - better architecture, stronger types and invariants, clear boundaries. agents love to copy what exists and take the shortest path, so make the easy thing the right thing. categorically eliminate problems through code and you won't need to think about it again.\n2. static analysis: lint rules, tests, CI, verification (eg TLA+). very token efficient ways to catch issues ahead of time.\n3. prose: comments, rules, AGENTS.md, skills - anything that can't be enforced and requires agent judgment. use it minimally, but do use /create-verification-skill.\n4. human review: the hardest to scale. at the rate agents land code, it's pretty much impossible to thoroughly review every PR, so spend that effort on the highest leverage point, designing an environment where agents do the right thing by default.\n\nthis forms an inverse pyramid: you want most of your effort at the top, least at the bottom. codebase improvements are deterministic, making it more token efficient, and lets you sleep more soundly at night.\n\ninstall https://github.com/cursor/plugins/tree/main/pstack and create a new Project:\n1. look through my slack/chat messages and code review comments where i've given feedback on PRs, code, architecture\n2. use /recall on my past transcripts to learn how i steer agents\n3. /poteto-mode use /correct and /architect on past commits to find the most common pitfalls agents fall into, then propose a plan to rearchitect the code i own so it's more agent friendly. answer open questions with prototyping rather than defer to me, and back the plan with real data. \n4. before you begin, use /sharpen + /in-your-own-words and confirm this prompt with me",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2111338115667509490",
+    "source_url": "https://x.com/thsottiaux/status/2111338115667509490",
+    "published_at": "Sat Oct 17 06:06:48 +0000 2026",
+    "split": "development",
+    "state": {
+      "post": {
+        "text": "@steipete is locked in",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2111339932614861298",
+    "source_url": "https://x.com/thsottiaux/status/2111339932614861298",
+    "published_at": "Sat Oct 17 06:14:01 +0000 2026",
+    "split": "development",
+    "state": {
+      "post": {
+        "text": "@ai_funss Working on two of these",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "Tibo已经没招了，我来出几招\n\n1. plus取消5h限制\n2. dot给plus用户使用\n3. ultrafast改为提升15倍速度\n4. Pro20x的用量翻倍\n5. 提升6.1 Sol的TPS至少到50\n\n这已经够Tibo 5天的了🤓",
+          "is_monitored_author": false
+        },
+        {
+          "relation": "quote",
+          "depth": 2,
+          "text": "Either we are out of ideas or we are cooking. Time will tell",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2111341888322314672",
+    "source_url": "https://x.com/thsottiaux/status/2111341888322314672",
+    "published_at": "Sat Oct 17 06:21:47 +0000 2026",
+    "split": "development",
+    "state": {
+      "post": {
+        "text": "@steipete 💀",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "@thsottiaux 🤫 we'll let the work do the talking",
+          "is_monitored_author": false
+        },
+        {
+          "relation": "parent",
+          "depth": 2,
+          "text": "@steipete is locked in",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2111491105120547265",
+    "source_url": "https://x.com/thsottiaux/status/2111491105120547265",
+    "published_at": "Sat Oct 17 16:14:43 +0000 2026",
+    "split": "development",
+    "state": {
+      "post": {
+        "text": "@poteto Close, but it's missing the gpt",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "is chat the final form of agent ui? please share why",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2111492028177723532",
+    "source_url": "https://x.com/thsottiaux/status/2111492028177723532",
+    "published_at": "Sat Oct 17 16:18:23 +0000 2026",
+    "split": "development",
+    "state": {
+      "post": {
+        "text": "Is it just me or was @ajambrosino nerfed today",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2111492673890824348",
+    "source_url": "https://x.com/thsottiaux/status/2111492673890824348",
+    "published_at": "Sat Oct 17 16:20:57 +0000 2026",
+    "split": "development",
+    "state": {
+      "post": {
+        "text": "Day 13/ Le limit reset",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "reset",
+    "rationale": "Explicit quota reset or linked timing."
+  },
+  {
+    "id": "2111492738025959922",
+    "source_url": "https://x.com/thsottiaux/status/2111492738025959922",
+    "published_at": "Sat Oct 17 16:21:13 +0000 2026",
+    "split": "development",
+    "state": {
+      "post": {
+        "text": "Landing sometime today by EOD PST",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "Day 13/ Le limit reset",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "reset",
+    "rationale": "Explicit quota reset or linked timing."
+  },
+  {
+    "id": "2111493076850229733",
+    "source_url": "https://x.com/thsottiaux/status/2111493076850229733",
+    "published_at": "Sat Oct 17 16:22:33 +0000 2026",
+    "split": "development",
+    "state": {
+      "post": {
+        "text": "@ajambrosino 2+2?",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "@thsottiaux 👀",
+          "is_monitored_author": false
+        },
+        {
+          "relation": "parent",
+          "depth": 2,
+          "text": "Is it just me or was @ajambrosino nerfed today",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2111495392559067199",
+    "source_url": "https://x.com/thsottiaux/status/2111495392559067199",
+    "published_at": "Sat Oct 17 16:31:45 +0000 2026",
+    "split": "development",
+    "state": {
+      "post": {
+        "text": "My work dot \"Burger\" coordinated with my personal dot \"Dorito\" over email at my personal dots request to get documents, which then coordinated with with my CPA in order to file some tax stuff. Took 20 minutes. We're still so early.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "neither",
+    "rationale": "Personal usage story, not a new capability announcement."
+  },
+  {
+    "id": "2111495569806065883",
+    "source_url": "https://x.com/thsottiaux/status/2111495569806065883",
+    "published_at": "Sat Oct 17 16:32:28 +0000 2026",
+    "split": "development",
+    "state": {
+      "post": {
+        "text": "@ajambrosino @ah20im start a ghost in the machine tactical squad, we've got a degradation",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "@thsottiaux green",
+          "is_monitored_author": false
+        },
+        {
+          "relation": "parent",
+          "depth": 2,
+          "text": "@ajambrosino 2+2?",
+          "is_monitored_author": true
+        },
+        {
+          "relation": "parent",
+          "depth": 3,
+          "text": "@thsottiaux 👀",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2111519953564368960",
+    "source_url": "https://x.com/thsottiaux/status/2111519953564368960",
+    "published_at": "Sat Oct 17 18:09:21 +0000 2026",
+    "split": "development",
+    "state": {
+      "post": {
+        "text": "@charliermarsh @ajambrosino Checks out, he was half his usual size today",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "@thsottiaux @ajambrosino I quantized him on Friday",
+          "is_monitored_author": false
+        },
+        {
+          "relation": "parent",
+          "depth": 2,
+          "text": "Is it just me or was @ajambrosino nerfed today",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2111522308666077527",
+    "source_url": "https://x.com/thsottiaux/status/2111522308666077527",
+    "published_at": "Sat Oct 17 18:18:43 +0000 2026",
+    "split": "development",
+    "state": {
+      "post": {
+        "text": "@jkeatn Let’s pump those numbers up",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "7,000 followers! don’t ask me anything, I work at anthropic",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2111523462372372942",
+    "source_url": "https://x.com/thsottiaux/status/2111523462372372942",
+    "published_at": "Sat Oct 17 18:23:18 +0000 2026",
+    "split": "development",
+    "state": {
+      "post": {
+        "text": "@gabrielchua Bit blurry",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "With plugin extensions, I can customise my Codex desktop app. \n\nGoogle cal feels a bit too cluttered for me, so I built a simpler focused month and day view, exactly how I like it.\n\nSoftware for n=1",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2111523665817047359",
+    "source_url": "https://x.com/thsottiaux/status/2111523665817047359",
+    "published_at": "Sat Oct 17 18:24:06 +0000 2026",
+    "split": "development",
+    "state": {
+      "post": {
+        "text": "@ajambrosino @petergyang @amorriscode 🍺👌",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "@petergyang @amorriscode hold my beer",
+          "is_monitored_author": false
+        },
+        {
+          "relation": "parent",
+          "depth": 2,
+          "text": "Have to give credit to @amorriscode and team - the Claude Code app is much faster now and arguably simpler to use than ChatGPT.\n\nThe only things missing still are better browser/computer use, remote control for all threads, and live voice.",
+          "is_monitored_author": false
+        },
+        {
+          "relation": "quote",
+          "depth": 3,
+          "text": "thanks for the feedback on the Claude Code Desktop launch this week. we'll continue to iterate based on feedback (yes, group by folder is coming back). our small team is grateful to be building for so many of you!",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2111566005684289735",
+    "source_url": "https://x.com/thsottiaux/status/2111566005684289735",
+    "published_at": "Sat Oct 17 21:12:21 +0000 2026",
+    "split": "development",
+    "state": {
+      "post": {
+        "text": "Done",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "neither",
+    "rationale": "Ungrounded completion with no linked text context; cannot infer a reset."
+  },
+  {
+    "id": "2111583927156760690",
+    "source_url": "https://x.com/thsottiaux/status/2111583927156760690",
+    "published_at": "Sat Oct 17 22:23:34 +0000 2026",
+    "split": "development",
+    "state": {
+      "post": {
+        "text": "@ananyairl Pot committed",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "Why is Codex giving reset every day? 😭",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2111687989328011357",
+    "source_url": "https://x.com/thsottiaux/status/2111687989328011357",
+    "published_at": "Sun Oct 18 05:17:04 +0000 2026",
+    "split": "development",
+    "state": {
+      "post": {
+        "text": "@rl_env Quick to jump to conclusion. This is my OpenAI work dot coordinating with my personal dot. Two entirely separate accounts.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "This is the reason why OpenAI won’t win the personal agents war \n\nMuse at least realizes that normies want one agent",
+          "is_monitored_author": false
+        },
+        {
+          "relation": "quote",
+          "depth": 2,
+          "text": "My work dot \"Burger\" coordinated with my personal dot \"Dorito\" over email at my personal dots request to get documents, which then coordinated with with my CPA in order to file some tax stuff. Took 20 minutes. We're still so early.",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2111832959842161136",
+    "source_url": "https://x.com/thsottiaux/status/2111832959842161136",
+    "published_at": "Sun Oct 18 14:53:08 +0000 2026",
+    "split": "development",
+    "state": {
+      "post": {
+        "text": "@argofowl EU sorry. We’re making it so that\n\n(a) if you had created a dot elsewhere and find yourself in the EU it will keep working\n(b) dots are coming to the EU in the future",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "my dot stopped showing up in my codex desktop app\n\nyeah openai is cooking...",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "Undated in-progress regional roadmap, not an available or definite scheduled release."
+  },
+  {
+    "id": "2111849858374177222",
+    "source_url": "https://x.com/thsottiaux/status/2111849858374177222",
+    "published_at": "Sun Oct 18 16:00:17 +0000 2026",
+    "split": "development",
+    "state": {
+      "post": {
+        "text": "What’s cooking today",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2111918635849801739",
+    "source_url": "https://x.com/thsottiaux/status/2111918635849801739",
+    "published_at": "Sun Oct 18 20:33:34 +0000 2026",
+    "split": "development",
+    "state": {
+      "post": {
+        "text": "@littlelion_love We’ll see",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "When Tibo reaches 1M followers on X, will there be a reset?",
+          "is_monitored_author": false
+        },
+        {
+          "relation": "quote",
+          "depth": 2,
+          "text": "What’s cooking today",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2111918768733753664",
+    "source_url": "https://x.com/thsottiaux/status/2111918768733753664",
+    "published_at": "Sun Oct 18 20:34:06 +0000 2026",
+    "split": "development",
+    "state": {
+      "post": {
+        "text": "People have escaped the TL and are asking me for resets on the street now. I’ll make little cards to hand out",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "neither",
+    "rationale": "Discussion of requests for resets, not an announcement."
+  },
+  {
+    "id": "2111941223187710114",
+    "source_url": "https://x.com/thsottiaux/status/2111941223187710114",
+    "published_at": "Sun Oct 18 22:03:20 +0000 2026",
+    "split": "development",
+    "state": {
+      "post": {
+        "text": "@LexnLin We do care about local regulation",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "I don't really get it. \nWhy is Grok Bot allowed in the EU but Dots take that much time?",
+          "is_monitored_author": false
+        },
+        {
+          "relation": "quote",
+          "depth": 2,
+          "text": "@argofowl EU sorry. We’re making it so that\n\n(a) if you had created a dot elsewhere and find yourself in the EU it will keep working\n(b) dots are coming to the EU in the future",
+          "is_monitored_author": true
+        },
+        {
+          "relation": "parent",
+          "depth": 3,
+          "text": "my dot stopped showing up in my codex desktop app\n\nyeah openai is cooking...",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2111945355596353823",
+    "source_url": "https://x.com/thsottiaux/status/2111945355596353823",
+    "published_at": "Sun Oct 18 22:19:45 +0000 2026",
+    "split": "development",
+    "state": {
+      "post": {
+        "text": "@theo Journalism with additional Theo steps",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "Just realized something.\n\nBecause I pursue accuracy above all else, I tend to make enemies with those who benefit from people being misinformed.",
+          "is_monitored_author": false
+        },
+        {
+          "relation": "quote",
+          "depth": 2,
+          "text": "I did not tell him to hide anything.\n\nI hit him up to ask about why T3 Code scored low. Learned he was on a 3+ month old version. He tried the modern version with our new orchestrator, realized his scores were not good, and adjusted.\n\nHe mentioned wanting to make a real benchmark after, so I offered to fund it because there’s no good research like this going on right now. He actually found a few things I’ve been rabbit hole-ing on all weekend.\n\nI have no idea what Cloudroom is. I definitely did not tell him to remove it or anything else.\n\nOnly commentary I had on other solutions was that I was curious why a shitty clone of our app scored higher than us initially. Nothing to do with cloudroom.",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2111990254408434095",
+    "source_url": "https://x.com/thsottiaux/status/2111990254408434095",
+    "published_at": "Mon Oct 19 01:18:10 +0000 2026",
+    "split": "development",
+    "state": {
+      "post": {
+        "text": "Day 14/\n\nSmall quality of life improvement. You can now edit previous messages within a thread in the desktop app. Long time requested, and took way too long to get that one out.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "feature",
+    "rationale": "Concrete new OpenAI capability or shipped improvement."
+  },
+  {
+    "id": "2111994295364571327",
+    "source_url": "https://x.com/thsottiaux/status/2111994295364571327",
+    "published_at": "Mon Oct 19 01:34:13 +0000 2026",
+    "split": "development",
+    "state": {
+      "post": {
+        "text": "@JamesStewau0y5 Registers as time travel",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "@thsottiaux I’m genuinely confused as to what this means. So a prompt I’ve sent earlier I can go back and change? Does it register like a steer?",
+          "is_monitored_author": false
+        },
+        {
+          "relation": "parent",
+          "depth": 2,
+          "text": "Day 14/\n\nSmall quality of life improvement. You can now edit previous messages within a thread in the desktop app. Long time requested, and took way too long to get that one out.",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2112034063934742720",
+    "source_url": "https://x.com/thsottiaux/status/2112034063934742720",
+    "published_at": "Mon Oct 19 04:12:15 +0000 2026",
+    "split": "development",
+    "state": {
+      "post": {
+        "text": "Our team worked with OpenCode to have their users who are also OpenAI API customers back in business and any credits refunded which would have been drawn in the attack.\n\nAlso, you can request Daybreak Blue access to use our cyber permissive setup for defense. Do not wait until you have to deal with an incident. We’re here to help.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "neither",
+    "rationale": "Incident restitution and access reminder, not a new release or quota reset."
+  },
+  {
+    "id": "2112034328549216593",
+    "source_url": "https://x.com/thsottiaux/status/2112034328549216593",
+    "published_at": "Mon Oct 19 04:13:18 +0000 2026",
+    "split": "development",
+    "state": {
+      "post": {
+        "text": "https://chatgpt.com/cyber",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "Our team worked with OpenCode to have their users who are also OpenAI API customers back in business and any credits refunded which would have been drawn in the attack.\n\nAlso, you can request Daybreak Blue access to use our cyber permissive setup for defense. Do not wait until you have to deal with an incident. We’re here to help.",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2112039275344941371",
+    "source_url": "https://x.com/thsottiaux/status/2112039275344941371",
+    "published_at": "Mon Oct 19 04:32:57 +0000 2026",
+    "split": "development",
+    "state": {
+      "post": {
+        "text": "I bought a new domain and I’m very excited for it. Very",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2112039554538770846",
+    "source_url": "https://x.com/thsottiaux/status/2112039554538770846",
+    "published_at": "Mon Oct 19 04:34:04 +0000 2026",
+    "split": "development",
+    "state": {
+      "post": {
+        "text": "@xiangning0 You wish",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "如果让 Tibo 来发布 Deepseek 的新模型：\n第一天，速度从 200t/s 提升到了300\n第二天，重置\n第三天，现在输入框可以生成回复了\n第四天，重置\n第五天，修改了默认上下文长度\n第六天，发重置卡\n第七天，支持 8 倍速，仅 pro 用户可用\n第二十八天，发布全新模型命名deepseek v4.5 天王星 Ultra fast",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2112039750999986304",
+    "source_url": "https://x.com/thsottiaux/status/2112039750999986304",
+    "published_at": "Mon Oct 19 04:34:51 +0000 2026",
+    "split": "development",
+    "state": {
+      "post": {
+        "text": "@codeglitch @hqmank Sorry",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "@hqmank I cant agree with the replying part, I tried to get him to see my bug reports, 0 replies, and there are a lot of them. Pinned message.",
+          "is_monitored_author": false
+        },
+        {
+          "relation": "parent",
+          "depth": 2,
+          "text": "Tibo might be the most active OpenAI person on X.\n\nHe's always replying to bug reports and resetting Codex limits. You'd think he worked in DevRel.\n\nBut according to WIRED, he leads OpenAI's core products, including ChatGPT and Codex, and reports directly to Greg Brockman.",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2112049026636103954",
+    "source_url": "https://x.com/thsottiaux/status/2112049026636103954",
+    "published_at": "Mon Oct 19 05:11:42 +0000 2026",
+    "split": "development",
+    "state": {
+      "post": {
+        "text": "@jxnlco Didn’t know Batman worked at OpenAI",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2112268918681485431",
+    "source_url": "https://x.com/thsottiaux/status/2112268918681485431",
+    "published_at": "Mon Oct 19 19:45:28 +0000 2026",
+    "split": "development",
+    "state": {
+      "post": {
+        "text": "Day 15/ We're cooked",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "quote",
+          "depth": 1,
+          "text": "Here’s what we’re cooking with Codex:\n\nhttps://x.com/i/broadcasts/1RKZzBELBbXKB",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "Broadcast teaser without a concrete new capability in supplied text."
+  },
+  {
+    "id": "2112426606870585551",
+    "source_url": "https://x.com/thsottiaux/status/2112426606870585551",
+    "published_at": "Tue Oct 20 06:12:04 +0000 2026",
+    "split": "development",
+    "state": {
+      "post": {
+        "text": "@theo Instead\n\n1) Buy a Pro 100 sub\n2) ???\n3) Enjoy T3Code",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "Can I be real for a sec? I'm super nervous about this launch. It's something I never thought I would do, and I want to be as transparent as possible.\n\nThis course is $1,300. You should not buy it. Let me explain.\n\nI've done YouTube for over 5 years now. I've never done a paid course of any form before. I have worked hard to keep all of my content freely available.\n\nI'm lucky to have found so many awesome companies that will sponsor short sections of my videos, enabling me to employ an incredible team without compromising my content.\n\nI have always hated the idea of charging my viewers. If I can't convince a company to cover our costs, that's my failure, and I don't like putting that failure on my audience.\n\nOn October 26th, my first-ever paid course with @megadevhq goes live. It's $1300 a seat. That's really expensive.\n\nI keep imagining a scenario and it makes me feel sick. I think of a young, excited dev who's recently gotten into my content. They're scared of falling behind, so they cut their expenses and save up the money, because they believe my course might be the key to getting a real dev job.\n\nEven now as I type this, I feel my heart rate increasing and my stomach flipping over itself. The thought of anyone putting themselves in a harder financial position, all because of me?\n\nThis might actually be my biggest fear.\n\nI don't want to sell promises. I don't want people paying me for hope.\n\nSo why did I do this course with Mega?\n\nTwo reasons: the people and the content.\n\nI was hit up by Joel about this course late last year. I trust him with my life. Even then, it wouldn't have been enough to convince me.\n\nThen I learned the other instructors who would be involved. Kent, Angie and John. All three were fundamental in my growth as an engineer. Getting to work with all of them was far too exciting. Made it really hard to say no.\n\nIf I had nothing unique to say, I still would have said no. I'm incredibly busy as-is, and I'm running low on space to even show you guys all the stuff I do.\n\nWhat pushed me over the line was the realization that there is so much I want to say that doesn't fit in a YouTube video.\n\nI just did a video about \"prompting better\". It's a deep dive on my real world workflows and how I think about building with AI. The only way I could get people to watch it was clickbaiting the title, \"your prompts suck\".\n\nWhat if I wasn't bound by clickability? What if I didn't have to focus on being entertaining for the whole video runtime? What if I was freed from the constrains of making content for the 500,000+ people who watch my videos?\n\nI love YouTube. I love my audience. I love the videos I make. But I'd also love to do a multi-part deep dive on \"building with AI in real world code bases\" that I know would bomb on YouTube.\n\nThat's what I filmed for Mega. I'm so proud of it. It's fundamentally different from any videos I've done before, but still feels like me just doing my thing.\n\nIs it worth $1,300, though? If that $1,300 comes out of the same bank account that you pay rent with, probably not.\n\nIs it worth $1,300 per person to a company trying to help their eng teams use AI properly at work? In my opinion, this is a bargain.\n\nIf you're paying your engineers $100k a year, and this course makes them 5% more effective at their jobs, that's a 4x ROI.\n\nWhat I'm trying to say is simple: Don't buy this course.\n\nGet your boss to buy it.\n\n(If you have an education budget at your job that works too. Just please don't pay for this yourself. Seriously.)\n\nSorry for the rant. If you can't tell, I'm genuinely quite nervous about this 🙃",
+          "is_monitored_author": false
+        },
+        {
+          "relation": "quote",
+          "depth": 2,
+          "text": "Obligatory call out:\nYes, the course is expensive. That's because we want your company/boss to pay for it.\n\nIf you can't expense it, please do NOT buy this course if you aren't making Real Dev Money™.\n\nIt's super focused on \"how to apply your existing engineering knowledge to building with AI\". Genuinely not that useful if you're not a full time dev yet.\n\nSeriously: DO NOT PUT YOURSELF IN A BAD FINANCIAL POSITION TO TAKE THIS COURSE. My free YouTube videos will help you more with getting your first job, I promise 🙏",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2112432076767289678",
+    "source_url": "https://x.com/thsottiaux/status/2112432076767289678",
+    "published_at": "Tue Oct 20 06:33:48 +0000 2026",
+    "split": "development",
+    "state": {
+      "post": {
+        "text": "Day 15/ Nevermind, we're still cooking... and reset. Enjoy.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "quote",
+          "depth": 1,
+          "text": "Day 15/ We're cooked",
+          "is_monitored_author": true
+        },
+        {
+          "relation": "quote",
+          "depth": 2,
+          "text": "Here’s what we’re cooking with Codex:\n\nhttps://x.com/i/broadcasts/1RKZzBELBbXKB",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "reset",
+    "rationale": "Explicit quota reset or linked timing."
+  },
+  {
+    "id": "2112592264686149749",
+    "source_url": "https://x.com/thsottiaux/status/2112592264686149749",
+    "published_at": "Tue Oct 20 17:10:20 +0000 2026",
+    "split": "development",
+    "state": {
+      "post": {
+        "text": "There were reports of usage draining faster than anticipated for some users over the weekend. We've identified approximately 40,000 accounts that had an inconsistency on which usage limits where the actual usage that was applied did not correspond to their actual selected plan. We are reaching out individually to all these users and have corrected the issue. If this affected you, we'll add credits to your account. Sorry we got this wrong.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "neither",
+    "rationale": "Billing/plan correction and restitution, not product feature or quota reset announcement."
+  },
+  {
+    "id": "2112712984644784534",
+    "source_url": "https://x.com/thsottiaux/status/2112712984644784534",
+    "published_at": "Wed Oct 21 01:10:02 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "Day 16/\n\nYou can now cache for 12h in the API and for logged in users across Codex & Work we keep cache forever and you don’t have any penalty for coming back to an old conversation or resuming after a few hours and are now guaranteed to hit the cache.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "quote",
+          "depth": 1,
+          "text": "You can now choose 12-hour prompt caching in the API.\n\nPersistent agents, like dots, reuse context throughout the day. \n\nYou can keep shared instructions, tools, and context cached longer and pay the lower cached-input rate, even when requests are hours apart.",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "feature",
+    "rationale": "Concrete new OpenAI capability or shipped improvement."
+  },
+  {
+    "id": "2112798407928713717",
+    "source_url": "https://x.com/thsottiaux/status/2112798407928713717",
+    "published_at": "Wed Oct 21 06:49:29 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "@theo I demand a reset",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "T3 Connect has not been reliable today. Super sorry about that. Should be recovered now 🤞\n\nNerdy deets below for those who care:\n\nT3 Connect is our built-in alternative to Tailscale for remote connections on T3 Code.\n\nTurns out there's so many T3 Connect users that we are hitting some rate limits on Cloudflare's side! They have confirmed the issues on their end and are working on fixes.\n\nWe were unaware of these limits (seems like they were too). We're well under the limits we knew about, specifically the # of tunnels we can deploy to our users. The alerting on these failures was also pretty rough. CF has confirmed all of this and is working on fixes on their end 🙏\n\nCrazy to have a product so popular that it's taking down CloudFlare lol. We are working hard to prevent these types of regressions going forward.\n\nThis work is full of fun challenges. Once a thundering herd starts, we're a bit screwed since we can't control the code you're running on your end! We have to plan way in advance for changes because we can't guarantee that users are on the latest version at any given time.\n\nThanks for sticking through with us in the interim. If you want to maximize your uptime and minimize chances of connection loss like today, I will not be disappointed if you set up Tailscale as a fallback (I do this personally)",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "Requests a reset from another author; does not announce one."
+  },
+  {
+    "id": "2112906496736641416",
+    "source_url": "https://x.com/thsottiaux/status/2112906496736641416",
+    "published_at": "Wed Oct 21 13:58:59 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "@JustLingonberry @sama is this true",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "Unconfirmed OpenAI insider info: \n\nThey are not happy with Tibo and no more endless resets. \n\n$500 worth of credits that won't last a few hours with astra is ****ing insult.",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2112992042465009736",
+    "source_url": "https://x.com/thsottiaux/status/2112992042465009736",
+    "published_at": "Wed Oct 21 19:38:55 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "@claudeai Dot, meet Duet. Duet, meet Dot. Be nice to each other.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "We’re opening a research preview of Claude Duet, a new app where Claude works as a proactive agent.\n\nIt comes to you with what needs your attention, completes tasks you ask of it, keeps working when you step away, and checks with you before it acts on your behalf.",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "Greeting a competitor product, not announcing an OpenAI release."
+  },
+  {
+    "id": "2113009945134379213",
+    "source_url": "https://x.com/thsottiaux/status/2113009945134379213",
+    "published_at": "Wed Oct 21 20:50:03 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "@theo Congrats",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "T3 Code users processed ~36.5 trillion tokens in the same window, 1.5x that of all Gemini 4 Argon demand globally 🤷",
+          "is_monitored_author": false
+        },
+        {
+          "relation": "quote",
+          "depth": 2,
+          "text": "In just the first 72 hours since Gemini 4 Argon launched, we processed ~25 trillion tokens, the demand for intelligence is incredible and still under appreciated!",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2113029655095836957",
+    "source_url": "https://x.com/thsottiaux/status/2113029655095836957",
+    "published_at": "Wed Oct 21 22:08:22 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "Dot, Dotter, Dottest",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "neither",
+    "rationale": "Unexplained wordplay with no textual announcement."
+  },
+  {
+    "id": "2113029854417600834",
+    "source_url": "https://x.com/thsottiaux/status/2113029854417600834",
+    "published_at": "Wed Oct 21 22:09:10 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "Fully included in the Pro plan, doesn't draw on your weekly usage.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "Dot, Dotter, Dottest",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "Existing plan inclusion clarification, without a stated change."
+  },
+  {
+    "id": "2113162277688070445",
+    "source_url": "https://x.com/thsottiaux/status/2113162277688070445",
+    "published_at": "Thu Oct 22 06:55:22 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "Day 17/ Bet you thought we forgot, but no, it’s reset day today.\n\nAlso good time to remind you to get Daybreak Blue access, it only takes 15 mins and you don’t want to have to do it in the middle of an incident.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "reset",
+    "rationale": "Explicit quota reset or linked timing."
+  },
+  {
+    "id": "2113162413008884099",
+    "source_url": "https://x.com/thsottiaux/status/2113162413008884099",
+    "published_at": "Thu Oct 22 06:55:54 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "Lands tomorrow before 10am PST.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "Day 17/ Bet you thought we forgot, but no, it’s reset day today.\n\nAlso good time to remind you to get Daybreak Blue access, it only takes 15 mins and you don’t want to have to do it in the middle of an incident.",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "reset",
+    "rationale": "Explicit quota reset or linked timing."
+  },
+  {
+    "id": "2113163458867032238",
+    "source_url": "https://x.com/thsottiaux/status/2113163458867032238",
+    "published_at": "Thu Oct 22 07:00:03 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "@ebloch Hefty",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "Insane. \n\nMy dot found an $8,300 mistake in my tax return. The return was prepared by a tax firm that is best in class! \n\nPeople, if you’re not using ChatGPT for your Finances, you are definitely leaving money on the table.",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2113404560853397516",
+    "source_url": "https://x.com/thsottiaux/status/2113404560853397516",
+    "published_at": "Thu Oct 22 22:58:07 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "@romainhuet Very baguette of you",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "The Decisions API is now generally available!\n\nTo celebrate, I had Codex reimagine a very important app… 🌭",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2113492187770175603",
+    "source_url": "https://x.com/thsottiaux/status/2113492187770175603",
+    "published_at": "Fri Oct 23 04:46:19 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "Day 18/ Decisions API is GA, OpenResponses joined the Linux Foundation, we shipped some performance improvements and Uber is going all-in on codex & work. But yes… that’s a reset!",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "reset",
+    "rationale": "Real reset takes priority over multiple simultaneous feature announcements."
+  },
+  {
+    "id": "2113492502355562875",
+    "source_url": "https://x.com/thsottiaux/status/2113492502355562875",
+    "published_at": "Fri Oct 23 04:47:34 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "Landing tomorrow before 10am PST together with a small ship.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "Day 18/ Decisions API is GA, OpenResponses joined the Linux Foundation, we shipped some performance improvements and Uber is going all-in on codex & work. But yes… that’s a reset!",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "reset",
+    "rationale": "Explicit quota reset or linked timing."
+  },
+  {
+    "id": "2113770573994299544",
+    "source_url": "https://x.com/thsottiaux/status/2113770573994299544",
+    "published_at": "Fri Oct 23 23:12:31 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "Day 19/ Small updates. Calls connect much faster for dots, changing reasoning in codex & work mid conversation does not invalidate cache anymore and a we've also updated the codex cli.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "feature",
+    "rationale": "Concrete new OpenAI capability or shipped improvement."
+  },
+  {
+    "id": "2113770862860222611",
+    "source_url": "https://x.com/thsottiaux/status/2113770862860222611",
+    "published_at": "Fri Oct 23 23:13:40 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "On codex cli updates. We've added reusable prompt presets, inline model and permission settings, and enterprise MCP sign-in. We've also fixed failures when resuming long sessions and added Windows corporate-proxy authentication.\n\nSurprisingly the CLI has grown 2X in usage since devday.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "Day 19/ Small updates. Calls connect much faster for dots, changing reasoning in codex & work mid conversation does not invalidate cache anymore and a we've also updated the codex cli.",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "feature",
+    "rationale": "Concrete new OpenAI capability or shipped improvement."
+  },
+  {
+    "id": "2113771215433392478",
+    "source_url": "https://x.com/thsottiaux/status/2113771215433392478",
+    "published_at": "Fri Oct 23 23:15:04 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "@playdropai @bcherny @alexandr_wang @poteto Fun game",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "Agents working in tandem. What could go wrong?\n\n✅ Space datacenters\n✅ Kardashev scale\n✅ Dyson spheres\n\nWe put your mascots in orbit. Keeping them alive is your problem.\n\n@thsottiaux @bcherny @alexandr_wang @poteto",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2113838156193894447",
+    "source_url": "https://x.com/thsottiaux/status/2113838156193894447",
+    "published_at": "Sat Oct 24 03:41:04 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "The difference between having a tool and being a tool is subtle these days and it’s easy to accidentally build yourself into being a tool. Don’t be a tool.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2114030784625647855",
+    "source_url": "https://x.com/thsottiaux/status/2114030784625647855",
+    "published_at": "Sat Oct 24 16:26:30 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "Saturday is for fixing bugs while sipping coffee. What are some great places to hangout in SF?",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "neither",
+    "rationale": "Personal work activity, not a shipped fix announcement."
+  },
+  {
+    "id": "2114037527598576003",
+    "source_url": "https://x.com/thsottiaux/status/2114037527598576003",
+    "published_at": "Sat Oct 24 16:53:18 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "@vishalsingh2972 One day",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "@thsottiaux RESET PARK 😎",
+          "is_monitored_author": false
+        },
+        {
+          "relation": "parent",
+          "depth": 2,
+          "text": "Saturday is for fixing bugs while sipping coffee. What are some great places to hangout in SF?",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2114073762895405067",
+    "source_url": "https://x.com/thsottiaux/status/2114073762895405067",
+    "published_at": "Sat Oct 24 19:17:17 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "@TokenGremlin Hi 👋",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "Wait, are we seeing a wave of resignations at OpenAI now too?\n\nPlease don't tell me Tibo is next.\n\nSeriously, what the hell is going on?",
+          "is_monitored_author": false
+        },
+        {
+          "relation": "quote",
+          "depth": 2,
+          "text": "👀 Mitchell Gordon (@mitchellgordon) has left OpenAI.",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2114074317759938918",
+    "source_url": "https://x.com/thsottiaux/status/2114074317759938918",
+    "published_at": "Sat Oct 24 19:19:29 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "@can @OpenAIDevs No need for a bribe. What’s bothering you",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "can i bribe someone at @OpenAIDevs to remove \"mini\" from codex?",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2114074885622501706",
+    "source_url": "https://x.com/thsottiaux/status/2114074885622501706",
+    "published_at": "Sat Oct 24 19:21:45 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "DM if you want to help scale dots to 1B users and have done similar things in the past",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2114086171907428846",
+    "source_url": "https://x.com/thsottiaux/status/2114086171907428846",
+    "published_at": "Sat Oct 24 20:06:35 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "@specialkdelslay Fortunately, this is fake",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "wtf does this even mean & why did they start it off with congratulations lmao",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2114125293124542632",
+    "source_url": "https://x.com/thsottiaux/status/2114125293124542632",
+    "published_at": "Sat Oct 24 22:42:03 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "@alexandr_wang Step 1: Quit posting butts and go buy containers\nStep 2: ???\nStep 3: Celebrate your 12 users",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "@thsottiaux oops you misspelled muse",
+          "is_monitored_author": false
+        },
+        {
+          "relation": "parent",
+          "depth": 2,
+          "text": "DM if you want to help scale dots to 1B users and have done similar things in the past",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2114125878804545940",
+    "source_url": "https://x.com/thsottiaux/status/2114125878804545940",
+    "published_at": "Sat Oct 24 22:44:22 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "@mitsuhiko I doubt they are on twitter",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "Saturday is for time with family.",
+          "is_monitored_author": false
+        },
+        {
+          "relation": "quote",
+          "depth": 2,
+          "text": "Saturday is for fixing bugs while sipping coffee. What are some great places to hangout in SF?",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2114199013176303641",
+    "source_url": "https://x.com/thsottiaux/status/2114199013176303641",
+    "published_at": "Sun Oct 25 03:34:59 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "@alexandr_wang Congrats, that’s not a butt",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "someone should check in on tibo. hope everything is ok",
+          "is_monitored_author": false
+        },
+        {
+          "relation": "quote",
+          "depth": 2,
+          "text": "the aura loss needs to be studied",
+          "is_monitored_author": false
+        },
+        {
+          "relation": "quote",
+          "depth": 3,
+          "text": "@alexandr_wang Step 1: Quit posting butts and go buy containers\nStep 2: ???\nStep 3: Celebrate your 12 users",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2114200152701575656",
+    "source_url": "https://x.com/thsottiaux/status/2114200152701575656",
+    "published_at": "Sun Oct 25 03:39:31 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "Day 20/ Rest and reset",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "reset",
+    "rationale": "Explicit quota reset or linked timing."
+  },
+  {
+    "id": "2114200291319124163",
+    "source_url": "https://x.com/thsottiaux/status/2114200291319124163",
+    "published_at": "Sun Oct 25 03:40:04 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "By midnight PST",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "Day 20/ Rest and reset",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "reset",
+    "rationale": "Explicit quota reset or linked timing."
+  },
+  {
+    "id": "2114228044072403055",
+    "source_url": "https://x.com/thsottiaux/status/2114228044072403055",
+    "published_at": "Sun Oct 25 05:30:20 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "@theo Not a real improvement, put the reset in the bag",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "Just realized we've pretty much maintained pace with the \"28 days of improvements to Codex\". We've had at least one solid improvement every day of the month.\n\nLet's make it official. Gonna ship one meaningful improvement to T3 Code every day for however long I'm capable :)",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "Joking demand directed at a third-party product, not an OpenAI reset."
+  },
+  {
+    "id": "2114228445043691592",
+    "source_url": "https://x.com/thsottiaux/status/2114228445043691592",
+    "published_at": "Sun Oct 25 05:31:56 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "@_jayyy18_13k",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "tibo's 28 day challenge is starting to look like 28 days of finding excuses to reset codex 😭",
+          "is_monitored_author": false
+        },
+        {
+          "relation": "quote",
+          "depth": 2,
+          "text": "Day 20/ Rest and reset",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2114237083652882932",
+    "source_url": "https://x.com/thsottiaux/status/2114237083652882932",
+    "published_at": "Sun Oct 25 06:06:16 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "It is all propagated. Enjoy some mad codexing tomorrow. Fun week ahead too.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "quote",
+          "depth": 1,
+          "text": "By midnight PST",
+          "is_monitored_author": true
+        },
+        {
+          "relation": "parent",
+          "depth": 2,
+          "text": "Day 20/ Rest and reset",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "reset",
+    "rationale": "Confirms propagation; explicit quote-to-parent chain establishes quota reset."
+  },
+  {
+    "id": "2114237441250828563",
+    "source_url": "https://x.com/thsottiaux/status/2114237441250828563",
+    "published_at": "Sun Oct 25 06:07:41 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "@ScriptedAlchemy .com",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "poteto",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2114365873049993364",
+    "source_url": "https://x.com/thsottiaux/status/2114365873049993364",
+    "published_at": "Sun Oct 25 14:38:01 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "@theo Love to see it!!",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "I made t3 code faster again btw",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2114435715605885396",
+    "source_url": "https://x.com/thsottiaux/status/2114435715605885396",
+    "published_at": "Sun Oct 25 19:15:33 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "@kirtandopamine Reality",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "holy shit, i'm failing to understand if he is actually serious",
+          "is_monitored_author": false
+        },
+        {
+          "relation": "quote",
+          "depth": 2,
+          "text": "DM if you want to help scale dots to 1B users and have done similar things in the past",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2114435873857028129",
+    "source_url": "https://x.com/thsottiaux/status/2114435873857028129",
+    "published_at": "Sun Oct 25 19:16:11 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "@himanshutwtxs Did you?",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "did you buy https://poteto.com?",
+          "is_monitored_author": false
+        },
+        {
+          "relation": "quote",
+          "depth": 2,
+          "text": "@ScriptedAlchemy .com",
+          "is_monitored_author": true
+        },
+        {
+          "relation": "parent",
+          "depth": 3,
+          "text": "poteto",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2114588174249071102",
+    "source_url": "https://x.com/thsottiaux/status/2114588174249071102",
+    "published_at": "Mon Oct 26 05:21:22 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "Day 21/ Wonder what happens the remaining seven days. But today is a reset.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "reset",
+    "rationale": "Explicit quota reset or linked timing."
+  },
+  {
+    "id": "2114588845874491691",
+    "source_url": "https://x.com/thsottiaux/status/2114588845874491691",
+    "published_at": "Mon Oct 26 05:24:02 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "@Aoakudotcom Me too, me too",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "@thsottiaux Nice! I am going to miss this when it’s over.",
+          "is_monitored_author": false
+        },
+        {
+          "relation": "parent",
+          "depth": 2,
+          "text": "Day 21/ Wonder what happens the remaining seven days. But today is a reset.",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2114595002210783279",
+    "source_url": "https://x.com/thsottiaux/status/2114595002210783279",
+    "published_at": "Mon Oct 26 05:48:30 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "Reminder you can customize the appearance of chatgpt on web and make it soothing\n\nhttps://chatgpt.com/settings/appearance",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "neither",
+    "rationale": "Reminder of existing settings, not a new feature."
+  },
+  {
+    "id": "2114598609245126731",
+    "source_url": "https://x.com/thsottiaux/status/2114598609245126731",
+    "published_at": "Mon Oct 26 06:02:50 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "@bijanbowen 10/10 soothed",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "@thsottiaux thx for the tip, this is soothing to me",
+          "is_monitored_author": false
+        },
+        {
+          "relation": "parent",
+          "depth": 2,
+          "text": "Reminder you can customize the appearance of chatgpt on web and make it soothing\n\nhttps://chatgpt.com/settings/appearance",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2114598675930296518",
+    "source_url": "https://x.com/thsottiaux/status/2114598675930296518",
+    "published_at": "Mon Oct 26 06:03:06 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "@Sisymiro Absolutely",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "@thsottiaux Could you add Claude's default color scheme?",
+          "is_monitored_author": false
+        },
+        {
+          "relation": "parent",
+          "depth": 2,
+          "text": "Reminder you can customize the appearance of chatgpt on web and make it soothing\n\nhttps://chatgpt.com/settings/appearance",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2114599388454481930",
+    "source_url": "https://x.com/thsottiaux/status/2114599388454481930",
+    "published_at": "Mon Oct 26 06:05:56 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "@larsencc @bot Not enough resets",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "Sunday @bot feedback thread.\n\nWhats the most annoying thing about grok bot right now? Be honest and brutal.",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "Joking complaint about another bot, not quota-reset announcement."
+  },
+  {
+    "id": "2114800277677092936",
+    "source_url": "https://x.com/thsottiaux/status/2114800277677092936",
+    "published_at": "Mon Oct 26 19:24:11 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "Day 22/ Terra is back! \n\nOur first model that is significantly better at writing,  personality and nuanced understanding of requests.\n\nPacks a punch across the board, very good at computer use, and gives 2X more usage than 6.1 Sol across API and subscriptions.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "quote",
+          "depth": 1,
+          "text": "GPT-6.1 Terra: delivering fast and capable computer use at a lower price.\n\nGPT-6.1 Terra understands what’s on screen, takes action across apps, writes naturally, and is a more capable model for your whole workday with the efficiency to take on more of it.",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "feature",
+    "rationale": "Concrete new OpenAI capability or shipped improvement."
+  },
+  {
+    "id": "2114839845604667840",
+    "source_url": "https://x.com/thsottiaux/status/2114839845604667840",
+    "published_at": "Mon Oct 26 22:01:25 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "@ZryMiller @rohit3a Lore accurate tibo",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "I had Terra-6.1 draw @thsottiaux in Microsoft paint. Video is sped up about 7.9x\n\nIdea from @rohit3a.",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2114922374978277786",
+    "source_url": "https://x.com/thsottiaux/status/2114922374978277786",
+    "published_at": "Tue Oct 27 03:29:22 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "@TokenGremlin Interesting",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "I have no idea what OpenAI did with GPT-6.1 Terra, but this thing runs like it's in Ultrafast mode when you enable Fast. And even at normal speed, it's ridiculously fast.\n\nI genuinely wasn't expecting this. It caught me completely off guard, and I think OpenAI has pulled off some kind of engineering miracle with this model's inference speed.\n\nOpenAI, please bring this level of optimization to every model going forward.\n\nThe downside? Some users still can't access it. I'm already opening a support ticket to get the issue investigated.",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2115148258372964831",
+    "source_url": "https://x.com/thsottiaux/status/2115148258372964831",
+    "published_at": "Tue Oct 27 18:26:57 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "@BrenBuilds A sign of great things to come",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "GPT-6.1 Terra fixed all 20 bugs in my app for about $.06 a run \n\nGPT-6.1 SOL did the same for $.22 and opus 5.5 for $.78 \n\nGPT-6 Luna and Haiku 5.5 cost less but missed bugs in every run",
+          "is_monitored_author": false
+        },
+        {
+          "relation": "quote",
+          "depth": 2,
+          "text": "GPT-6.1 Terra: delivering fast and capable computer use at a lower price.\n\nGPT-6.1 Terra understands what’s on screen, takes action across apps, writes naturally, and is a more capable model for your whole workday with the efficiency to take on more of it.",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2115272201922572627",
+    "source_url": "https://x.com/thsottiaux/status/2115272201922572627",
+    "published_at": "Wed Oct 28 02:39:27 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "@Xanderwow_A What's going on",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "Perhaps, in another universe, their story is about more than Reset, Bot, and Code.",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2115273064481218829",
+    "source_url": "https://x.com/thsottiaux/status/2115273064481218829",
+    "published_at": "Wed Oct 28 02:42:53 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "Day 23/ Much requested iCloud Main & Calendar plugins. Just kidding, today is a reset. Still much requested though!",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "quote",
+          "depth": 1,
+          "text": "Much requested, and now yours to connect: iCloud Mail and Calendar plugins are available in ChatGPT.\n\nAsk ChatGPT to find that email, catch up on your inbox, check what’s next, or update a calendar event. Phew.\n\nAvailable on all ChatGPT plans on web, desktop, and iOS.",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "reset",
+    "rationale": "Author retracts feature framing and explicitly announces reset; reset wins."
+  },
+  {
+    "id": "2115273253711409208",
+    "source_url": "https://x.com/thsottiaux/status/2115273253711409208",
+    "published_at": "Wed Oct 28 02:43:38 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "Lands by midnight PST.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "Day 23/ Much requested iCloud Main & Calendar plugins. Just kidding, today is a reset. Still much requested though!",
+          "is_monitored_author": true
+        },
+        {
+          "relation": "quote",
+          "depth": 2,
+          "text": "Much requested, and now yours to connect: iCloud Mail and Calendar plugins are available in ChatGPT.\n\nAsk ChatGPT to find that email, catch up on your inbox, check what’s next, or update a calendar event. Phew.\n\nAvailable on all ChatGPT plans on web, desktop, and iOS.",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "reset",
+    "rationale": "Explicit quota reset or linked timing."
+  },
+  {
+    "id": "2115289940233961584",
+    "source_url": "https://x.com/thsottiaux/status/2115289940233961584",
+    "published_at": "Wed Oct 28 03:49:56 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "@TokenGremlin @poteto lend me some of your strength, there is still time",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "ChatGPT Pro users, don't forget that your usage limits are getting cut in half in just 3 days.\n\nTerrible news to be reminded of, of course. And the only way OpenAI can make this whole situation any less awful is by releasing a model that's as good as or better than Opus 5.5, while being way more efficient than the current GPT-6 Astra.",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "Reaction to speculation and plan complaint; no concrete announcement."
+  },
+  {
+    "id": "2115290111147712544",
+    "source_url": "https://x.com/thsottiaux/status/2115290111147712544",
+    "published_at": "Wed Oct 28 03:50:37 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "@matteing Hi Sergio",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "Just spoke to an insider in a major AI lab.",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota-reset announcement."
+  },
+  {
+    "id": "2115290318652444729",
+    "source_url": "https://x.com/thsottiaux/status/2115290318652444729",
+    "published_at": "Wed Oct 28 03:51:26 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "@AdamHoltererer Maybe it’s because I have bad long term memory.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "OpenAI has reset Codex limits 11 times this month",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "Reaction to historical reset count, not a new reset."
+  },
+  {
+    "id": "2115297093879472332",
+    "source_url": "https://x.com/thsottiaux/status/2115297093879472332",
+    "published_at": "Wed Oct 28 04:18:22 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "https://www.poteto.com has landed",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "neither",
+    "rationale": "Unrelated personal domain launch; no evidence of OpenAI product capability."
+  },
+  {
+    "id": "2115299029294920189",
+    "source_url": "https://x.com/thsottiaux/status/2115299029294920189",
+    "published_at": "Wed Oct 28 04:26:03 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "@mark_k @OpenAI Taking notes",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "I'm going to say this:\n\nThe model I really want from @OpenAI is neither Terra nor Astra. Terra is crap, and Astra is expensive and slow.\n\nWhat we really need is a more capable Sol that can compete with Opus 5.5 on price and speed.\n\nBring on GPT 6.2 Sol (or maybe 6.5?).",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "Acknowledges feature request, not a release commitment."
+  },
+  {
+    "id": "2115329600897319076",
+    "source_url": "https://x.com/thsottiaux/status/2115329600897319076",
+    "published_at": "Wed Oct 28 06:27:32 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "@BenjaminDEKR Pretty crazy but we have this thing called GPT and it just does stuff when you ask",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "do you guys ever do any work",
+          "is_monitored_author": false
+        },
+        {
+          "relation": "quote",
+          "depth": 2,
+          "text": "https://www.poteto.com has landed",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "Generic praise of existing GPT functionality, not a new change."
+  },
+  {
+    "id": "2115330127886463244",
+    "source_url": "https://x.com/thsottiaux/status/2115330127886463244",
+    "published_at": "Wed Oct 28 06:29:38 +0000 2026",
+    "split": "holdout",
+    "state": {
+      "post": {
+        "text": "And it's done. See you tomorrow for some good news.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "quote",
+          "depth": 1,
+          "text": "Lands by midnight PST.",
+          "is_monitored_author": true
+        },
+        {
+          "relation": "parent",
+          "depth": 2,
+          "text": "Day 23/ Much requested iCloud Main & Calendar plugins. Just kidding, today is a reset. Still much requested though!",
+          "is_monitored_author": true
+        },
+        {
+          "relation": "quote",
+          "depth": 3,
+          "text": "Much requested, and now yours to connect: iCloud Mail and Calendar plugins are available in ChatGPT.\n\nAsk ChatGPT to find that email, catch up on your inbox, check what’s next, or update a calendar event. Phew.\n\nAvailable on all ChatGPT plans on web, desktop, and iOS.",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "reset",
+    "rationale": "Confirmation linked by quote and its parent to a reset; vague future teaser adds nothing."
+  }
+]

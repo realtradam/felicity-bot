@@ -1,0 +1,1025 @@
+[
+  {
+    "id": "2096688770523467947",
+    "source_url": "https://x.com/thsottiaux/status/2096688770523467947",
+    "published_at": "Sun Sep 06 19:55:32 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "To calibrate you all on which reasoning effort to use for Astra, know that GPT-6 Astra on low performs better than GPT-5.6 Sol on high.\n\nIf you were using high reasoning efforts with Sol and were happy, I suggest you move down to low or medium for Astra.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota reset."
+  },
+  {
+    "id": "2096717905614524491",
+    "source_url": "https://x.com/thsottiaux/status/2096717905614524491",
+    "published_at": "Sun Sep 06 21:51:18 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "We've made some improvements that improve usage on the long tail for power users of Astra when logged in with your ChatGPT account.\n\nNo change in quality and a pure win that on the long tail can result in up to 3-4X less usage being drawn from the subscription.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "feature",
+    "rationale": "Concrete new OpenAI capability or shipped improvement."
+  },
+  {
+    "id": "2097174560412246215",
+    "source_url": "https://x.com/thsottiaux/status/2097174560412246215",
+    "published_at": "Tue Sep 08 04:05:53 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "All reset for everyone. Enjoy the week with Astra.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "quote",
+          "depth": 1,
+          "text": "Never gonna give you up\nNever gonna let you down\nNever gonna run around and desert you\nNever gonna make you cry\nNever gonna say goodbye\nNever gonna tell a lie and hurt you\n\nThanks for reading. We will do a global reset of the usage for all paid subscriptions so that you can keep enjoying Astra after burning through all of it doing fun 3D modeling in blender. The work week is about to start.\n\nLands around 6pm PST today.",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "reset",
+    "rationale": "Announces or confirms quota reset."
+  },
+  {
+    "id": "2097482307812859978",
+    "source_url": "https://x.com/thsottiaux/status/2097482307812859978",
+    "published_at": "Wed Sep 09 00:28:46 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "I for one am glad prompt injection is getting solved across the industry and that Astra is not only our most capable, but also our most aligned model to date. But also ...",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "quote",
+          "depth": 1,
+          "text": "I am pleased to see that OpenAI’s new model is roughly on par with Gemini Flash and Opus 4.8 on prompt injection risk. Nice work!\n\nEvaluating and naming other labs turns out to be a great way to encourage them to train more aligned models. We will continue to do this until other labs pay more attention to safety. This is good for everyone and there is a lot of room left to go!\n\nWe solved prompt injection in practice for Claude models about two months ago. But prompt injection is a significant security risk no matter what model you use, and it is important that the industry similarly spends more effort to train their models to be resistant to prompt injection, among other elements of model alignment.\n\nAs models become more capable and central to businesses and economies, the risks only increase. We should be taking them seriously, and doing the right thing for our customers and the world.",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota reset."
+  },
+  {
+    "id": "2097559315150426222",
+    "source_url": "https://x.com/thsottiaux/status/2097559315150426222",
+    "published_at": "Wed Sep 09 05:34:46 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "Demand for Astra is really unprecedented. We're pulling all the levers possible to sustain the demand, but I've not seen anything like it until now and we went through very steep growth before. Priority will always be to keep excellent service for existing users, but we might have to pause new Pro subscriptions for a bit if this continues.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota reset."
+  },
+  {
+    "id": "2097829053147582782",
+    "source_url": "https://x.com/thsottiaux/status/2097829053147582782",
+    "published_at": "Wed Sep 09 23:26:36 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "Happy to be building here with you all. Lots to explore",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota reset."
+  },
+  {
+    "id": "2098113585683808624",
+    "source_url": "https://x.com/thsottiaux/status/2098113585683808624",
+    "published_at": "Thu Sep 10 18:17:14 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "To make sure our current users have an incredible experience and continued access to Astra, we are going to pause subscriptions to our $200 Pro plan. These put the most strain on our systems and we wanted to take the smallest step that allows us to continue giving the broadest access possible. All other plans and the api remain available.\n\nThere is no impact to existing accounts and we are working on adding more capacity as fast as we can. Thanks!",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "quote",
+          "depth": 1,
+          "text": "Demand for Astra is really unprecedented. We're pulling all the levers possible to sustain the demand, but I've not seen anything like it until now and we went through very steep growth before. Priority will always be to keep excellent service for existing users, but we might have to pause new Pro subscriptions for a bit if this continues.",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "Pause of new subscriptions, no new capability/improvement or quota reset."
+  },
+  {
+    "id": "2098300998968357218",
+    "source_url": "https://x.com/thsottiaux/status/2098300998968357218",
+    "published_at": "Fri Sep 11 06:41:57 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "Next week we’ll be retiring GPT-5.3-Codex-Spark. Can you believe we shipped a model named as such!!\n\nIt's had a good run and was a lot of fun, but usage has been declining and we have significantly better models now. Time to make room for the future.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "neither",
+    "rationale": "Retirement of an old model, not a new capability or improvement."
+  },
+  {
+    "id": "2098612714704891959",
+    "source_url": "https://x.com/thsottiaux/status/2098612714704891959",
+    "published_at": "Sat Sep 12 03:20:36 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "Hi Astra users. A reset and a quick update on quality issues that have been posted around.\n\nWorking with some of you, we have found and fixed the following issues:\n- Some skills written for previous models were triggering too often or preventing the model from checking its work.\n- An opt-in context management experiment that could cause early stops or replies to older messages. We've disabled it. Our rough estimate is that 4-5k users were affected by this experiment.\n- We've also removed some badly configured engines that resulted in a measured quality degradation for a long tail of traffic flowing through them.\n\nWe’ve also made some more minor improvements and things should feel significantly better across the board. More consistent follow-through, better tracking of your latest message, and better checks on the work as it’s going through the motions.\n\nThe examples posted and all the users who worked directly with us were incredibly useful in helping fix things quickly. Always grateful for this incredible community.\n\nAnd of course, a reset is also landing by midnight today.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "reset",
+    "rationale": "Announces or confirms quota reset."
+  },
+  {
+    "id": "2099393115241300166",
+    "source_url": "https://x.com/thsottiaux/status/2099393115241300166",
+    "published_at": "Mon Sep 14 07:01:38 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "What’s a feature we should remove from Codex that isn’t useful anymore?",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota reset."
+  },
+  {
+    "id": "2100121084817502216",
+    "source_url": "https://x.com/thsottiaux/status/2100121084817502216",
+    "published_at": "Wed Sep 16 07:14:19 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "11pm on a Tuesday, big startup energy",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota reset."
+  },
+  {
+    "id": "2100297380968997327",
+    "source_url": "https://x.com/thsottiaux/status/2100297380968997327",
+    "published_at": "Wed Sep 16 18:54:51 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "Astra\n\n✅ Fast\n✅ Frontier\n✅ Efficient\n✅ For everyone",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "quote",
+          "depth": 1,
+          "text": "We are releasing the latest version of BrokenArXiv and ArXivMath! These benchmarks now focus on conjectures that were refuted in the last month on ArXiv, and models are executed within a harness instead of directly via API.\n\nPerformance remains impressive, with GPT-6 Astra on top",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "Praise of existing model benchmark results, not a new product release."
+  },
+  {
+    "id": "2101157729037586694",
+    "source_url": "https://x.com/thsottiaux/status/2101157729037586694",
+    "published_at": "Sat Sep 19 03:53:34 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "We were working on the keynote today with @romainhuet and @sama and most of the fun was trying to figure out how to explain it all to you because there is so much good stuff in there that it's a bit ridiculous all in quick succession. \n\nWe'll have some things next week already to not keep you waiting so long, but very excited to show you all new things we've been working on and how it will all come together in the coming months.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota reset."
+  },
+  {
+    "id": "2102440619616682120",
+    "source_url": "https://x.com/thsottiaux/status/2102440619616682120",
+    "published_at": "Tue Sep 22 16:51:19 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "We have been focusing on efficiency and intelligence for all. \n\nVery proud of the team. Only possible when you have incredible models at the top end of the capability that you can then use to make a big difference in everything else.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota reset."
+  },
+  {
+    "id": "2102814202117411196",
+    "source_url": "https://x.com/thsottiaux/status/2102814202117411196",
+    "published_at": "Wed Sep 23 17:35:48 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "Voice! I've gotten so used to just call ChatGPT and talk about all the work, check on emails, do some coding, manage my calendar and it works across the full ecosystem of plugins, including 3P developed plugins.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "quote",
+          "depth": 1,
+          "text": "We heard you loud and clear. ChatGPT Voice can now:\n\n- Use plugins like your email, calendar, and Slack.\n\n- Be powered by GPT-6 Astra, Sol, and Luna.\n\n- Be used in ChatGPT Work on web and mobile, so you can create docs, decks, sites, and spreadsheets or tackle complex tasks in the browser, just by talking.\n\nRolling out globally today in the latest version of the app.",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "feature",
+    "rationale": "Concrete new OpenAI capability or shipped improvement."
+  },
+  {
+    "id": "2103620061156290622",
+    "source_url": "https://x.com/thsottiaux/status/2103620061156290622",
+    "published_at": "Fri Sep 25 22:58:00 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "We are aware that codex is down and are working hard to bring back normal service.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota reset."
+  },
+  {
+    "id": "2103911959544610829",
+    "source_url": "https://x.com/thsottiaux/status/2103911959544610829",
+    "published_at": "Sat Sep 26 18:17:54 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "Resets all propagated. That will be all. Have a fantastic weekend.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "reset",
+    "rationale": "Announces or confirms quota reset."
+  },
+  {
+    "id": "2104465709384491519",
+    "source_url": "https://x.com/thsottiaux/status/2104465709384491519",
+    "published_at": "Mon Sep 28 06:58:18 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "Sunday vibes. See you at Fort Mason soon 🎮👩‍💻",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota reset."
+  },
+  {
+    "id": "2104838506363408740",
+    "source_url": "https://x.com/thsottiaux/status/2104838506363408740",
+    "published_at": "Tue Sep 29 07:39:40 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "That was yesterday, today is DevDay. And it's all good news. I'm surprised we've kept it all under wraps.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "quote",
+          "depth": 1,
+          "text": "Hi,\n\nTomorrow we are re-opening the Pro $200 subscriptions to new subscribers, but together with it we are also changing how we calculate the usage for it. In effect, if you do the math, it will net out at half the dollar in API spend compared to the old Pro $200 plan. \n\nNow that it's said, let me explain why this is happening and why you will still get more work done than if you were on the Pro $200 subscription one month ago.\n\n(a) We didn't want to compromise in other ways and are committing to not reintroducing the 5h limit, so that you can fully use the weekly usage when you want.\n(b) On the subscription, we guarantee that over time you always get more work done and with an increasing level of quality. This means that you will continue to get more value per dollar spent as a result of models getting more efficient and us passing down the improvements in the form of API price reductions.\n(c) We don't want to put an incentive on ourselves to artificially inflate the API list prices to make it look like you are getting a lot (and workaround it through discounts, etc). Instead we want to continue to both rapidly reduce prices and increase capabilities of models on the API. This week we introduced GPT-6 Sol and GPT-6 Luna at 50% of their previous price. Over time, we see prices go low enough that it makes sense for most to buy usage as needed without there being a significant gap between what you get in a subscription and what you get in the API for a dollar spent.\n(d) Tomorrow, we are adding more things to the subscription that won't draw on the usage, I won't reveal what that is yet.\n\nI wanted to be transparent before all the big announcements tomorrow. Lots of new exciting things are coming to the subscriptions that will make it super compelling, but I wanted to make sure to share this change ahead of time so you can all understand it before we shower you with good news.\n\nCodexingly,\nTibo",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "Teaser and reaction to earlier news, no concrete new release in focal post."
+  },
+  {
+    "id": "2104981170685616361",
+    "source_url": "https://x.com/thsottiaux/status/2104981170685616361",
+    "published_at": "Tue Sep 29 17:06:34 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "Announcing dots. Dots work 24/7 for you, learn from your feedback, have their own computer, browser and can be connected to over 4k apps in our ecosystem.\n\nThey’re powered by Astra our best model yet. Included in your Pro plan, without drawing down on any of your usage. You can even call a dot while it’s working.\n\nWe’re getting you started with your primary dot today and soon you’ll be able to create entire teams of them.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "feature",
+    "rationale": "Concrete new OpenAI capability or shipped improvement."
+  },
+  {
+    "id": "2104986448269279399",
+    "source_url": "https://x.com/thsottiaux/status/2104986448269279399",
+    "published_at": "Tue Sep 29 17:27:32 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "Decisions API, for lightning fast constrained decision making powered by Luna. Supports visual inputs, and tuned to be able to make decisions in less than a few hundreds of milliseconds end to end.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "feature",
+    "rationale": "Concrete new OpenAI capability or shipped improvement."
+  },
+  {
+    "id": "2104989161774322009",
+    "source_url": "https://x.com/thsottiaux/status/2104989161774322009",
+    "published_at": "Tue Sep 29 17:38:19 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "Dots are included in all Pro, Business Premium and Enterprise plans. This includes the Pro 100 plan. We’ll be looking to further expand access soon.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "neither",
+    "rationale": "Existing plan inclusion clarification and vague future expansion."
+  },
+  {
+    "id": "2104994835212226681",
+    "source_url": "https://x.com/thsottiaux/status/2104994835212226681",
+    "published_at": "Tue Sep 29 18:00:52 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "Live demos suffered from rolling out all the updates at the same time, but were committed to keep doing these live in the future. \n\nAlmost all the things we announced will be available today. Can’t see what you will do with it.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "neither",
+    "rationale": "General launch-day recap with no specific capability established in linked text."
+  },
+  {
+    "id": "2105007775676072381",
+    "source_url": "https://x.com/thsottiaux/status/2105007775676072381",
+    "published_at": "Tue Sep 29 18:52:17 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "https://openai.com/index/introducing-gpt-6-1-sol/",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "GPT-6.1 is a good model. And it’s unbelievably efficient. Included in all paid plans and on the API today.",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota reset."
+  },
+  {
+    "id": "2105039500149948878",
+    "source_url": "https://x.com/thsottiaux/status/2105039500149948878",
+    "published_at": "Tue Sep 29 20:58:21 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "https://developers.openai.com/plugins/deploy/submission",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "Plugin discovery on ChatGPT leads to massive adoption opportunity. Open ecosystems will win.",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota reset."
+  },
+  {
+    "id": "2105102312167575701",
+    "source_url": "https://x.com/thsottiaux/status/2105102312167575701",
+    "published_at": "Wed Sep 30 01:07:56 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "I got community noted, but the note is wrong 😅\n\nYour primary dot is included in your plan and will be available 24/7. If you ask it to create a codex task for you, that one will be drawing usage as usual. But when your dot does work directly, that uses nothing and is all on top of your plans usage. In the future you will be able to increase the speed and allow your dot to have more bandwidth, this will be a paid feature, but the baseline functionality will always just be included in your plan.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "quote",
+          "depth": 1,
+          "text": "Announcing dots. Dots work 24/7 for you, learn from your feedback, have their own computer, browser and can be connected to over 4k apps in our ecosystem.\n\nThey’re powered by Astra our best model yet. Included in your Pro plan, without drawing down on any of your usage. You can even call a dot while it’s working.\n\nWe’re getting you started with your primary dot today and soon you’ll be able to create entire teams of them.",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "Corrects misinformation about existing plan inclusions, not a new change."
+  },
+  {
+    "id": "2105178959327756396",
+    "source_url": "https://x.com/thsottiaux/status/2105178959327756396",
+    "published_at": "Wed Sep 30 06:12:30 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "What’s up dot",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota reset."
+  },
+  {
+    "id": "2105348026416140781",
+    "source_url": "https://x.com/thsottiaux/status/2105348026416140781",
+    "published_at": "Wed Sep 30 17:24:19 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "Hi! What would you like to see us ship for dots and space in the next two weeks? Or how can we improve things in other parts of the product.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota reset."
+  },
+  {
+    "id": "2105519215092584786",
+    "source_url": "https://x.com/thsottiaux/status/2105519215092584786",
+    "published_at": "Thu Oct 01 04:44:34 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "One more thing, you can now build and deploy MCP servers right through ChatGPT. And restrict its access to anyone you want or share it with the world.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "quote",
+          "depth": 1,
+          "text": "Announcing one more launch: ChatGPT Sites can now host MCP servers, including plugin extensions! 🤯\n\n> @⁠sites create a todo list that I can use in ChatGPT\n\nThis will:\n\n· Create an MCP server with extensions\n· Deploy that MCP server to Sites\n· Turn the MCP server into a plugin\n· Install the plugin for you across web, mobile, and desktop\n\nChatGPT is slowly becoming malleable software that anybody can customize to their needs. Very excited to see what you all build with this!",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "feature",
+    "rationale": "Concrete new OpenAI capability or shipped improvement."
+  },
+  {
+    "id": "2105843926221660585",
+    "source_url": "https://x.com/thsottiaux/status/2105843926221660585",
+    "published_at": "Fri Oct 02 02:14:51 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "Global reset landing tomorrow 10am PST for all paid ChatGPT accounts. Apologies for the slow start with GPT-6.1 Sol, it's now back to running at expected speeds after the massive load spike in the first two days.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "reset",
+    "rationale": "Announces or confirms quota reset."
+  },
+  {
+    "id": "2106131810921136451",
+    "source_url": "https://x.com/thsottiaux/status/2106131810921136451",
+    "published_at": "Fri Oct 02 21:18:48 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "Reset all propagated. Enjoy.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "quote",
+          "depth": 1,
+          "text": "Global reset landing tomorrow 10am PST for all paid ChatGPT accounts. Apologies for the slow start with GPT-6.1 Sol, it's now back to running at expected speeds after the massive load spike in the first two days.",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "reset",
+    "rationale": "Announces or confirms quota reset."
+  },
+  {
+    "id": "2106239435461579088",
+    "source_url": "https://x.com/thsottiaux/status/2106239435461579088",
+    "published_at": "Sat Oct 03 04:26:28 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "All fixed. Surprising number of Pro 500 users on here.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "quote",
+          "depth": 1,
+          "text": "Seeing some reports that the Pro 500 didn’t get the reset as expected earlier. Investigating and will make up for it",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "reset",
+    "rationale": "Completion of an identified missing quota reset, not mere billing refund."
+  },
+  {
+    "id": "2106501204285239560",
+    "source_url": "https://x.com/thsottiaux/status/2106501204285239560",
+    "published_at": "Sat Oct 03 21:46:38 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "If we were to add one more sidebar, what should be in it",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota reset."
+  },
+  {
+    "id": "2106610099720720811",
+    "source_url": "https://x.com/thsottiaux/status/2106610099720720811",
+    "published_at": "Sun Oct 04 04:59:21 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "All right, we’re locking in. Only things being worked on are simplifications, more efficiency for more usage, groundbreaking features or new models. \n\nSometimes you have to invest ahead of the curve, but feedback is clear that you all want things to get simpler. On it.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota reset."
+  },
+  {
+    "id": "2107159119107146237",
+    "source_url": "https://x.com/thsottiaux/status/2107159119107146237",
+    "published_at": "Mon Oct 05 17:20:57 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "Reaching 50 TPS instead of 30TPS, with also the most optimized tokenizer out there. And the models are quite the efficient ones in terms of number of tokens needed to get things done!",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "Day 1/\n\nWe have optimized the default speed to be ~50% faster across GPT-6 Astra and GPT-6.1 Sol through the subscription across all our products and partners using Sign in With ChatGPT (including OpenCode, Pi, Amp, Devin, ...).\n\nNo changes needed on your end and this should be felt within the next two hours.",
+          "is_monitored_author": true
+        },
+        {
+          "relation": "quote",
+          "depth": 2,
+          "text": "Over the next 28 days, each day we’ll either ship one thing that is a clear improvement and relevant for most codex/work users or ship a full reset. Let the improvements begin.",
+          "is_monitored_author": true
+        },
+        {
+          "relation": "quote",
+          "depth": 3,
+          "text": "All right, we’re locking in. Only things being worked on are simplifications, more efficiency for more usage, groundbreaking features or new models. \n\nSometimes you have to invest ahead of the curve, but feedback is clear that you all want things to get simpler. On it.",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "feature",
+    "rationale": "Concrete new OpenAI capability or shipped improvement."
+  },
+  {
+    "id": "2107311729768353844",
+    "source_url": "https://x.com/thsottiaux/status/2107311729768353844",
+    "published_at": "Tue Oct 06 03:27:22 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "This might have been my best day so far at oai. Ridiculous amounts of fun and intensity. Future is bright",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota reset."
+  },
+  {
+    "id": "2107370852564021582",
+    "source_url": "https://x.com/thsottiaux/status/2107370852564021582",
+    "published_at": "Tue Oct 06 07:22:18 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "Use auto-review instead of full-access. Not a trade-off anymore and you'll sleep more peacefully",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "Day 2.1/\n\nWe have made Auto-review free for all users signed in through a ChatGPT account. You can enable it in settings > permissions > auto-review. Auto-review improves upon the default sandbox setting that requires you to approve everything, which is prone to decision fatigue unless you spend a lot of time configuring specific rules.\n\nIt allows you to run long tasks while having a second agent review all actions taken by the primary agent. Its only goal is to prevent high-risk actions from being taken and to protect against unwanted actions that are not aligned with the original user intent. This  Auto-review feature is now free and does not draw usage from your plan.",
+          "is_monitored_author": true
+        },
+        {
+          "relation": "quote",
+          "depth": 2,
+          "text": "Day 1/\n\nWe have optimized the default speed to be ~50% faster across GPT-6 Astra and GPT-6.1 Sol through the subscription across all our products and partners using Sign in With ChatGPT (including OpenCode, Pi, Amp, Devin, ...).\n\nNo changes needed on your end and this should be felt within the next two hours.",
+          "is_monitored_author": true
+        },
+        {
+          "relation": "quote",
+          "depth": 3,
+          "text": "Over the next 28 days, each day we’ll either ship one thing that is a clear improvement and relevant for most codex/work users or ship a full reset. Let the improvements begin.",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "Advice on using existing permission mode, not announcement of a change."
+  },
+  {
+    "id": "2107573405553938664",
+    "source_url": "https://x.com/thsottiaux/status/2107573405553938664",
+    "published_at": "Tue Oct 06 20:47:11 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "Day 2.3/\n\nNever worry about remembering what you were saying with that colleague. Just talk your heart out and build up the context to load up into codex to get it all done.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "quote",
+          "depth": 1,
+          "text": "Your next meeting comes with a note-taker who can help with the follow-up.\n\nThe Meetings plugin takes notes for you and saves a personalized summary and next steps in ChatGPT Space, based on what ChatGPT knows about you and the work you’ve done together.\n\nKeep notes private or share them with your team, then ask ChatGPT to update a project plan or draft a follow-up.\n\nAvailable in beta for Pro and Business users in the ChatGPT desktop app on macOS. Enterprise is coming soon.\n\nDownload the desktop app, then search for “Meetings” in the plugin directory.\nhttps://chatgpt.com/download/",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "feature",
+    "rationale": "Concrete new OpenAI capability or shipped improvement."
+  },
+  {
+    "id": "2107576143285219799",
+    "source_url": "https://x.com/thsottiaux/status/2107576143285219799",
+    "published_at": "Tue Oct 06 20:58:04 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "Vote",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "Roundup of Day 2/\n\n2.1/ Approve for me (auto-review) is now included and does not use usage. Can be between 2-10% of plan when used. Also better for you.\n2.2/ Simplified API for builders.\n2.3/ Meeting notes integrated.\n2.4/ Decisions API live for builders. Will use in the app to improve the experience.",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota reset."
+  },
+  {
+    "id": "2107599996225007892",
+    "source_url": "https://x.com/thsottiaux/status/2107599996225007892",
+    "published_at": "Tue Oct 06 22:32:51 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "To calibrate",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "Completely unrelated to the rest of the ships today, but our models did solve some important math problems and the team documented it in the following blogpost. Remarkable new era of scientific progress.\n\nhttps://openai.com/index/sharing-ai-progress-in-mathematics/",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota reset."
+  },
+  {
+    "id": "2107676653895967106",
+    "source_url": "https://x.com/thsottiaux/status/2107676653895967106",
+    "published_at": "Wed Oct 07 03:37:27 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "Also! Good evening!!",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "We shipped four things that were deemed good to great and some math proofs, but the vote is clear and the community demands a reset. I did calibrate it and it *seems* that the game is rigged in reset's favor, but such are the rules at the moment.\n\nTherefore ... the reset has been processed. Enjoy!",
+          "is_monitored_author": true
+        },
+        {
+          "relation": "quote",
+          "depth": 2,
+          "text": "Roundup of Day 2/\n\n2.1/ Approve for me (auto-review) is now included and does not use usage. Can be between 2-10% of plan when used. Also better for you.\n2.2/ Simplified API for builders.\n2.3/ Meeting notes integrated.\n2.4/ Decisions API live for builders. Will use in the app to improve the experience.",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota reset."
+  },
+  {
+    "id": "2107913738791596286",
+    "source_url": "https://x.com/thsottiaux/status/2107913738791596286",
+    "published_at": "Wed Oct 07 19:19:33 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "Will be there by EOD PST.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "Day 3/\n\nThe big one is GPT-6 in Chat, but today is also a little celebration day with a new high of 40M active users across Codex and ChatGPT Work.\n\nLoading a banked reset in everyone's paid accounts. See you again tomorrow!",
+          "is_monitored_author": true
+        },
+        {
+          "relation": "quote",
+          "depth": 2,
+          "text": "Roundup of Day 2/\n\n2.1/ Approve for me (auto-review) is now included and does not use usage. Can be between 2-10% of plan when used. Also better for you.\n2.2/ Simplified API for builders.\n2.3/ Meeting notes integrated.\n2.4/ Decisions API live for builders. Will use in the app to improve the experience.",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "reset",
+    "rationale": "Timing follow-up directly linked to a real reset announcement."
+  },
+  {
+    "id": "2108275041276420573",
+    "source_url": "https://x.com/thsottiaux/status/2108275041276420573",
+    "published_at": "Thu Oct 08 19:15:14 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "Day 4/\n\nWe have improved steering to be instant, leading to the model now reacting much faster to adjustments you make, allowing you to course-correct direction in realtime and not have the model waste effort.\n\nAlso releasing GPT-6.1 Sol ultrafast. The two work very well together.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "quote",
+          "depth": 1,
+          "text": "Ultrafast is rolling out today for GPT-6.1 Sol in the API, Codex, and ChatGPT Work.\n\nNear-Astra intelligence at up to 8x faster speeds than Sol Standard, so you can build as fast as the ideas come.",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "feature",
+    "rationale": "Concrete new OpenAI capability or shipped improvement."
+  },
+  {
+    "id": "2108646052178092403",
+    "source_url": "https://x.com/thsottiaux/status/2108646052178092403",
+    "published_at": "Fri Oct 09 19:49:30 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "Day 5 (dots edition)/\n\nYou can now create and text your dot entirely from the ChatGPT mobile app. Impressed so many created them via the desktop/web app previously. Time to scale!",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "quote",
+          "depth": 1,
+          "text": "Fresh updates for dots.\n\nFirst up: you can now create your dot straight from your phone in the ChatGPT app on iOS and Android.",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "feature",
+    "rationale": "Concrete new OpenAI capability or shipped improvement."
+  },
+  {
+    "id": "2108777962053292398",
+    "source_url": "https://x.com/thsottiaux/status/2108777962053292398",
+    "published_at": "Sat Oct 10 04:33:40 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "Your ChatGPT subscription is now also a Devin subscription",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "quote",
+          "depth": 1,
+          "text": "You can use any personal ChatGPT plan with Devin\n\nJust connect your Go, Plus, or Pro plan to Devin and all GPT model usage will draw down from you plan's quota",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "feature",
+    "rationale": "Concrete new OpenAI capability or shipped improvement."
+  },
+  {
+    "id": "2109045392684032299",
+    "source_url": "https://x.com/thsottiaux/status/2109045392684032299",
+    "published_at": "Sat Oct 10 22:16:20 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "Global reset by EOD. May the tokens do good things for you.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "Day 6/ Reset",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "reset",
+    "rationale": "Announces or confirms quota reset."
+  },
+  {
+    "id": "2109152716954222849",
+    "source_url": "https://x.com/thsottiaux/status/2109152716954222849",
+    "published_at": "Sun Oct 11 05:22:48 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "Pro users, would you rather have",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota reset."
+  },
+  {
+    "id": "2109439315570999598",
+    "source_url": "https://x.com/thsottiaux/status/2109439315570999598",
+    "published_at": "Mon Oct 12 00:21:38 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "The results of this poll has gotten me confused. I definitely thought it would sway much more favorably in the 2X direction across Pro 100/200/500 at the cost of bringing back 5h limits in order to smoothen the demand curve.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "quote",
+          "depth": 1,
+          "text": "Pro users, would you rather have",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota reset."
+  },
+  {
+    "id": "2109873287853707513",
+    "source_url": "https://x.com/thsottiaux/status/2109873287853707513",
+    "published_at": "Tue Oct 13 05:06:06 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "What would you like with your side of reset? It's done.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "quote",
+          "depth": 1,
+          "text": "Global reset landing by EOD PST time. Enjoy",
+          "is_monitored_author": true
+        },
+        {
+          "relation": "parent",
+          "depth": 2,
+          "text": "Day 8/ Reset",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "reset",
+    "rationale": "Announces or confirms quota reset."
+  },
+  {
+    "id": "2110151780478927344",
+    "source_url": "https://x.com/thsottiaux/status/2110151780478927344",
+    "published_at": "Tue Oct 13 23:32:43 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "Day 9/\n\nWe've rolled out optimizations to how we store state on disk for the chatgpt & codex desktop app that should reduce the amount stored on disk by 60%. Small ship but we've heard enough feedback about power users running out of disk space.",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": []
+    },
+    "expected": "feature",
+    "rationale": "Concrete new OpenAI capability or shipped improvement."
+  },
+  {
+    "id": "2110618732666257557",
+    "source_url": "https://x.com/thsottiaux/status/2110618732666257557",
+    "published_at": "Thu Oct 15 06:28:13 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "Done and dusted",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "quote",
+          "depth": 1,
+          "text": "Landing within the next 2 hours",
+          "is_monitored_author": true
+        },
+        {
+          "relation": "parent",
+          "depth": 2,
+          "text": "The reports of my reset button being lost are greatly exaggerated\n\nDay 10/ Reset",
+          "is_monitored_author": true
+        }
+      ]
+    },
+    "expected": "reset",
+    "rationale": "Completion quote chain links back to quota reset, using earlier text only."
+  },
+  {
+    "id": "2110864861119045840",
+    "source_url": "https://x.com/thsottiaux/status/2110864861119045840",
+    "published_at": "Thu Oct 15 22:46:15 +0000 2026",
+    "split": "validation",
+    "state": {
+      "post": {
+        "text": "Je programme en français",
+        "is_monitored_author": true
+      },
+      "linked_earlier_context": [
+        {
+          "relation": "parent",
+          "depth": 1,
+          "text": "Bonjour",
+          "is_monitored_author": true
+        },
+        {
+          "relation": "quote",
+          "depth": 2,
+          "text": "New voices. Better accents. And less \"checking...\"\n\nGPT-Live-1.1 brings these updates to Voice in ChatGPT, Codex, and dots, with new voices in French, German, Hindi, Mexican Spanish, Korean, and Japanese.\n\nRolling out today to all users. Coming soon to the API.",
+          "is_monitored_author": false
+        }
+      ]
+    },
+    "expected": "neither",
+    "rationale": "No concrete new OpenAI feature or quota reset."
+  }
+]

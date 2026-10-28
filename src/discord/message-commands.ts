@@ -13,7 +13,7 @@ import { showServerEmoji, showStats } from './stats.js';
 import { UserError } from './user-error.js';
 
 export interface ParsedCommand {
-  group: 'emoji' | 'history' | 'help';
+  group: 'emoji' | 'history' | 'help' | 'register' | 'unregister' | 'test';
   action: string;
   args: string[];
 }
@@ -23,6 +23,18 @@ export function parseMessageCommand(
 ): ParsedCommand | undefined {
   if (/^!help$/i.test(content.trim())) {
     return { group: 'help', action: 'help', args: [] };
+  }
+  const notification = /^!(register|unregister|test)(?:\s+(.*))?$/i.exec(
+    content.trim(),
+  );
+  if (notification?.[1]) {
+    const group = notification[1].toLowerCase() as
+      'register' | 'unregister' | 'test';
+    return {
+      group,
+      action: group,
+      args: notification[2]?.trim().split(/\s+/).filter(Boolean) ?? [],
+    };
   }
   const match = /^!(emoji|history)(?:\s+([a-z_]+))?(?:\s+(.*))?\s*$/i.exec(
     content.trim(),
@@ -53,6 +65,11 @@ const help = [
   '!history stats_channel [page]',
   '!history stats_current [page]',
   '!history server_emoji',
+  '',
+  '### Notifications',
+  '!register openai-reset',
+  '!unregister [openai-reset]',
+  '!test openai-reset · offline sample with example confidence',
 ].join('\n');
 
 export async function sendReport(
@@ -117,6 +134,14 @@ export async function handleMessageCommand(
       allowedMentions: { parse: [], repliedUser: false },
     });
   };
+  if (group === 'register' || group === 'unregister' || group === 'test') {
+    if (!context.notifications)
+      throw new UserError(
+        'Notification commands are unavailable on this deployment.',
+      );
+    await context.notifications.command(message, group, args);
+    return true;
+  }
   if (action === 'help') {
     await reply(help);
     return true;

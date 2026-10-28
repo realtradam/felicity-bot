@@ -1,0 +1,590 @@
+{"event": "reserved", "call": 1, "reserve": "0.0005", "utc": "2026-10-28T10:39:05.934697+00:00"}
+{"event": "completed", "call": 1, "cost": "0.00000534"}
+{"event": "reserved", "call": 2, "reserve": "0.0005", "utc": "2026-10-28T10:39:15.336962+00:00"}
+{"event": "completed", "call": 2, "cost": "0.00000534"}
+{"event": "reserved", "call": 3, "reserve": "0.0005", "utc": "2026-10-28T10:39:16.127769+00:00"}
+{"event": "completed", "call": 3, "cost": "0.00000608"}
+{"event": "reserved", "call": 4, "reserve": "0.0005", "utc": "2026-10-28T10:39:17.168853+00:00"}
+{"event": "completed", "call": 4, "cost": "0.00000926"}
+{"event": "reserved", "call": 5, "reserve": "0.0005", "utc": "2026-10-28T10:39:18.069365+00:00"}
+{"event": "completed", "call": 5, "cost": "0.00000798"}
+{"event": "reserved", "call": 6, "reserve": "0.0005", "utc": "2026-10-28T10:39:18.840882+00:00"}
+{"event": "reserved", "call": 7, "reserve": "0.0005", "utc": "2026-10-28T10:40:22.631482+00:00"}
+{"event": "completed", "call": 7, "cost": "0.00000956"}
+{"event": "reserved", "call": 8, "reserve": "0.0005", "utc": "2026-10-28T10:40:35.632671+00:00"}
+{"event": "completed", "call": 8, "cost": "0.00000674"}
+{"event": "reserved", "call": 9, "reserve": "0.0005", "utc": "2026-10-28T10:40:48.633770+00:00"}
+{"event": "completed", "call": 9, "cost": "0.00001056"}
+{"event": "reserved", "call": 10, "reserve": "0.0005", "utc": "2026-10-28T10:41:01.635537+00:00"}
+{"event": "completed", "call": 10, "cost": "0.00000576"}
+{"event": "reserved", "call": 11, "reserve": "0.0005", "utc": "2026-10-28T10:41:14.636295+00:00"}
+{"event": "completed", "call": 11, "cost": "0.00000676"}
+{"event": "reserved", "call": 12, "reserve": "0.0005", "utc": "2026-10-28T10:41:27.637328+00:00"}
+{"event": "completed", "call": 12, "cost": "0.00000622"}
+{"event": "reserved", "call": 13, "reserve": "0.0005", "utc": "2026-10-28T10:41:40.637992+00:00"}
+{"event": "completed", "call": 13, "cost": "0.0000062"}
+{"event": "reserved", "call": 14, "reserve": "0.0005", "utc": "2026-10-28T10:41:53.638661+00:00"}
+{"event": "completed", "call": 14, "cost": "0.00001398"}
+{"event": "reserved", "call": 15, "reserve": "0.0005", "utc": "2026-10-28T10:42:06.639568+00:00"}
+{"event": "completed", "call": 15, "cost": "0.00000518"}
+{"event": "reserved", "call": 16, "reserve": "0.0005", "utc": "2026-10-28T10:42:19.640459+00:00"}
+{"event": "completed", "call": 16, "cost": "0.00000804"}
+{"event": "reserved", "call": 17, "reserve": "0.0005", "utc": "2026-10-28T10:42:32.642358+00:00"}
+{"event": "completed", "call": 17, "cost": "0.00000654"}
+{"event": "reserved", "call": 18, "reserve": "0.0005", "utc": "2026-10-28T10:42:45.643598+00:00"}
+{"event": "completed", "call": 18, "cost": "0.000006"}
+{"event": "reserved", "call": 19, "reserve": "0.0005", "utc": "2026-10-28T10:42:58.644500+00:00"}
+{"event": "completed", "call": 19, "cost": "0.00000534"}
+{"event": "reserved", "call": 20, "reserve": "0.0005", "utc": "2026-10-28T10:43:11.645678+00:00"}
+{"event": "completed", "call": 20, "cost": "0.00000522"}
+{"event": "reserved", "call": 21, "reserve": "0.0005", "utc": "2026-10-28T10:43:24.647026+00:00"}
+{"event": "completed", "call": 21, "cost": "0.00000586"}
+{"event": "reserved", "call": 22, "reserve": "0.0005", "utc": "2026-10-28T10:43:37.648117+00:00"}
+{"event": "completed", "call": 22, "cost": "0.00000658"}
+{"event": "reserved", "call": 23, "reserve": "0.0005", "utc": "2026-10-28T10:43:50.649077+00:00"}
+{"event": "completed", "call": 23, "cost": "0.00000614"}
+{"event": "reserved", "call": 24, "reserve": "0.0005", "utc": "2026-10-28T10:44:03.650230+00:00"}
+{"event": "completed", "call": 24, "cost": "0.00000734"}
+{"event": "reserved", "call": 25, "reserve": "0.0005", "utc": "2026-10-28T10:44:16.651215+00:00"}
+{"event": "completed", "call": 25, "cost": "0.000007"}
+{"event": "reserved", "call": 26, "reserve": "0.0005", "utc": "2026-10-28T10:44:29.651959+00:00"}
+{"event": "completed", "call": 26, "cost": "0.0000061"}
+{"event": "reserved", "call": 27, "reserve": "0.0005", "utc": "2026-10-28T10:44:42.652855+00:00"}
+{"event": "completed", "call": 27, "cost": "0.0000067"}
+{"event": "reserved", "call": 28, "reserve": "0.0005", "utc": "2026-10-28T10:44:55.654996+00:00"}
+{"event": "completed", "call": 28, "cost": "0.00000908"}
+{"event": "reserved", "call": 29, "reserve": "0.0005", "utc": "2026-10-28T10:45:08.656085+00:00"}
+{"event": "completed", "call": 29, "cost": "0.00000508"}
+{"event": "reserved", "call": 30, "reserve": "0.0005", "utc": "2026-10-28T10:45:21.657559+00:00"}
+{"event": "completed", "call": 30, "cost": "0.00000588"}
+{"event": "reserved", "call": 31, "reserve": "0.0005", "utc": "2026-10-28T10:45:34.658651+00:00"}
+{"event": "completed", "call": 31, "cost": "0.00000816"}
+{"event": "reserved", "call": 32, "reserve": "0.0005", "utc": "2026-10-28T10:45:47.659757+00:00"}
+{"event": "reserved", "call": 33, "reserve": "0.0005", "utc": "2026-10-28T10:46:00.660636+00:00"}
+{"event": "completed", "call": 33, "cost": "0.00000514"}
+{"event": "reserved", "call": 34, "reserve": "0.0005", "utc": "2026-10-28T10:46:13.661428+00:00"}
+{"event": "completed", "call": 34, "cost": "0.00000658"}
+{"event": "reserved", "call": 35, "reserve": "0.0005", "utc": "2026-10-28T10:46:26.662335+00:00"}
+{"event": "completed", "call": 35, "cost": "0.00000554"}
+{"event": "reserved", "call": 36, "reserve": "0.0005", "utc": "2026-10-28T10:46:39.663313+00:00"}
+{"event": "completed", "call": 36, "cost": "0.00000848"}
+{"event": "reserved", "call": 37, "reserve": "0.0005", "utc": "2026-10-28T10:46:52.664112+00:00"}
+{"event": "completed", "call": 37, "cost": "0.00000998"}
+{"event": "reserved", "call": 38, "reserve": "0.0005", "utc": "2026-10-28T10:47:05.665130+00:00"}
+{"event": "completed", "call": 38, "cost": "0.00000588"}
+{"event": "reserved", "call": 39, "reserve": "0.0005", "utc": "2026-10-28T10:47:18.666025+00:00"}
+{"event": "completed", "call": 39, "cost": "0.00000774"}
+{"event": "reserved", "call": 40, "reserve": "0.0005", "utc": "2026-10-28T10:47:31.667237+00:00"}
+{"event": "completed", "call": 40, "cost": "0.00000648"}
+{"event": "reserved", "call": 41, "reserve": "0.0005", "utc": "2026-10-28T10:47:44.668099+00:00"}
+{"event": "completed", "call": 41, "cost": "0.00000714"}
+{"event": "reserved", "call": 42, "reserve": "0.0005", "utc": "2026-10-28T10:47:57.669393+00:00"}
+{"event": "completed", "call": 42, "cost": "0.00000534"}
+{"event": "reserved", "call": 43, "reserve": "0.0005", "utc": "2026-10-28T10:48:10.670326+00:00"}
+{"event": "completed", "call": 43, "cost": "0.0000077"}
+{"event": "reserved", "call": 44, "reserve": "0.0005", "utc": "2026-10-28T10:48:23.671146+00:00"}
+{"event": "completed", "call": 44, "cost": "0.00000834"}
+{"event": "reserved", "call": 45, "reserve": "0.0005", "utc": "2026-10-28T10:48:36.672201+00:00"}
+{"event": "completed", "call": 45, "cost": "0.0000053"}
+{"event": "reserved", "call": 46, "reserve": "0.0005", "utc": "2026-10-28T10:48:49.673392+00:00"}
+{"event": "completed", "call": 46, "cost": "0.0000063"}
+{"event": "reserved", "call": 47, "reserve": "0.0005", "utc": "2026-10-28T10:49:02.674837+00:00"}
+{"event": "completed", "call": 47, "cost": "0.00002746"}
+{"event": "reserved", "call": 48, "reserve": "0.0005", "utc": "2026-10-28T10:49:15.676113+00:00"}
+{"event": "completed", "call": 48, "cost": "0.00000714"}
+{"event": "reserved", "call": 49, "reserve": "0.0005", "utc": "2026-10-28T10:49:28.677105+00:00"}
+{"event": "completed", "call": 49, "cost": "0.00000676"}
+{"event": "reserved", "call": 50, "reserve": "0.0005", "utc": "2026-10-28T10:50:25.769022+00:00"}
+{"event": "completed", "call": 50, "cost": "0.0000129"}
+{"event": "reserved", "call": 51, "reserve": "0.0005", "utc": "2026-10-28T10:50:38.770231+00:00"}
+{"event": "completed", "call": 51, "cost": "0.00001364"}
+{"event": "reserved", "call": 52, "reserve": "0.0005", "utc": "2026-10-28T10:50:51.771503+00:00"}
+{"event": "completed", "call": 52, "cost": "0.00001682"}
+{"event": "reserved", "call": 53, "reserve": "0.0005", "utc": "2026-10-28T10:51:04.772556+00:00"}
+{"event": "completed", "call": 53, "cost": "0.00001554"}
+{"event": "reserved", "call": 54, "reserve": "0.0005", "utc": "2026-10-28T10:51:17.773597+00:00"}
+{"event": "completed", "call": 54, "cost": "0.00001712"}
+{"event": "reserved", "call": 55, "reserve": "0.0005", "utc": "2026-10-28T10:51:30.774800+00:00"}
+{"event": "completed", "call": 55, "cost": "0.0000143"}
+{"event": "reserved", "call": 56, "reserve": "0.0005", "utc": "2026-10-28T10:51:43.775799+00:00"}
+{"event": "completed", "call": 56, "cost": "0.00001812"}
+{"event": "reserved", "call": 57, "reserve": "0.0005", "utc": "2026-10-28T10:51:56.776744+00:00"}
+{"event": "completed", "call": 57, "cost": "0.00001332"}
+{"event": "reserved", "call": 58, "reserve": "0.0005", "utc": "2026-10-28T10:52:09.777988+00:00"}
+{"event": "completed", "call": 58, "cost": "0.00001432"}
+{"event": "reserved", "call": 59, "reserve": "0.0005", "utc": "2026-10-28T10:52:22.779321+00:00"}
+{"event": "completed", "call": 59, "cost": "0.00001378"}
+{"event": "reserved", "call": 60, "reserve": "0.0005", "utc": "2026-10-28T10:52:35.780522+00:00"}
+{"event": "completed", "call": 60, "cost": "0.00001376"}
+{"event": "reserved", "call": 61, "reserve": "0.0005", "utc": "2026-10-28T10:52:48.782018+00:00"}
+{"event": "completed", "call": 61, "cost": "0.00002154"}
+{"event": "reserved", "call": 62, "reserve": "0.0005", "utc": "2026-10-28T10:53:01.783607+00:00"}
+{"event": "completed", "call": 62, "cost": "0.00001274"}
+{"event": "reserved", "call": 63, "reserve": "0.0005", "utc": "2026-10-28T10:53:14.785183+00:00"}
+{"event": "completed", "call": 63, "cost": "0.0000156"}
+{"event": "reserved", "call": 64, "reserve": "0.0005", "utc": "2026-10-28T10:53:27.786332+00:00"}
+{"event": "completed", "call": 64, "cost": "0.0000141"}
+{"event": "reserved", "call": 65, "reserve": "0.0005", "utc": "2026-10-28T10:53:40.787592+00:00"}
+{"event": "completed", "call": 65, "cost": "0.00001356"}
+{"event": "reserved", "call": 66, "reserve": "0.0005", "utc": "2026-10-28T10:53:53.788713+00:00"}
+{"event": "completed", "call": 66, "cost": "0.0000129"}
+{"event": "reserved", "call": 67, "reserve": "0.0005", "utc": "2026-10-28T10:54:06.790415+00:00"}
+{"event": "completed", "call": 67, "cost": "0.00001278"}
+{"event": "reserved", "call": 68, "reserve": "0.0005", "utc": "2026-10-28T10:54:19.791760+00:00"}
+{"event": "completed", "call": 68, "cost": "0.00001342"}
+{"event": "reserved", "call": 69, "reserve": "0.0005", "utc": "2026-10-28T10:54:32.793055+00:00"}
+{"event": "completed", "call": 69, "cost": "0.00001414"}
+{"event": "reserved", "call": 70, "reserve": "0.0005", "utc": "2026-10-28T10:54:45.794026+00:00"}
+{"event": "completed", "call": 70, "cost": "0.0000137"}
+{"event": "reserved", "call": 71, "reserve": "0.0005", "utc": "2026-10-28T10:54:58.795551+00:00"}
+{"event": "completed", "call": 71, "cost": "0.0000149"}
+{"event": "reserved", "call": 72, "reserve": "0.0005", "utc": "2026-10-28T10:55:11.796943+00:00"}
+{"event": "completed", "call": 72, "cost": "0.00001456"}
+{"event": "reserved", "call": 73, "reserve": "0.0005", "utc": "2026-10-28T10:55:24.798067+00:00"}
+{"event": "completed", "call": 73, "cost": "0.00001366"}
+{"event": "reserved", "call": 74, "reserve": "0.0005", "utc": "2026-10-28T10:55:37.799747+00:00"}
+{"event": "completed", "call": 74, "cost": "0.00001426"}
+{"event": "reserved", "call": 75, "reserve": "0.0005", "utc": "2026-10-28T10:55:50.801366+00:00"}
+{"event": "completed", "call": 75, "cost": "0.00001664"}
+{"event": "reserved", "call": 76, "reserve": "0.0005", "utc": "2026-10-28T10:56:03.802492+00:00"}
+{"event": "completed", "call": 76, "cost": "0.00001264"}
+{"event": "reserved", "call": 77, "reserve": "0.0005", "utc": "2026-10-28T10:56:16.803792+00:00"}
+{"event": "completed", "call": 77, "cost": "0.00001344"}
+{"event": "reserved", "call": 78, "reserve": "0.0005", "utc": "2026-10-28T10:56:29.804954+00:00"}
+{"event": "completed", "call": 78, "cost": "0.00001572"}
+{"event": "reserved", "call": 79, "reserve": "0.0005", "utc": "2026-10-28T10:56:42.806168+00:00"}
+{"event": "completed", "call": 79, "cost": "0.00001436"}
+{"event": "reserved", "call": 80, "reserve": "0.0005", "utc": "2026-10-28T10:56:55.807331+00:00"}
+{"event": "completed", "call": 80, "cost": "0.0000127"}
+{"event": "reserved", "call": 81, "reserve": "0.0005", "utc": "2026-10-28T10:57:08.809087+00:00"}
+{"event": "completed", "call": 81, "cost": "0.00001414"}
+{"event": "reserved", "call": 82, "reserve": "0.0005", "utc": "2026-10-28T10:57:21.810711+00:00"}
+{"event": "completed", "call": 82, "cost": "0.0000131"}
+{"event": "reserved", "call": 83, "reserve": "0.0005", "utc": "2026-10-28T10:57:34.811804+00:00"}
+{"event": "completed", "call": 83, "cost": "0.00001604"}
+{"event": "reserved", "call": 84, "reserve": "0.0005", "utc": "2026-10-28T10:57:47.813046+00:00"}
+{"event": "completed", "call": 84, "cost": "0.00001754"}
+{"event": "reserved", "call": 85, "reserve": "0.0005", "utc": "2026-10-28T10:58:00.814320+00:00"}
+{"event": "completed", "call": 85, "cost": "0.00001344"}
+{"event": "reserved", "call": 86, "reserve": "0.0005", "utc": "2026-10-28T10:58:13.815905+00:00"}
+{"event": "completed", "call": 86, "cost": "0.0000153"}
+{"event": "reserved", "call": 87, "reserve": "0.0005", "utc": "2026-10-28T10:58:26.817311+00:00"}
+{"event": "completed", "call": 87, "cost": "0.00001404"}
+{"event": "reserved", "call": 88, "reserve": "0.0005", "utc": "2026-10-28T10:58:39.818490+00:00"}
+{"event": "completed", "call": 88, "cost": "0.0000147"}
+{"event": "reserved", "call": 89, "reserve": "0.0005", "utc": "2026-10-28T10:58:52.819620+00:00"}
+{"event": "completed", "call": 89, "cost": "0.0000129"}
+{"event": "reserved", "call": 90, "reserve": "0.0005", "utc": "2026-10-28T10:59:05.821425+00:00"}
+{"event": "completed", "call": 90, "cost": "0.00001526"}
+{"event": "reserved", "call": 91, "reserve": "0.0005", "utc": "2026-10-28T10:59:18.822864+00:00"}
+{"event": "completed", "call": 91, "cost": "0.0000159"}
+{"event": "reserved", "call": 92, "reserve": "0.0005", "utc": "2026-10-28T10:59:31.824448+00:00"}
+{"event": "completed", "call": 92, "cost": "0.00001286"}
+{"event": "reserved", "call": 93, "reserve": "0.0005", "utc": "2026-10-28T10:59:44.826379+00:00"}
+{"event": "completed", "call": 93, "cost": "0.00001386"}
+{"event": "reserved", "call": 94, "reserve": "0.0005", "utc": "2026-10-28T10:59:57.828253+00:00"}
+{"event": "completed", "call": 94, "cost": "0.00003502"}
+{"event": "reserved", "call": 95, "reserve": "0.0005", "utc": "2026-10-28T11:00:10.829861+00:00"}
+{"event": "completed", "call": 95, "cost": "0.0000147"}
+{"event": "reserved", "call": 96, "reserve": "0.0005", "utc": "2026-10-28T11:00:23.831164+00:00"}
+{"event": "completed", "call": 96, "cost": "0.00001432"}
+{"event": "reserved", "call": 97, "reserve": "0.0005", "utc": "2026-10-28T11:00:58.254549+00:00"}
+{"event": "completed", "call": 97, "cost": "0.00001548"}
+{"event": "reserved", "call": 98, "reserve": "0.0005", "utc": "2026-10-28T11:01:11.255890+00:00"}
+{"event": "completed", "call": 98, "cost": "0.00001936"}
+{"event": "reserved", "call": 99, "reserve": "0.0005", "utc": "2026-10-28T11:01:24.258210+00:00"}
+{"event": "completed", "call": 99, "cost": "0.00001424"}
+{"event": "reserved", "call": 100, "reserve": "0.0005", "utc": "2026-10-28T11:01:37.260115+00:00"}
+{"event": "completed", "call": 100, "cost": "0.00001466"}
+{"event": "reserved", "call": 101, "reserve": "0.0005", "utc": "2026-10-28T11:01:50.261863+00:00"}
+{"event": "completed", "call": 101, "cost": "0.00001504"}
+{"event": "reserved", "call": 102, "reserve": "0.0005", "utc": "2026-10-28T11:02:03.263298+00:00"}
+{"event": "completed", "call": 102, "cost": "0.00001276"}
+{"event": "reserved", "call": 103, "reserve": "0.0005", "utc": "2026-10-28T11:02:16.264449+00:00"}
+{"event": "completed", "call": 103, "cost": "0.00001352"}
+{"event": "reserved", "call": 104, "reserve": "0.0005", "utc": "2026-10-28T11:02:29.266189+00:00"}
+{"event": "completed", "call": 104, "cost": "0.00001378"}
+{"event": "reserved", "call": 105, "reserve": "0.0005", "utc": "2026-10-28T11:02:42.268042+00:00"}
+{"event": "completed", "call": 105, "cost": "0.00001444"}
+{"event": "reserved", "call": 106, "reserve": "0.0005", "utc": "2026-10-28T11:02:55.269418+00:00"}
+{"event": "completed", "call": 106, "cost": "0.00001442"}
+{"event": "reserved", "call": 107, "reserve": "0.0005", "utc": "2026-10-28T11:03:08.271107+00:00"}
+{"event": "completed", "call": 107, "cost": "0.00001386"}
+{"event": "reserved", "call": 108, "reserve": "0.0005", "utc": "2026-10-28T11:03:21.272851+00:00"}
+{"event": "completed", "call": 108, "cost": "0.00001346"}
+{"event": "reserved", "call": 109, "reserve": "0.0005", "utc": "2026-10-28T11:03:34.274445+00:00"}
+{"event": "completed", "call": 109, "cost": "0.00001422"}
+{"event": "reserved", "call": 110, "reserve": "0.0005", "utc": "2026-10-28T11:03:47.276077+00:00"}
+{"event": "completed", "call": 110, "cost": "0.0000134"}
+{"event": "reserved", "call": 111, "reserve": "0.0005", "utc": "2026-10-28T11:04:00.277317+00:00"}
+{"event": "completed", "call": 111, "cost": "0.00001504"}
+{"event": "reserved", "call": 112, "reserve": "0.0005", "utc": "2026-10-28T11:04:13.278912+00:00"}
+{"event": "completed", "call": 112, "cost": "0.00001468"}
+{"event": "reserved", "call": 113, "reserve": "0.0005", "utc": "2026-10-28T11:04:26.280473+00:00"}
+{"event": "completed", "call": 113, "cost": "0.00001326"}
+{"event": "reserved", "call": 114, "reserve": "0.0005", "utc": "2026-10-28T11:04:39.281629+00:00"}
+{"event": "completed", "call": 114, "cost": "0.00001302"}
+{"event": "reserved", "call": 115, "reserve": "0.0005", "utc": "2026-10-28T11:04:52.283221+00:00"}
+{"event": "completed", "call": 115, "cost": "0.00001436"}
+{"event": "reserved", "call": 116, "reserve": "0.0005", "utc": "2026-10-28T11:05:05.284914+00:00"}
+{"event": "completed", "call": 116, "cost": "0.0000148"}
+{"event": "reserved", "call": 117, "reserve": "0.0005", "utc": "2026-10-28T11:05:18.286977+00:00"}
+{"event": "completed", "call": 117, "cost": "0.00001386"}
+{"event": "reserved", "call": 118, "reserve": "0.0005", "utc": "2026-10-28T11:05:31.289154+00:00"}
+{"event": "completed", "call": 118, "cost": "0.00001304"}
+{"event": "reserved", "call": 119, "reserve": "0.0005", "utc": "2026-10-28T11:05:44.290874+00:00"}
+{"event": "completed", "call": 119, "cost": "0.00001364"}
+{"event": "reserved", "call": 120, "reserve": "0.0005", "utc": "2026-10-28T11:05:57.292630+00:00"}
+{"event": "completed", "call": 120, "cost": "0.00001492"}
+{"event": "reserved", "call": 121, "reserve": "0.0005", "utc": "2026-10-28T11:06:10.294007+00:00"}
+{"event": "completed", "call": 121, "cost": "0.0000143"}
+{"event": "reserved", "call": 122, "reserve": "0.0005", "utc": "2026-10-28T11:06:23.295628+00:00"}
+{"event": "completed", "call": 122, "cost": "0.00001542"}
+{"event": "reserved", "call": 123, "reserve": "0.0005", "utc": "2026-10-28T11:06:36.297047+00:00"}
+{"event": "completed", "call": 123, "cost": "0.00001278"}
+{"event": "reserved", "call": 124, "reserve": "0.0005", "utc": "2026-10-28T11:06:49.299139+00:00"}
+{"event": "completed", "call": 124, "cost": "0.00001332"}
+{"event": "reserved", "call": 125, "reserve": "0.0005", "utc": "2026-10-28T11:07:02.300787+00:00"}
+{"event": "completed", "call": 125, "cost": "0.00001458"}
+{"event": "reserved", "call": 126, "reserve": "0.0005", "utc": "2026-10-28T11:07:15.302557+00:00"}
+{"event": "completed", "call": 126, "cost": "0.00001446"}
+{"event": "reserved", "call": 127, "reserve": "0.0005", "utc": "2026-10-28T11:07:28.303870+00:00"}
+{"event": "completed", "call": 127, "cost": "0.00001416"}
+{"event": "reserved", "call": 128, "reserve": "0.0005", "utc": "2026-10-28T11:07:41.305730+00:00"}
+{"event": "completed", "call": 128, "cost": "0.00001324"}
+{"event": "reserved", "call": 129, "reserve": "0.0005", "utc": "2026-10-28T11:07:54.307327+00:00"}
+{"event": "completed", "call": 129, "cost": "0.00001338"}
+{"event": "reserved", "call": 130, "reserve": "0.0005", "utc": "2026-10-28T11:08:07.308730+00:00"}
+{"event": "completed", "call": 130, "cost": "0.00001442"}
+{"event": "reserved", "call": 131, "reserve": "0.0005", "utc": "2026-10-28T11:08:20.310779+00:00"}
+{"event": "completed", "call": 131, "cost": "0.00001456"}
+{"event": "reserved", "call": 132, "reserve": "0.0005", "utc": "2026-10-28T11:08:33.312336+00:00"}
+{"event": "completed", "call": 132, "cost": "0.00001298"}
+{"event": "reserved", "call": 133, "reserve": "0.0005", "utc": "2026-10-28T11:08:46.314369+00:00"}
+{"event": "completed", "call": 133, "cost": "0.00001446"}
+{"event": "reserved", "call": 134, "reserve": "0.0005", "utc": "2026-10-28T11:08:59.316100+00:00"}
+{"event": "completed", "call": 134, "cost": "0.00001316"}
+{"event": "reserved", "call": 135, "reserve": "0.0005", "utc": "2026-10-28T11:09:12.317672+00:00"}
+{"event": "completed", "call": 135, "cost": "0.00001468"}
+{"event": "reserved", "call": 136, "reserve": "0.0005", "utc": "2026-10-28T11:09:25.319394+00:00"}
+{"event": "completed", "call": 136, "cost": "0.00001446"}
+{"event": "reserved", "call": 137, "reserve": "0.0005", "utc": "2026-10-28T11:09:38.320820+00:00"}
+{"event": "completed", "call": 137, "cost": "0.00001376"}
+{"event": "reserved", "call": 138, "reserve": "0.0005", "utc": "2026-10-28T11:09:51.322356+00:00"}
+{"event": "completed", "call": 138, "cost": "0.0000156"}
+{"event": "reserved", "call": 139, "reserve": "0.0005", "utc": "2026-10-28T11:10:04.324379+00:00"}
+{"event": "completed", "call": 139, "cost": "0.00001406"}
+{"event": "reserved", "call": 140, "reserve": "0.0005", "utc": "2026-10-28T11:10:17.328442+00:00"}
+{"event": "completed", "call": 140, "cost": "0.00001562"}
+{"event": "reserved", "call": 141, "reserve": "0.0005", "utc": "2026-10-28T11:10:30.330341+00:00"}
+{"event": "completed", "call": 141, "cost": "0.00001654"}
+{"event": "reserved", "call": 142, "reserve": "0.0005", "utc": "2026-10-28T11:10:43.332235+00:00"}
+{"event": "completed", "call": 142, "cost": "0.00001362"}
+{"event": "reserved", "call": 143, "reserve": "0.0005", "utc": "2026-10-28T11:10:56.333982+00:00"}
+{"event": "completed", "call": 143, "cost": "0.00001496"}
+{"event": "reserved", "call": 144, "reserve": "0.0005", "utc": "2026-10-28T11:11:09.336346+00:00"}
+{"event": "completed", "call": 144, "cost": "0.00001556"}
+{"event": "reserved", "call": 145, "reserve": "0.0005", "utc": "2026-10-28T11:11:22.338135+00:00"}
+{"event": "completed", "call": 145, "cost": "0.00001512"}
+{"event": "reserved", "call": 146, "reserve": "0.0005", "utc": "2026-10-28T11:11:35.339529+00:00"}
+{"event": "completed", "call": 146, "cost": "0.0000134"}
+{"event": "reserved", "call": 147, "reserve": "0.0005", "utc": "2026-10-28T11:11:48.341333+00:00"}
+{"event": "completed", "call": 147, "cost": "0.00001364"}
+{"event": "reserved", "call": 148, "reserve": "0.0005", "utc": "2026-10-28T11:12:01.343364+00:00"}
+{"event": "completed", "call": 148, "cost": "0.0000128"}
+{"event": "reserved", "call": 149, "reserve": "0.0005", "utc": "2026-10-28T11:12:14.346247+00:00"}
+{"event": "completed", "call": 149, "cost": "0.00001484"}
+{"event": "reserved", "call": 150, "reserve": "0.0005", "utc": "2026-10-28T11:12:27.349385+00:00"}
+{"event": "completed", "call": 150, "cost": "0.00001436"}
+{"event": "reserved", "call": 151, "reserve": "0.0005", "utc": "2026-10-28T11:12:40.351652+00:00"}
+{"event": "completed", "call": 151, "cost": "0.0000163"}
+{"event": "reserved", "call": 152, "reserve": "0.0005", "utc": "2026-10-28T11:12:43.354030+00:00"}
+{"event": "rate_limited", "call": 152, "attempt": 1, "wait_seconds": 60}
+{"event": "completed", "call": 152, "cost": "0.00001282"}
+{"event": "reserved", "call": 153, "reserve": "0.0005", "utc": "2026-10-28T11:13:56.684596+00:00"}
+{"event": "completed", "call": 153, "cost": "0.00001288"}
+{"event": "reserved", "call": 154, "reserve": "0.0005", "utc": "2026-10-28T11:14:09.686485+00:00"}
+{"event": "completed", "call": 154, "cost": "0.0000129"}
+{"event": "reserved", "call": 155, "reserve": "0.0005", "utc": "2026-10-28T11:14:22.688069+00:00"}
+{"event": "completed", "call": 155, "cost": "0.00001288"}
+{"event": "reserved", "call": 156, "reserve": "0.0005", "utc": "2026-10-28T11:14:35.691440+00:00"}
+{"event": "completed", "call": 156, "cost": "0.00001282"}
+{"event": "reserved", "call": 157, "reserve": "0.0005", "utc": "2026-10-28T11:14:48.692876+00:00"}
+{"event": "completed", "call": 157, "cost": "0.00001352"}
+{"event": "reserved", "call": 158, "reserve": "0.0005", "utc": "2026-10-28T11:15:01.695259+00:00"}
+{"event": "completed", "call": 158, "cost": "0.0000134"}
+{"event": "reserved", "call": 159, "reserve": "0.0005", "utc": "2026-10-28T11:15:14.696905+00:00"}
+{"event": "completed", "call": 159, "cost": "0.00001288"}
+{"event": "reserved", "call": 160, "reserve": "0.0005", "utc": "2026-10-28T11:15:27.698466+00:00"}
+{"event": "completed", "call": 160, "cost": "0.00001288"}
+{"event": "reserved", "call": 161, "reserve": "0.0005", "utc": "2026-10-28T11:15:40.700387+00:00"}
+{"event": "completed", "call": 161, "cost": "0.00001288"}
+{"event": "reserved", "call": 162, "reserve": "0.0005", "utc": "2026-10-28T11:15:53.701815+00:00"}
+{"event": "completed", "call": 162, "cost": "0.00001342"}
+{"event": "reserved", "call": 163, "reserve": "0.0005", "utc": "2026-10-28T11:16:06.704085+00:00"}
+{"event": "completed", "call": 163, "cost": "0.00001336"}
+{"event": "reserved", "call": 164, "reserve": "0.0005", "utc": "2026-10-28T11:16:19.705569+00:00"}
+{"event": "completed", "call": 164, "cost": "0.00001286"}
+{"event": "reserved", "call": 165, "reserve": "0.0005", "utc": "2026-10-28T11:16:32.707772+00:00"}
+{"event": "completed", "call": 165, "cost": "0.0000128"}
+{"event": "reserved", "call": 166, "reserve": "0.0005", "utc": "2026-10-28T11:16:45.709655+00:00"}
+{"event": "completed", "call": 166, "cost": "0.00001292"}
+{"event": "reserved", "call": 167, "reserve": "0.0005", "utc": "2026-10-28T11:16:58.711134+00:00"}
+{"event": "completed", "call": 167, "cost": "0.0000129"}
+{"event": "reserved", "call": 168, "reserve": "0.0005", "utc": "2026-10-28T11:17:11.712990+00:00"}
+{"event": "completed", "call": 168, "cost": "0.00001292"}
+{"event": "reserved", "call": 169, "reserve": "0.0005", "utc": "2026-10-28T11:17:24.714598+00:00"}
+{"event": "completed", "call": 169, "cost": "0.00001348"}
+{"event": "reserved", "call": 170, "reserve": "0.0005", "utc": "2026-10-28T11:17:37.716971+00:00"}
+{"event": "completed", "call": 170, "cost": "0.0000129"}
+{"event": "reserved", "call": 171, "reserve": "0.0005", "utc": "2026-10-28T11:17:50.719818+00:00"}
+{"event": "completed", "call": 171, "cost": "0.0000128"}
+{"event": "reserved", "call": 172, "reserve": "0.0005", "utc": "2026-10-28T11:18:03.721972+00:00"}
+{"event": "completed", "call": 172, "cost": "0.00001294"}
+{"event": "reserved", "call": 173, "reserve": "0.0005", "utc": "2026-10-28T11:18:16.724303+00:00"}
+{"event": "completed", "call": 173, "cost": "0.00001288"}
+{"event": "reserved", "call": 174, "reserve": "0.0005", "utc": "2026-10-28T11:18:29.727056+00:00"}
+{"event": "completed", "call": 174, "cost": "0.00001352"}
+{"event": "reserved", "call": 175, "reserve": "0.0005", "utc": "2026-10-28T11:18:42.729107+00:00"}
+{"event": "completed", "call": 175, "cost": "0.00001336"}
+{"event": "reserved", "call": 176, "reserve": "0.0005", "utc": "2026-10-28T11:18:55.730995+00:00"}
+{"event": "completed", "call": 176, "cost": "0.0000128"}
+{"event": "reserved", "call": 177, "reserve": "0.0005", "utc": "2026-10-28T11:19:08.733575+00:00"}
+{"event": "completed", "call": 177, "cost": "0.00001278"}
+{"event": "reserved", "call": 178, "reserve": "0.0005", "utc": "2026-10-28T11:19:21.736150+00:00"}
+{"event": "completed", "call": 178, "cost": "0.00001284"}
+{"event": "reserved", "call": 179, "reserve": "0.0005", "utc": "2026-10-28T11:19:34.738580+00:00"}
+{"event": "completed", "call": 179, "cost": "0.00001288"}
+{"event": "reserved", "call": 180, "reserve": "0.0005", "utc": "2026-10-28T11:19:47.740933+00:00"}
+{"event": "completed", "call": 180, "cost": "0.0000129"}
+{"event": "reserved", "call": 181, "reserve": "0.0005", "utc": "2026-10-28T11:20:00.742713+00:00"}
+{"event": "completed", "call": 181, "cost": "0.00001276"}
+{"event": "reserved", "call": 182, "reserve": "0.0005", "utc": "2026-10-28T11:20:13.744650+00:00"}
+{"event": "completed", "call": 182, "cost": "0.0000128"}
+{"event": "reserved", "call": 183, "reserve": "0.0005", "utc": "2026-10-28T11:20:26.747641+00:00"}
+{"event": "completed", "call": 183, "cost": "0.00001286"}
+{"event": "reserved", "call": 184, "reserve": "0.0005", "utc": "2026-10-28T11:20:39.749379+00:00"}
+{"event": "completed", "call": 184, "cost": "0.00001342"}
+{"event": "reserved", "call": 185, "reserve": "0.0005", "utc": "2026-10-28T11:20:52.751798+00:00"}
+{"event": "completed", "call": 185, "cost": "0.00001334"}
+{"event": "reserved", "call": 186, "reserve": "0.0005", "utc": "2026-10-28T11:21:05.754315+00:00"}
+{"event": "completed", "call": 186, "cost": "0.00001264"}
+{"event": "reserved", "call": 187, "reserve": "0.0005", "utc": "2026-10-28T11:21:18.756342+00:00"}
+{"event": "completed", "call": 187, "cost": "0.00001292"}
+{"event": "reserved", "call": 188, "reserve": "0.0005", "utc": "2026-10-28T11:21:34.617934+00:00"}
+{"event": "completed", "call": 188, "cost": "0.00001112"}
+{"event": "reserved", "call": 189, "reserve": "0.0005", "utc": "2026-10-28T11:21:47.620313+00:00"}
+{"event": "completed", "call": 189, "cost": "0.000015"}
+{"event": "reserved", "call": 190, "reserve": "0.0005", "utc": "2026-10-28T11:22:00.623164+00:00"}
+{"event": "completed", "call": 190, "cost": "0.00000988"}
+{"event": "reserved", "call": 191, "reserve": "0.0005", "utc": "2026-10-28T11:22:13.625406+00:00"}
+{"event": "completed", "call": 191, "cost": "0.0000103"}
+{"event": "reserved", "call": 192, "reserve": "0.0005", "utc": "2026-10-28T11:22:26.628678+00:00"}
+{"event": "completed", "call": 192, "cost": "0.00001068"}
+{"event": "reserved", "call": 193, "reserve": "0.0005", "utc": "2026-10-28T11:22:39.631215+00:00"}
+{"event": "completed", "call": 193, "cost": "0.0000084"}
+{"event": "reserved", "call": 194, "reserve": "0.0005", "utc": "2026-10-28T11:22:52.633410+00:00"}
+{"event": "completed", "call": 194, "cost": "0.00000916"}
+{"event": "reserved", "call": 195, "reserve": "0.0005", "utc": "2026-10-28T11:23:05.635452+00:00"}
+{"event": "completed", "call": 195, "cost": "0.00000942"}
+{"event": "reserved", "call": 196, "reserve": "0.0005", "utc": "2026-10-28T11:23:18.637151+00:00"}
+{"event": "completed", "call": 196, "cost": "0.00001008"}
+{"event": "reserved", "call": 197, "reserve": "0.0005", "utc": "2026-10-28T11:23:31.639571+00:00"}
+{"event": "completed", "call": 197, "cost": "0.00001006"}
+{"event": "reserved", "call": 198, "reserve": "0.0005", "utc": "2026-10-28T11:23:44.641447+00:00"}
+{"event": "completed", "call": 198, "cost": "0.0000095"}
+{"event": "reserved", "call": 199, "reserve": "0.0005", "utc": "2026-10-28T11:23:57.643796+00:00"}
+{"event": "completed", "call": 199, "cost": "0.0000091"}
+{"event": "reserved", "call": 200, "reserve": "0.0005", "utc": "2026-10-28T11:24:10.646232+00:00"}
+{"event": "completed", "call": 200, "cost": "0.00000986"}
+{"event": "reserved", "call": 201, "reserve": "0.0005", "utc": "2026-10-28T11:24:23.648147+00:00"}
+{"event": "completed", "call": 201, "cost": "0.00000904"}
+{"event": "reserved", "call": 202, "reserve": "0.0005", "utc": "2026-10-28T11:24:36.651229+00:00"}
+{"event": "completed", "call": 202, "cost": "0.00001068"}
+{"event": "reserved", "call": 203, "reserve": "0.0005", "utc": "2026-10-28T11:24:49.654282+00:00"}
+{"event": "completed", "call": 203, "cost": "0.00001032"}
+{"event": "reserved", "call": 204, "reserve": "0.0005", "utc": "2026-10-28T11:25:02.656215+00:00"}
+{"event": "completed", "call": 204, "cost": "0.0000089"}
+{"event": "reserved", "call": 205, "reserve": "0.0005", "utc": "2026-10-28T11:25:15.657931+00:00"}
+{"event": "completed", "call": 205, "cost": "0.00000866"}
+{"event": "reserved", "call": 206, "reserve": "0.0005", "utc": "2026-10-28T11:25:28.659708+00:00"}
+{"event": "completed", "call": 206, "cost": "0.00001"}
+{"event": "reserved", "call": 207, "reserve": "0.0005", "utc": "2026-10-28T11:25:41.662289+00:00"}
+{"event": "completed", "call": 207, "cost": "0.00001044"}
+{"event": "reserved", "call": 208, "reserve": "0.0005", "utc": "2026-10-28T11:25:54.665760+00:00"}
+{"event": "completed", "call": 208, "cost": "0.0000095"}
+{"event": "reserved", "call": 209, "reserve": "0.0005", "utc": "2026-10-28T11:26:07.667533+00:00"}
+{"event": "completed", "call": 209, "cost": "0.00000868"}
+{"event": "reserved", "call": 210, "reserve": "0.0005", "utc": "2026-10-28T11:26:20.669828+00:00"}
+{"event": "completed", "call": 210, "cost": "0.00000928"}
+{"event": "reserved", "call": 211, "reserve": "0.0005", "utc": "2026-10-28T11:26:33.672067+00:00"}
+{"event": "completed", "call": 211, "cost": "0.00001056"}
+{"event": "reserved", "call": 212, "reserve": "0.0005", "utc": "2026-10-28T11:26:46.673923+00:00"}
+{"event": "completed", "call": 212, "cost": "0.00000994"}
+{"event": "reserved", "call": 213, "reserve": "0.0005", "utc": "2026-10-28T11:26:59.676985+00:00"}
+{"event": "completed", "call": 213, "cost": "0.00001106"}
+{"event": "reserved", "call": 214, "reserve": "0.0005", "utc": "2026-10-28T11:27:12.678905+00:00"}
+{"event": "completed", "call": 214, "cost": "0.00000842"}
+{"event": "reserved", "call": 215, "reserve": "0.0005", "utc": "2026-10-28T11:27:25.681463+00:00"}
+{"event": "completed", "call": 215, "cost": "0.00000896"}
+{"event": "reserved", "call": 216, "reserve": "0.0005", "utc": "2026-10-28T11:27:38.684504+00:00"}
+{"event": "completed", "call": 216, "cost": "0.00001022"}
+{"event": "reserved", "call": 217, "reserve": "0.0005", "utc": "2026-10-28T11:27:51.687895+00:00"}
+{"event": "completed", "call": 217, "cost": "0.0000101"}
+{"event": "reserved", "call": 218, "reserve": "0.0005", "utc": "2026-10-28T11:28:04.690843+00:00"}
+{"event": "completed", "call": 218, "cost": "0.0000098"}
+{"event": "reserved", "call": 219, "reserve": "0.0005", "utc": "2026-10-28T11:28:17.692797+00:00"}
+{"event": "completed", "call": 219, "cost": "0.00000888"}
+{"event": "reserved", "call": 220, "reserve": "0.0005", "utc": "2026-10-28T11:28:30.694922+00:00"}
+{"event": "completed", "call": 220, "cost": "0.00000902"}
+{"event": "reserved", "call": 221, "reserve": "0.0005", "utc": "2026-10-28T11:28:43.696687+00:00"}
+{"event": "completed", "call": 221, "cost": "0.00001006"}
+{"event": "reserved", "call": 222, "reserve": "0.0005", "utc": "2026-10-28T11:28:56.699293+00:00"}
+{"event": "completed", "call": 222, "cost": "0.0000102"}
+{"event": "reserved", "call": 223, "reserve": "0.0005", "utc": "2026-10-28T11:29:09.702718+00:00"}
+{"event": "completed", "call": 223, "cost": "0.00000862"}
+{"event": "reserved", "call": 224, "reserve": "0.0005", "utc": "2026-10-28T11:29:22.704781+00:00"}
+{"event": "completed", "call": 224, "cost": "0.0000101"}
+{"event": "reserved", "call": 225, "reserve": "0.0005", "utc": "2026-10-28T11:29:35.706679+00:00"}
+{"event": "completed", "call": 225, "cost": "0.0000088"}
+{"event": "reserved", "call": 226, "reserve": "0.0005", "utc": "2026-10-28T11:29:48.709107+00:00"}
+{"event": "completed", "call": 226, "cost": "0.00001032"}
+{"event": "reserved", "call": 227, "reserve": "0.0005", "utc": "2026-10-28T11:30:01.711395+00:00"}
+{"event": "completed", "call": 227, "cost": "0.0000101"}
+{"event": "reserved", "call": 228, "reserve": "0.0005", "utc": "2026-10-28T11:30:14.714587+00:00"}
+{"event": "completed", "call": 228, "cost": "0.0000094"}
+{"event": "reserved", "call": 229, "reserve": "0.0005", "utc": "2026-10-28T11:30:27.716479+00:00"}
+{"event": "completed", "call": 229, "cost": "0.00001124"}
+{"event": "reserved", "call": 230, "reserve": "0.0005", "utc": "2026-10-28T11:30:40.718386+00:00"}
+{"event": "completed", "call": 230, "cost": "0.0000097"}
+{"event": "reserved", "call": 231, "reserve": "0.0005", "utc": "2026-10-28T11:30:53.720235+00:00"}
+{"event": "completed", "call": 231, "cost": "0.00001126"}
+{"event": "reserved", "call": 232, "reserve": "0.0005", "utc": "2026-10-28T11:31:06.722937+00:00"}
+{"event": "completed", "call": 232, "cost": "0.00001218"}
+{"event": "reserved", "call": 233, "reserve": "0.0005", "utc": "2026-10-28T11:31:19.726297+00:00"}
+{"event": "completed", "call": 233, "cost": "0.00000926"}
+{"event": "reserved", "call": 234, "reserve": "0.0005", "utc": "2026-10-28T11:31:32.729516+00:00"}
+{"event": "completed", "call": 234, "cost": "0.0000106"}
+{"event": "reserved", "call": 235, "reserve": "0.0005", "utc": "2026-10-28T11:31:45.731501+00:00"}
+{"event": "completed", "call": 235, "cost": "0.0000112"}
+{"event": "reserved", "call": 236, "reserve": "0.0005", "utc": "2026-10-28T11:31:58.733928+00:00"}
+{"event": "completed", "call": 236, "cost": "0.00001076"}
+{"event": "reserved", "call": 237, "reserve": "0.0005", "utc": "2026-10-28T11:32:11.736082+00:00"}
+{"event": "completed", "call": 237, "cost": "0.00000904"}
+{"event": "reserved", "call": 238, "reserve": "0.0005", "utc": "2026-10-28T11:32:24.738715+00:00"}
+{"event": "completed", "call": 238, "cost": "0.00000928"}
+{"event": "reserved", "call": 239, "reserve": "0.0005", "utc": "2026-10-28T11:32:37.741416+00:00"}
+{"event": "completed", "call": 239, "cost": "0.00000844"}
+{"event": "reserved", "call": 240, "reserve": "0.0005", "utc": "2026-10-28T11:32:50.743974+00:00"}
+{"event": "completed", "call": 240, "cost": "0.00001048"}
+{"event": "reserved", "call": 241, "reserve": "0.0005", "utc": "2026-10-28T11:33:03.746360+00:00"}
+{"event": "completed", "call": 241, "cost": "0.00001"}
+{"event": "reserved", "call": 242, "reserve": "0.0005", "utc": "2026-10-28T11:33:16.749836+00:00"}
+{"event": "completed", "call": 242, "cost": "0.00001194"}
+{"event": "reserved", "call": 243, "reserve": "0.0005", "utc": "2026-10-28T11:33:19.852366+00:00"}
+{"event": "completed", "call": 243, "cost": "0.0000095"}
+{"event": "reserved", "call": 244, "reserve": "0.0005", "utc": "2026-10-28T11:33:32.854322+00:00"}
+{"event": "completed", "call": 244, "cost": "0.00000944"}
+{"event": "reserved", "call": 245, "reserve": "0.0005", "utc": "2026-10-28T11:33:45.856709+00:00"}
+{"event": "completed", "call": 245, "cost": "0.0000109"}
+{"event": "reserved", "call": 246, "reserve": "0.0005", "utc": "2026-10-28T11:33:58.858736+00:00"}
+{"event": "rate_limited", "call": 246, "attempt": 1, "wait_seconds": 60}
+{"event": "completed", "call": 246, "cost": "0.00001316"}
+{"event": "reserved", "call": 247, "reserve": "0.0005", "utc": "2026-10-28T11:35:12.143669+00:00"}
+{"event": "completed", "call": 247, "cost": "0.00000958"}
+{"event": "reserved", "call": 248, "reserve": "0.0005", "utc": "2026-10-28T11:35:25.145944+00:00"}
+{"event": "completed", "call": 248, "cost": "0.0000085"}
+{"event": "reserved", "call": 249, "reserve": "0.0005", "utc": "2026-10-28T11:35:38.147872+00:00"}
+{"event": "completed", "call": 249, "cost": "0.0000119"}
+{"event": "reserved", "call": 250, "reserve": "0.0005", "utc": "2026-10-28T11:35:51.150690+00:00"}
+{"event": "completed", "call": 250, "cost": "0.00000956"}
+{"event": "reserved", "call": 251, "reserve": "0.0005", "utc": "2026-10-28T11:36:04.153755+00:00"}
+{"event": "completed", "call": 251, "cost": "0.00001256"}
+{"event": "reserved", "call": 252, "reserve": "0.0005", "utc": "2026-10-28T11:36:17.156277+00:00"}
+{"event": "completed", "call": 252, "cost": "0.00000856"}
+{"event": "reserved", "call": 253, "reserve": "0.0005", "utc": "2026-10-28T11:36:30.159300+00:00"}
+{"event": "completed", "call": 253, "cost": "0.00000846"}
+{"event": "reserved", "call": 254, "reserve": "0.0005", "utc": "2026-10-28T11:36:43.162265+00:00"}
+{"event": "completed", "call": 254, "cost": "0.00001034"}
+{"event": "reserved", "call": 255, "reserve": "0.0005", "utc": "2026-10-28T11:36:56.164624+00:00"}
+{"event": "completed", "call": 255, "cost": "0.0000102"}
+{"event": "reserved", "call": 256, "reserve": "0.0005", "utc": "2026-10-28T11:37:09.167349+00:00"}
+{"event": "completed", "call": 256, "cost": "0.0000092"}
+{"event": "reserved", "call": 257, "reserve": "0.0005", "utc": "2026-10-28T11:37:22.169975+00:00"}
+{"event": "completed", "call": 257, "cost": "0.00001166"}
+{"event": "reserved", "call": 258, "reserve": "0.0005", "utc": "2026-10-28T11:37:35.172289+00:00"}
+{"event": "completed", "call": 258, "cost": "0.0000086"}
+{"event": "reserved", "call": 259, "reserve": "0.0005", "utc": "2026-10-28T11:37:48.174534+00:00"}
+{"event": "completed", "call": 259, "cost": "0.00000854"}
+{"event": "reserved", "call": 260, "reserve": "0.0005", "utc": "2026-10-28T11:38:01.176912+00:00"}
+{"event": "completed", "call": 260, "cost": "0.00000864"}
+{"event": "reserved", "call": 261, "reserve": "0.0005", "utc": "2026-10-28T11:38:14.180005+00:00"}
+{"event": "completed", "call": 261, "cost": "0.00001792"}
+{"event": "reserved", "call": 262, "reserve": "0.0005", "utc": "2026-10-28T11:38:27.182582+00:00"}
+{"event": "completed", "call": 262, "cost": "0.0000103"}
+{"event": "reserved", "call": 263, "reserve": "0.0005", "utc": "2026-10-28T11:38:40.184682+00:00"}
+{"event": "completed", "call": 263, "cost": "0.000009"}
+{"event": "reserved", "call": 264, "reserve": "0.0005", "utc": "2026-10-28T11:38:53.186980+00:00"}
+{"event": "completed", "call": 264, "cost": "0.00000892"}
+{"event": "reserved", "call": 265, "reserve": "0.0005", "utc": "2026-10-28T11:39:06.189682+00:00"}
+{"event": "completed", "call": 265, "cost": "0.00000924"}
+{"event": "reserved", "call": 266, "reserve": "0.0005", "utc": "2026-10-28T11:39:19.191720+00:00"}
+{"event": "completed", "call": 266, "cost": "0.00000962"}
+{"event": "reserved", "call": 267, "reserve": "0.0005", "utc": "2026-10-28T11:39:32.194285+00:00"}
+{"event": "completed", "call": 267, "cost": "0.00000928"}
+{"event": "reserved", "call": 268, "reserve": "0.0005", "utc": "2026-10-28T11:39:45.197518+00:00"}
+{"event": "completed", "call": 268, "cost": "0.00001308"}
+{"event": "reserved", "call": 269, "reserve": "0.0005", "utc": "2026-10-28T11:39:58.199710+00:00"}
+{"event": "completed", "call": 269, "cost": "0.00000834"}
+{"event": "reserved", "call": 270, "reserve": "0.0005", "utc": "2026-10-28T11:40:11.202548+00:00"}
+{"event": "completed", "call": 270, "cost": "0.0000089"}
+{"event": "reserved", "call": 271, "reserve": "0.0005", "utc": "2026-10-28T11:40:24.205582+00:00"}
+{"event": "completed", "call": 271, "cost": "0.00001174"}
+{"event": "reserved", "call": 272, "reserve": "0.0005", "utc": "2026-10-28T11:40:37.208249+00:00"}
+{"event": "completed", "call": 272, "cost": "0.00000928"}
+{"event": "reserved", "call": 273, "reserve": "0.0005", "utc": "2026-10-28T11:40:50.210742+00:00"}
+{"event": "completed", "call": 273, "cost": "0.00000986"}
+{"event": "reserved", "call": 274, "reserve": "0.0005", "utc": "2026-10-28T11:41:03.213870+00:00"}
+{"event": "completed", "call": 274, "cost": "0.00000958"}
+{"event": "reserved", "call": 275, "reserve": "0.0005", "utc": "2026-10-28T11:41:16.217612+00:00"}
+{"event": "completed", "call": 275, "cost": "0.00000854"}
+{"event": "reserved", "call": 276, "reserve": "0.0005", "utc": "2026-10-28T11:41:29.220153+00:00"}
+{"event": "completed", "call": 276, "cost": "0.0000094"}
+{"event": "reserved", "call": 277, "reserve": "0.0005", "utc": "2026-10-28T11:41:42.223252+00:00"}
+{"event": "completed", "call": 277, "cost": "0.0000141"}
+{"event": "reserved", "call": 278, "reserve": "0.0005", "utc": "2026-10-28T11:41:55.225947+00:00"}
+{"event": "completed", "call": 278, "cost": "0.00000876"}
+{"event": "reserved", "call": 279, "reserve": "0.0005", "utc": "2026-10-28T11:42:08.229188+00:00"}
+{"event": "completed", "call": 279, "cost": "0.00001524"}
+{"event": "reserved", "call": 280, "reserve": "0.0005", "utc": "2026-10-28T11:42:21.232773+00:00"}
+{"event": "completed", "call": 280, "cost": "0.0000123"}
+{"event": "reserved", "call": 281, "reserve": "0.0005", "utc": "2026-10-28T11:42:34.235174+00:00"}
+{"event": "completed", "call": 281, "cost": "0.00001056"}
+{"event": "reserved", "call": 282, "reserve": "0.0005", "utc": "2026-10-28T11:42:47.238303+00:00"}
+{"event": "completed", "call": 282, "cost": "0.00000992"}
+{"event": "reserved", "call": 283, "reserve": "0.0005", "utc": "2026-10-28T11:43:00.240539+00:00"}
+{"event": "completed", "call": 283, "cost": "0.0000125"}
+{"event": "reserved", "call": 284, "reserve": "0.0005", "utc": "2026-10-28T11:43:13.243519+00:00"}
+{"event": "completed", "call": 284, "cost": "0.00001242"}
+{"event": "reserved", "call": 285, "reserve": "0.0005", "utc": "2026-10-28T11:43:26.247045+00:00"}
+{"event": "completed", "call": 285, "cost": "0.00001112"}
+{"event": "reserved", "call": 286, "reserve": "0.0005", "utc": "2026-10-28T11:43:39.249668+00:00"}
+{"event": "completed", "call": 286, "cost": "0.0000102"}
+{"event": "reserved", "call": 287, "reserve": "0.0005", "utc": "2026-10-28T11:43:52.252788+00:00"}
+{"event": "completed", "call": 287, "cost": "0.00000974"}
+{"event": "reserved", "call": 288, "reserve": "0.0005", "utc": "2026-10-28T11:44:05.255577+00:00"}
+{"event": "completed", "call": 288, "cost": "0.00000912"}
+{"event": "reserved", "call": 289, "reserve": "0.0005", "utc": "2026-10-28T11:44:18.258535+00:00"}
+{"event": "completed", "call": 289, "cost": "0.0000084"}
+{"event": "reserved", "call": 290, "reserve": "0.0005", "utc": "2026-10-28T11:44:31.261379+00:00"}
+{"event": "completed", "call": 290, "cost": "0.00001006"}
+{"event": "reserved", "call": 291, "reserve": "0.0005", "utc": "2026-10-28T11:44:44.263958+00:00"}
+{"event": "completed", "call": 291, "cost": "0.0000098"}
+{"event": "reserved", "call": 292, "reserve": "0.0005", "utc": "2026-10-28T11:44:57.266897+00:00"}
+{"event": "completed", "call": 292, "cost": "0.0000094"}
+{"event": "reserved", "call": 293, "reserve": "0.0005", "utc": "2026-10-28T11:45:10.269479+00:00"}
+{"event": "completed", "call": 293, "cost": "0.00000986"}
+{"event": "reserved", "call": 294, "reserve": "0.0005", "utc": "2026-10-28T11:45:23.271806+00:00"}
+{"event": "rate_limited", "call": 294, "attempt": 1, "wait_seconds": 60}
+{"event": "rate_limited", "call": 294, "attempt": 2, "wait_seconds": 120}
+{"event": "completed", "call": 294, "cost": "0.00001076"}

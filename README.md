@@ -85,6 +85,21 @@ Replies are ordinary, public messages in the invoking channel—not ephemeral. *
 
 `!help` lists all message commands, grouped under small `###` prefix headers. Bare `!emoji` shows `!emoji list`; bare `!history` shows `!history stats`. Explicit `!emoji help` and `!history help` still show the full menu. Emoji selectors accept an actual Discord mention (`<:name:ID>`), `:name:`, bare name or numeric ID. Incoming swap targets accept backed-up names (case-insensitive) or a full asset ID (reported when a name is ambiguous). Duplicate/ambiguous names are rejected rather than guessing. Renamed emoji keep aliases. There is no `remote` command.
 
+### OpenAI reset and feature notifications
+
+```text
+!register openai-reset
+!unregister openai-reset
+!unregister
+!test openai-reset
+```
+
+Subscribe the **current channel** to new reset **and** feature posts from **@thsottiaux**; unrelated posts stay silent. Registrations persist across restarts. `!test openai-reset` sends a labeled synthetic preview with example confidence, **without any Twitter/AI API call, credit usage, or registration**. Real notifications show the model's chosen-category confidence and a source link.
+
+The implementation uses free FxTwitter polling (about one minute, not a real-time stream) and the previously evaluated `perplexity/pplx-decider-v1.2` via the existing free-tier Gateway key. Set optional `AI_GATEWAY_API_KEY` (or existing `VERCEL_TOKEN`) securely; `OPENAI_RESET_ENABLED=false` disables monitoring. No key means subscriptions/samples still work but monitoring stays off. No paid X API, purchase/top-up or model fallback; persistent credit limits fail closed. Confidence is a model estimate, **not a guarantee of future accuracy**.
+
+See [notification behavior, cost safeguards and operational limits](docs/openai-notifications.md). This change is offline-tested only; production has not been deployed or logged into for testing.
+
 ### Swaps and imports
 
 - Incoming images are read and validated **before any removal**, and the outgoing image is backed up first.

@@ -1,0 +1,11 @@
+# Phase 2: failed holdout becomes development; fresh retrospective validation
+
+The phase-1 v2 prompt failed its chronological holdout (45/55 overall and 1/11 reset recall). Those results remain recorded and must not be relabeled as unseen accuracy for subsequent prompts. The previously untouched synthetic challenge is also being completed under v2, with no edits to it or the prompt.
+
+To continue the user's requested refinement honestly, explicitly promote the entire consumed 55-post holdout to phase-2 development. Make one final, shorter general zero-shot prompt (v3) using the observed failure pattern: the hosted model strongly underrecognizes terse reset announcements and overweights conservative exclusions. Do not include any actual tweet examples, day-number rules, tweet IDs or answer mappings. Preserve the original label policy. Keep prompt selection and all earlier failures visible.
+
+For a genuinely new inference/refinement-held-out check, use the independently retrieved older timeline (September 6–October 15), not any original 102 tweets. Select every third item in the chronological newly collected list (indices 0,3,6,...,153), excluding empty text if encountered, for a deterministic 52-post validation set. Assign provisional manual labels before v3 inference. This is retrospective validation, NOT a new forward chronological holdout, and its texts have been read during collection. Do not inspect or refine on its model predictions. The selection does not depend on predictions or labels. Explicit context from older posts in the same collection is permitted, never from future posts.
+
+Freeze v3 and the new validation fixture hashes before any v3 call. Run it first on the consumed 55-post phase-2 development set, then once on the new 52-post validation set. No v4. Report all previous metrics, the phase-2 development metrics and the fresh validation metrics distinctly. If v3 does not achieve strong validation results, state that clearly; do not tune further against the validation set.
+
+Same fixed model, existing credits only, no purchases/top-ups/fallbacks, same $0.05 maximum experiment spend and 400 logical-call cap. Overall development calls remain within the original approximate 150-case cap (47 v1 + 47 v2 + 55 v3 = 149, plus the separately documented initial smoke/transport attempts).

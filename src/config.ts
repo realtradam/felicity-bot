@@ -5,6 +5,9 @@ const snowflake = z.string().regex(/^\d{17,20}$/);
 const schema = z.object({
   DISCORD_TOKEN: z.string().trim().min(1),
   DISCORD_CLIENT_ID: snowflake,
+  OPENAI_RESET_ENABLED: z.enum(['true', 'false']).default('true'),
+  AI_GATEWAY_API_KEY: z.string().trim().optional(),
+  VERCEL_TOKEN: z.string().trim().optional(),
   PREVIEW_CACHE_SIZE: z.coerce.number().int().min(10).max(2000).default(100),
   DATA_DIR: z.string().min(1).default('./data'),
   LOG_LEVEL: z
@@ -21,7 +24,13 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env) {
     ];
     throw new Error(`Missing or invalid configuration: ${keys.join(', ')}`);
   }
+  const gatewayKey = result.data.AI_GATEWAY_API_KEY || result.data.VERCEL_TOKEN;
   return {
+    openaiReset: {
+      enabled:
+        result.data.OPENAI_RESET_ENABLED === 'true' && Boolean(gatewayKey),
+      apiKey: gatewayKey,
+    },
     previewCacheSize: result.data.PREVIEW_CACHE_SIZE,
     token: result.data.DISCORD_TOKEN,
     clientId: result.data.DISCORD_CLIENT_ID,

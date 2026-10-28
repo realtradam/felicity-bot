@@ -6,6 +6,9 @@ export function createLogger(level: string) {
     redact: [
       'token',
       'DISCORD_TOKEN',
+      'apiKey',
+      'AI_GATEWAY_API_KEY',
+      'VERCEL_TOKEN',
       'authorization',
       'headers.authorization',
     ],

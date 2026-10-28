@@ -1,7 +1,12 @@
 #!/usr/bin/env bash
 set -euo pipefail
-source "$(dirname "$0")/_common"
-compose config --quiet
-# Only placeholders for syntax validation: never real credentials.
-DISCORD_TOKEN=validation-only DISCORD_CLIENT_ID=123456789012345678 \
-  docker compose --env-file /dev/null -p felicity-prod -f "$ROOT/docker-compose.prod.yml" config --quiet
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+cd "$ROOT"
+# Never read .env, expand real credentials, print rendered config or start services.
+for spec in 'docker-compose.yml felicity-dev' 'docker-compose.prod.yml felicity-prod'; do
+  read -r file project <<< "$spec"
+  env -i PATH="$PATH" HOME="$HOME" \
+    DISCORD_TOKEN=validation-only DISCORD_CLIENT_ID=123456789012345678 \
+    docker compose --env-file /dev/null -p "$project" -f "$ROOT/$file" config --quiet
+done
+printf 'Development/production Compose validated offline with placeholders only.\n'
