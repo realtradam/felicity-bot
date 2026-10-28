@@ -13,7 +13,7 @@ export function ingestMessage(db: BotDatabase, message: Message) {
     textEmojis:
       message.author.bot ||
       message.webhookId ||
-      /^!(emoji|history)(?:\s|$)/i.test(message.content.trimStart())
+      /^!(emoji|history|ai|image)(?:\s|$)/i.test(message.content.trimStart())
         ? []
         : countEmoji(message.content),
     reactions: [...message.reactions.cache.values()].flatMap((reaction) => {

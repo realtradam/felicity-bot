@@ -8,6 +8,11 @@ import {
   Partials,
 } from 'discord.js';
 import type { Logger } from 'pino';
+import { ExaSearch } from './ai/search.js';
+import { ChatStore } from './ai/store.js';
+import { ChatService } from './ai/service.js';
+import { LogfareGateway } from './ai/gateway.js';
+import { DiscordAI, aiDisabled } from './discord/ai.js';
 import { loadConfig } from './config.js';
 import { handleMessageCommand } from './discord/message-commands.js';
 import { UserError } from './discord/user-error.js';
@@ -48,6 +53,21 @@ async function main() {
       MessageManager: 100,
     }),
   });
+  const chatStore = config.ai
+    ? new ChatStore(join(config.dataDir, 'ai.sqlite'))
+    : undefined;
+  const ai =
+    chatStore && config.ai
+      ? new DiscordAI(
+          new ChatService(
+            chatStore,
+            new LogfareGateway(config.ai.apiKey),
+            config.ai.searchApiKey
+              ? new ExaSearch(config.ai.searchApiKey)
+              : undefined,
+          ),
+        )
+      : undefined;
   const controller = new AbortController();
   const tasks = new Set<Promise<void>>();
   const notifications = new DiscordNotifications(
@@ -131,7 +151,9 @@ async function main() {
     }
     run(async () => {
       try {
-        await handleMessageCommand(message, context);
+        if (await handleMessageCommand(message, context)) return;
+        if (ai) await ai.handle(message, controller.signal);
+        else await aiDisabled(message);
       } catch (error) {
         logger.error(errorDetails(error), 'Message command failed');
         if (!controller.signal.aborted)
@@ -183,13 +205,22 @@ async function main() {
     refresh(reaction.message.channelId, reaction.message.id),
   );
   client.on(Events.GuildDelete, (guild) => {
-    if (!stopping) notificationStore.removeGuild(guild.id);
+    if (!stopping) {
+      notificationStore.removeGuild(guild.id);
+      ai?.removeGuild(guild.id);
+    }
   });
   client.on(Events.ChannelDelete, (channel) => {
-    if (!stopping) notificationStore.removeChannel(channel.id);
+    if (!stopping) {
+      notificationStore.removeChannel(channel.id);
+      ai?.removeChannel(channel.id);
+    }
   });
   client.on(Events.ThreadDelete, (thread) => {
-    if (!stopping) notificationStore.removeChannel(thread.id);
+    if (!stopping) {
+      notificationStore.removeChannel(thread.id);
+      ai?.removeChannel(thread.id);
+    }
   });
   client.on(Events.MessageReactionRemove, (reaction) =>
     refresh(reaction.message.channelId, reaction.message.id),
@@ -230,6 +261,7 @@ async function main() {
     forceExit.unref();
     await client.destroy();
     await Promise.allSettled([...tasks]);
+    chatStore?.close();
     notificationStore.close();
     db.close();
     clearTimeout(forceExit);

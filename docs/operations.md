@@ -42,6 +42,14 @@ Dev secret: `projects/discordbot-felicity/dev/discord_token`.
 Production secret: `projects/discordbot-felicity/prod/discord_token`.
 Local development uses a git-ignored `.env` with owner-only permissions (`chmod 600 .env`). `.env.example` contains non-secret settings only. Exported environment variables override `.env`. If `.env` is missing, startup falls back to gopass; an incomplete `.env` does not silently mix in gopass credentials. Never commit `.env` or reuse production credentials in development.
 
+## AI chat and images
+
+`LOGFARE_API_KEY` enables channel-scoped AI chat and image commands; `AI_CHAT_ENABLED=false` disables both. The optional feature defaults to GLM 5.3 chat and FLUX.1 Schnell images. The sole optional AI tool is Exa search via Umans (`UMANS_API_KEY`), matching Dispatch; there is no Firecrawl or other tool access. Both Compose configurations pass both keys through; production needs its own Dokploy environment entry. No deploy/start/stop is implied by changing source configuration.
+
+See [AI chat](ai-chat.md) for commands, first-token typing, per-channel history/100k compaction, TTFT/TPS metrics, bedtime errors, provider logging and limitations. The separate `ai.sqlite` contains directed message text, sender metadata, summary, settings and output reply IDs, so whole-directory backups now contain private conversation content. `!ai clear` does not erase provider logs, Discord messages or backups. Ordinary channel messages are still not collected as transcripts.
+
+`bin/ai-smoke` makes a real provider chat/image request without connecting to Discord or touching stored history; normal `bin/test`, `bin/check` and `bin/build` remain offline. Never run two Discord-connected bot instances on the same token for a UI test.
+
 ## Persistence and backup
 
 Development Compose project: `felicity-dev`.

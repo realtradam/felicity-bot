@@ -64,3 +64,46 @@ it('enables optional notifications only with an existing key and supports explic
     }),
   ).toThrow('Missing or invalid configuration: OPENAI_RESET_ENABLED');
 });
+
+it('enables Logfare chat only with a key, supports disabling, and never exposes keys in validation errors', () => {
+  expect(loadConfig(valid).ai).toBeUndefined();
+  expect(loadConfig({ ...valid, LOGFARE_API_KEY: 'test-key' }).ai).toEqual({
+    apiKey: 'test-key',
+    searchApiKey: undefined,
+  });
+  expect(loadConfig({ ...valid, LOGFARE_API_KEY: '  ' }).ai).toBeUndefined();
+  expect(
+    loadConfig({
+      ...valid,
+      LOGFARE_API_KEY: 'test-key',
+      AI_CHAT_ENABLED: 'false',
+    }).ai,
+  ).toBeUndefined();
+  expect(() =>
+    loadConfig({
+      ...valid,
+      LOGFARE_API_KEY: 'never-print-me',
+      AI_CHAT_ENABLED: 'yes',
+    }),
+  ).toThrow('Missing or invalid configuration: AI_CHAT_ENABLED');
+});
+
+it('uses the Umans key only for optional Exa search, never as the chat credential', () => {
+  expect(
+    loadConfig({ ...valid, UMANS_API_KEY: 'search-test-key' }).ai,
+  ).toBeUndefined();
+  expect(
+    loadConfig({
+      ...valid,
+      LOGFARE_API_KEY: 'chat-test-key',
+      UMANS_API_KEY: 'search-test-key',
+    }).ai,
+  ).toEqual({ apiKey: 'chat-test-key', searchApiKey: 'search-test-key' });
+  expect(
+    loadConfig({
+      ...valid,
+      LOGFARE_API_KEY: 'chat-test-key',
+      UMANS_API_KEY: '  ',
+    }).ai?.searchApiKey,
+  ).toBeUndefined();
+});

@@ -2,7 +2,7 @@
 
 This directory is the standalone **bot Git repository**. It stays in `bot/` so additional sibling services can be added in the future. The bot is self-contained: SQLite stores original image bytes and Discord application emoji provide inline previews. No image host, public HTTP server, domain, or shared Docker network is required. The original `felicity-dev` project and named data volumes are preserved.
 
-A TypeScript/discord.js bot for archiving server emoji, managing uploads/removals, and measuring custom and Unicode emoji usage. Node 24, SQLite (`better-sqlite3`), Zod configuration, Pino logging, Vitest, ESLint, and Prettier.
+A TypeScript/discord.js bot for archiving server emoji, managing uploads/removals, measuring custom and Unicode emoji usage, and channel-scoped AI chat/image generation through Logfare. Node 24, SQLite (`better-sqlite3`), Zod configuration, Pino logging, Vitest, ESLint, and Prettier.
 
 Development runs in Docker. The host only needs Docker with Compose and Bash. Local credentials are loaded from a git-ignored `.env` file; gopass is optional. No inbound ports, public URL, or local TLS certificates are needed: the bot connects outbound to Discord.
 
@@ -85,6 +85,29 @@ Replies are ordinary, public messages in the invoking channel—not ephemeral. *
 
 `!help` lists all message commands, grouped under small `###` prefix headers. Bare `!emoji` shows `!emoji list`; bare `!history` shows `!history stats`. Explicit `!emoji help` and `!history help` still show the full menu. Emoji selectors accept an actual Discord mention (`<:name:ID>`), `:name:`, bare name or numeric ID. Incoming swap targets accept backed-up names (case-insensitive) or a full asset ID (reported when a name is ambiguous). Duplicate/ambiguous names are rejected rather than guessing. Renamed emoji keep aliases. There is no `remote` command.
 
+### AI chat and image generation
+
+Start a message with **@Felicity**, or reply directly to one of her AI text responses. History and model choices are shared **only within that channel/thread** and persist across restarts. Ordinary channel chatter and replies to other bot outputs are not included.
+
+```text
+!ai models [page]
+!ai model glm-5.3
+!ai status
+!ai compact
+!ai clear
+!image models [page]
+!image model flux-1-schnell
+!image a cat watching the stars
+```
+
+`!ai help` / `!image help` explain all commands. Default chat model: **GLM 5.3**; default image model: **FLUX.1 Schnell**. Chat model lists show Logfare’s observed 24h TTFT/TPS; image lists show generation latency. Missing metrics say unavailable. History auto-compacts above approximately **100,000 tokens**, earlier for smaller model windows; manual compaction/clear affect only the current channel.
+
+Typing begins at the first streamed text/reasoning token. Responses are AI text verbatim, split if necessary, with only a final `-# GLM 5.3`-style bare-model subtext. Usage limits get “I’m tired and went to bed. I can’t reply right now.” with `-# Usage limits reached`; other errors use the relevant sanitized reason. Reasoning is never displayed.
+
+The AI’s **only tool** is optional `web_search` through **Exa via Umans**, matching Dispatch; supply `UMANS_API_KEY` to enable it. No Firecrawl, shell, file, Discord-action, scrape/crawl or AI-callable image tools. Only the final assistant text is posted, not intermediate search prose or tool results.
+
+Set `LOGFARE_API_KEY` in the ignored environment; `AI_CHAT_ENABLED=false` disables the feature. **Logfare logs prompts and responses** and applies fair-use limits. Directed chat bodies, sender IDs/names and timestamps are now persisted in a separate `ai.sqlite`; analytics still do not store channel transcripts. `!ai clear` erases local context, not public Discord messages or provider logs. See [AI chat operations/privacy](docs/ai-chat.md) for exact triggers, compaction, configuration and tests. Production needs its own environment configuration; this change does not deploy or start the bot.
+
 ### OpenAI reset and feature notifications
 
 ```text
@@ -142,7 +165,7 @@ Stats include installed, archived-zero-use, and swapped-out emoji. Deleted/unins
 
 Stats render installed custom emoji inline and use the bot's cached application-emoji previews for archived/removed ones (text fallback if unavailable). Untracked custom emoji — usually ones from a server the bot is not in — are previewed by downloading their public Discord CDN image into the same bot-owned cache; nothing is added to the archive database. Standard Unicode emoji are included whenever observed in text or reactions, including flags, skin tones, keycaps and joined sequences. Presentation-selector variants share totals; different skin tones remain separate. The selector is restored when reporting, so text-default symbols such as ❤ and ☹ appear as emoji rather than monochrome text. Unicode entries do not get installation-state labels. Reports use ten entries per page: `!history stats 2` or `!history stats_channel 2`.
 
-**Backfill after upgrading:** previous snapshots did not record Unicode emoji and message bodies are not stored. Run `!history scan restart` in each channel/thread to include older Unicode usage. New live messages/reactions are tracked automatically. A normal incremental scan deliberately skips already-covered messages.
+**Backfill after upgrading:** previous snapshots did not record Unicode emoji and analytics do not store message bodies. Run `!history scan restart` in each channel/thread to include older Unicode usage. New live messages/reactions are tracked automatically. A normal incremental scan deliberately skips already-covered messages.
 
 `!history stats_current [page]` lists **each currently installed custom emoji slot in this server**, with server-wide counts sorted by fewest total uses first (older last-used day breaks ties). It excludes Unicode, removed backups and external emoji, but includes zero-use, managed and role-restricted installed emoji. Counts/dates still combine all known old/new IDs of the same archived image. Identical images installed under multiple names each show that shared total; the rows are not independent counts to add together. Zero means **never observed**, not proof of no historical usage—scan the relevant channels first.
 
@@ -166,7 +189,7 @@ Persistent files inside the container:
 
 `data` is a **named Docker volume**, not the host's `./data` directory. See [operations](docs/operations.md) for persistence, backups and production deployment.
 
-- No raw message text or author IDs are stored. Stored data includes message/channel/guild IDs, message timestamps, emoji IDs, derived counts, asset metadata and scan cursors.
+- Emoji analytics store no raw message text or author IDs. The separate optional AI chat database does store directed conversations and sender metadata; see [AI chat privacy](docs/ai-chat.md). Analytics data includes message/channel/guild IDs, message timestamps, emoji IDs, derived counts, asset metadata and scan cursors.
 - Text usage excludes bot/webhook-authored messages and management commands. Reactions to their messages are included. Reaction totals include bots and normal/super reactions; they are not distinct-human counts.
 - Unicode emoji are excluded: they do not occupy custom server emoji slots.
 - Cached/live message edits and reaction events trigger REST refreshes; deletion events remove stored usage. Missing events during downtime need explicit rescans. This is not an immutable event ledger or guaranteed-exact historical analytics system.

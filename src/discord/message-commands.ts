@@ -51,6 +51,10 @@ export function parseMessageCommand(
 const help = [
   '!help · show all message commands',
   '',
+  '### !ai / !image',
+  '!ai help · chat, channel models and history controls',
+  '!image help · image models and generation',
+  '',
   '### !emoji',
   '!emoji backup',
   '!emoji list [page]',

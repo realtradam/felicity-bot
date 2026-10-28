@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+set -euo pipefail
+source "$(dirname "$0")/_common"
+# Real provider integration only. No Discord connection or runtime database access.
+compose run --rm --no-deps bot node --import tsx --input-type=module -e '
+import { ExaSearch } from "./src/ai/search.ts";
+import { ChatStore } from "./src/ai/store.ts";
+import { ChatService } from "./src/ai/service.ts";
+import { LogfareGateway } from "./src/ai/gateway.ts";
+if (!process.env.UMANS_API_KEY || !process.env.LOGFARE_API_KEY) throw new Error("UMANS_API_KEY and LOGFARE_API_KEY are required");
+const store = new ChatStore(":memory:");
+const controller = new AbortController();
+const search = new ExaSearch(process.env.UMANS_API_KEY);
+let searches = 0;
+const original = search.search.bind(search);
+search.search = async (...args) => { searches++; return original(...args); };
+try {
+  const service = new ChatService(store, new LogfareGateway(process.env.LOGFARE_API_KEY), search);
+  let firstToken = false;
+  await service.chat("smoke-channel", "smoke-guild", `[${new Date().toISOString()}] Use web_search to find the official Discord developer documentation for message formatting. Reply in one short sentence with the official URL.`, controller.signal, () => { firstToken = true; }, async (text, model) => {
+    if (!text.trim() || !firstToken || !searches) throw new Error("Search tool loop not exercised");
+    console.log("Exa-only chat loop OK:", JSON.stringify({ model, searches, firstToken, characters: text.length, storedMessages: store.load("smoke-channel").messages.length }));
+  });
+} catch (error) {
+  console.error(error?.name === "AIError" ? error.message : "Search smoke failed; check service configuration.");
+  process.exitCode = 1;
+} finally { controller.abort(); store.close(); }
+'

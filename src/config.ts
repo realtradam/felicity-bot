@@ -5,6 +5,9 @@ const snowflake = z.string().regex(/^\d{17,20}$/);
 const schema = z.object({
   DISCORD_TOKEN: z.string().trim().min(1),
   DISCORD_CLIENT_ID: snowflake,
+  UMANS_API_KEY: z.string().trim().optional(),
+  LOGFARE_API_KEY: z.string().trim().optional(),
+  AI_CHAT_ENABLED: z.enum(['true', 'false']).default('true'),
   OPENAI_RESET_ENABLED: z.enum(['true', 'false']).default('true'),
   AI_GATEWAY_API_KEY: z.string().trim().optional(),
   VERCEL_TOKEN: z.string().trim().optional(),
@@ -26,6 +29,13 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env) {
   }
   const gatewayKey = result.data.AI_GATEWAY_API_KEY || result.data.VERCEL_TOKEN;
   return {
+    ai:
+      result.data.AI_CHAT_ENABLED === 'true' && result.data.LOGFARE_API_KEY
+        ? {
+            apiKey: result.data.LOGFARE_API_KEY,
+            searchApiKey: result.data.UMANS_API_KEY || undefined,
+          }
+        : undefined,
     openaiReset: {
       enabled:
         result.data.OPENAI_RESET_ENABLED === 'true' && Boolean(gatewayKey),

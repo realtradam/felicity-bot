@@ -12,6 +12,9 @@ services:
       DISCORD_CLIENT_ID: ${DISCORD_CLIENT_ID:?Supply the application ID}
       DATA_DIR: /app/data
       # Existing credits only. No top-ups, paid fallback or Twitter credentials.
+      UMANS_API_KEY: ${UMANS_API_KEY:-}
+      LOGFARE_API_KEY: ${LOGFARE_API_KEY:-}
+      AI_CHAT_ENABLED: ${AI_CHAT_ENABLED:-true}
       OPENAI_RESET_ENABLED: ${OPENAI_RESET_ENABLED:-true}
       AI_GATEWAY_API_KEY: ${AI_GATEWAY_API_KEY:-}
       VERCEL_TOKEN: ${VERCEL_TOKEN:-}

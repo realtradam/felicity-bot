@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+set -euo pipefail
+source "$(dirname "$0")/_common"
+# Provider integration only: never import index.ts, log in to Discord or access stored history.
+# Compose supplies LOGFARE_API_KEY; no dotenv execution or secret stdout.
+compose run --rm --no-deps bot node --import tsx --input-type=module -e '
+import { LogfareGateway } from "./src/ai/gateway.ts";
+if (!process.env.LOGFARE_API_KEY) throw new Error("LOGFARE_API_KEY is required");
+const gateway = new LogfareGateway(process.env.LOGFARE_API_KEY);
+const controller = new AbortController();
+try {
+  const models = await gateway.models(controller.signal);
+  const chat = models.find(m => m.id === "glm-5.3" && m.kind === "chat" && !m.locked);
+  const image = models.find(m => m.id === "flux-1-schnell" && m.kind === "image" && !m.locked);
+  if (!chat || !image) throw new Error("Smoke models unavailable or locked");
+  const metrics = await gateway.metrics(controller.signal);
+  let firstToken = false;
+  const result = await gateway.complete(chat.id, [{ role: "system", content: "Your name is Felicity. You are a Discord bot. Your model is GLM 5.3." }, { role: "user", content: `[${new Date().toISOString()}] Reply with a short hello, nothing else.` }], controller.signal, () => { firstToken = true; }, 1024);
+  if (!firstToken || !result.text.trim()) throw new Error("Streaming chat failed");
+  console.log("Chat stream OK:", JSON.stringify({ model: result.model, characters: result.text.length, firstToken, inputTokens: result.inputTokens, metricsAvailable: metrics.has(chat.id) }));
+  const generated = await gateway.image(image.id, "A simple blue circle on a white background.", controller.signal);
+  console.log("Image generation OK:", JSON.stringify({ model: image.id, bytes: generated.bytes.length, extension: generated.extension }));
+} catch (error) {
+  // Gateway errors are value-safe; unknown errors expose only the type.
+  console.error(error?.name === "AIError" ? error.message : "Provider smoke failed; check configuration and service availability.");
+  process.exitCode = 1;
+} finally { controller.abort(); }
+'
