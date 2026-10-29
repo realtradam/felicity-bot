@@ -5,6 +5,10 @@ import type { ToolCall } from './types.js';
 // Same search-only relay protocol as Dispatch's tool-web-search Umans backend.
 // Fixed hosts/provider: no model-selected URL, scrape mode, or fallback backend.
 export const EXA_ENDPOINT = 'https://api.code.umans.ai/v1/messages';
+// Umans routing is model-dependent: the Kimi route returns raw Exa blocks with
+// zero model tokens. umans-flash runs a summarizing model and drops those blocks.
+// Keep this explicit: an alias change must not silently add another AI turn.
+export const EXA_SEARCH_ROUTE = 'umans-kimi-k3';
 export const SEARCH_TOOL = {
   type: 'function',
   function: {
@@ -151,7 +155,7 @@ export class ExaSearch {
           'X-Umans-Websearch-Provider': 'exa',
         },
         body: JSON.stringify({
-          model: 'umans-flash',
+          model: EXA_SEARCH_ROUTE,
           max_tokens: 1024,
           messages: [{ role: 'user', content: args.query }],
           tools: [{ type: 'web_search_20250305', max_uses: 5 }],

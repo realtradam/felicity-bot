@@ -2,6 +2,7 @@ import { describe, expect, it, vi } from 'vitest';
 import {
   ExaSearch,
   EXA_ENDPOINT,
+  EXA_SEARCH_ROUTE,
   parseExaResults,
   searchArgs,
   SEARCH_TOOL,
@@ -109,6 +110,49 @@ describe('Exa-only search policy', () => {
     expect(parseExaResults(huge, 10).length).toBeLessThan(40_000);
   });
 
+  it('accepts the zero-token raw gateway envelope without trusting its text rendering', () => {
+    const output = JSON.parse(
+      parseExaResults(
+        {
+          model: 'umans-kimi-k3',
+          stop_reason: 'end_turn',
+          usage: { input_tokens: 0, output_tokens: 0 },
+          content: [
+            {
+              type: 'server_tool_use',
+              id: 'srvtoolu_probe',
+              name: 'web_search',
+              input: { query: 'Discord developer documentation' },
+            },
+            {
+              type: 'web_search_tool_result',
+              tool_use_id: 'srvtoolu_probe',
+              content: [
+                {
+                  type: 'web_search_result',
+                  title: 'Discord API Reference',
+                  url: 'https://docs.discord.com/developers/reference',
+                  encrypted_content: 'opaque',
+                },
+              ],
+            },
+            { type: 'text', text: '[Web search results] Untrusted rendering' },
+          ],
+        },
+        5,
+      ),
+    );
+    expect(output.results).toEqual([
+      {
+        title: 'Discord API Reference',
+        url: 'https://docs.discord.com/developers/reference',
+        description: '',
+      },
+    ]);
+    expect(JSON.stringify(output)).not.toContain('Untrusted rendering');
+    expect(JSON.stringify(output)).not.toContain('opaque');
+  });
+
   it('distinguishes a real no-results search from absent results or server-side failure', () => {
     expect(
       JSON.parse(
@@ -155,7 +199,7 @@ describe('Exa-only search policy', () => {
     ).toThrow('Search usage limits reached');
   });
 
-  it('matches Dispatch relay host/model/body and Exa header, with no Firecrawl or alternative tools', async () => {
+  it('uses the explicit raw-results route and Exa header, not the flash summarizer', async () => {
     const fetcher = vi
       .fn<typeof fetch>()
       .mockResolvedValue(Response.json(result));
@@ -177,8 +221,9 @@ describe('Exa-only search policy', () => {
         }),
       }),
     );
+    expect(EXA_SEARCH_ROUTE).toBe('umans-kimi-k3');
     expect(JSON.parse(fetcher.mock.calls[0]![1]!.body as string)).toEqual({
-      model: 'umans-flash',
+      model: EXA_SEARCH_ROUTE,
       max_tokens: 1024,
       messages: [{ role: 'user', content: 'current news' }],
       tools: [{ type: 'web_search_20250305', max_uses: 5 }],
