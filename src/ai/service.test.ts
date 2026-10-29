@@ -400,8 +400,34 @@ describe('Exa-only chat tool loop', () => {
     });
     await f.chat();
     expect(f.runSearch).toHaveBeenCalledTimes(3);
-    expect(f.complete.mock.calls[3]![5]).toBe(false);
+    const final = f.complete.mock.calls[3]!;
+    expect(final[5]).toBe(false);
+    expect(final[1].at(-1)).toEqual({
+      role: 'system',
+      content:
+        'The web_search budget for this reply is exhausted. Do not call tools again. Write your final answer to the original user now using the available sources. Be explicit about missing or unverified information; do not invent prices or citations.',
+    });
+    expect(final[1].filter((m) => m.role === 'tool')).toHaveLength(3);
     expect(f.deliver).toHaveBeenCalledExactlyOnceWith('final', 'GLM 5.3 Flash');
+    expect(JSON.stringify(f.store.load('one'))).not.toContain(
+      'budget for this reply is exhausted',
+    );
+  });
+
+  it('fails closed if the final answer still requests a tool after the budget is exhausted', async () => {
+    const f = searchFixture();
+    for (let i = 0; i < 4; i++)
+      f.complete.mockResolvedValueOnce({
+        text: '',
+        model: model.id,
+        inputTokens: 50,
+        toolCalls: [toolCall(`call-${i}`)],
+      });
+    await expect(f.chat()).rejects.toThrow('Web search call limit reached');
+    expect(f.runSearch).toHaveBeenCalledTimes(3);
+    expect(f.complete).toHaveBeenCalledTimes(4);
+    expect(f.deliver).not.toHaveBeenCalled();
+    expect(f.store.load('one').messages).toEqual([]);
   });
 
   it('rejects repeated call IDs across rounds rather than searching twice', async () => {

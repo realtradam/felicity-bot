@@ -206,9 +206,15 @@ export class ChatService {
     };
     for (let round = 0; round < 4; round++) {
       deadline.throwIfAborted();
+      const enabled = Boolean(this.search) && searches < 3;
+      if (this.search && !enabled)
+        transcript.push({
+          role: 'system',
+          content:
+            'The web_search budget for this reply is exhausted. Do not call tools again. Write your final answer to the original user now using the available sources. Be explicit about missing or unverified information; do not invent prices or citations.',
+        });
       if (tokens(transcript) > limit)
         throw new AIError('Search context exceeds the channel context limit');
-      const enabled = Boolean(this.search) && searches < 3;
       const result = await this.gateway.complete(
         model.id,
         transcript,
